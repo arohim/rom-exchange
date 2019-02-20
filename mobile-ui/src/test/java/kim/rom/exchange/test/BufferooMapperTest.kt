@@ -1,7 +1,7 @@
-package org.buffer.android.boilerplate.ui
+package kim.rom.exchange.test
 
 import kim.rom.exchange.mapper.BufferooMapper
-import org.buffer.android.boilerplate.ui.test.factory.BufferooFactory
+import kim.rom.exchange.test.test.factory.BufferooFactory
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

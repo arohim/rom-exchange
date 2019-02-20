@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.test
+package kim.rom.exchange.test.test
 
 import android.app.Application
 import android.content.Context
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.test.runner.AndroidJUnitRunner
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
+import kim.rom.exchange.test.TestApplication
 
 class TestRunner : AndroidJUnitRunner() {
 

@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.browse
+package kim.rom.exchange.test.browse
 
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.assertion.ViewAssertions.matches
@@ -9,12 +9,12 @@ import android.support.test.runner.AndroidJUnit4
 import android.support.v7.widget.RecyclerView
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
+import kim.rom.exchange.R
 import kim.rom.exchange.browse.BrowseActivity
+import kim.rom.exchange.test.TestApplication
+import kim.rom.exchange.test.test.factory.ui.BufferooFactory
+import kim.rom.exchange.test.test.util.RecyclerViewMatcher
 import org.buffer.android.boilerplate.domain.model.Bufferoo
-import org.buffer.android.boilerplate.ui.R
-import org.buffer.android.boilerplate.ui.test.TestApplication
-import org.buffer.android.boilerplate.ui.test.factory.ui.BufferooFactory
-import org.buffer.android.boilerplate.ui.test.util.RecyclerViewMatcher
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,7 +23,8 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class BrowseActivityTest {
 
-    @Rule @JvmField
+    @Rule
+    @JvmField
     val activity = ActivityTestRule<BrowseActivity>(BrowseActivity::class.java, false, false)
 
     @Test
@@ -48,9 +49,9 @@ class BrowseActivityTest {
         activity.launchActivity(null)
 
         bufferoos.forEachIndexed { index, bufferoo ->
-            onView(withId(R.id.recycler_browse)).perform(RecyclerViewActions.
-                    scrollToPosition<RecyclerView.ViewHolder>(index))
-            checkBufferooDetailsDisplay(bufferoo, index) }
+            onView(withId(R.id.recycler_browse)).perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(index))
+            checkBufferooDetailsDisplay(bufferoo, index)
+        }
     }
 
     private fun checkBufferooDetailsDisplay(bufferoo: Bufferoo, position: Int) {

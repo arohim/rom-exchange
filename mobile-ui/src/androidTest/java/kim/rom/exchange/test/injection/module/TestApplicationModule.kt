@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.injection.module
+package kim.rom.exchange.test.injection.module
 
 import android.app.Application
 import android.content.Context

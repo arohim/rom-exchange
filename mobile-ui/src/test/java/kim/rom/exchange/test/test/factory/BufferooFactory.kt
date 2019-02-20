@@ -1,7 +1,7 @@
-package org.buffer.android.boilerplate.ui.test.factory
+package kim.rom.exchange.test.test.factory
 
 import org.buffer.android.boilerplate.presentation.model.BufferooView
-import org.buffer.android.boilerplate.ui.test.factory.DataFactory.Factory.randomUuid
+import kim.rom.exchange.test.test.factory.DataFactory.Factory.randomUuid
 
 /**
  * Factory class for Bufferoo related instances

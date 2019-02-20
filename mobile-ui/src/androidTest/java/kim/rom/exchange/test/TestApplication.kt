@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.test
+package kim.rom.exchange.test
 
 import android.app.Activity
 import android.app.Application
@@ -6,13 +6,14 @@ import android.support.test.InstrumentationRegistry
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
-import org.buffer.android.boilerplate.ui.injection.component.DaggerTestApplicationComponent
-import org.buffer.android.boilerplate.ui.injection.component.TestApplicationComponent
+import kim.rom.exchange.test.injection.component.DaggerTestApplicationComponent
+import kim.rom.exchange.test.injection.component.TestApplicationComponent
 import javax.inject.Inject
 
-class TestApplication: Application(), HasActivityInjector {
+class TestApplication : Application(), HasActivityInjector {
 
-    @Inject lateinit var injector: DispatchingAndroidInjector<Activity>
+    @Inject
+    lateinit var injector: DispatchingAndroidInjector<Activity>
 
     private lateinit var appComponent: TestApplicationComponent
 
@@ -25,8 +26,7 @@ class TestApplication: Application(), HasActivityInjector {
     companion object {
 
         fun appComponent(): TestApplicationComponent {
-            return (InstrumentationRegistry.getTargetContext().applicationContext as TestApplication).
-                    appComponent
+            return (InstrumentationRegistry.getTargetContext().applicationContext as TestApplication).appComponent
         }
 
     }

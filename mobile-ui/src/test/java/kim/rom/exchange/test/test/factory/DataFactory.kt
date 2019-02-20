@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.test.factory
+package kim.rom.exchange.test.test.factory
 
 import java.util.concurrent.ThreadLocalRandom
 

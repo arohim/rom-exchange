@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.injection.component
+package kim.rom.exchange.test.injection.component
 
 import android.app.Application
 import dagger.BindsInstance
@@ -8,9 +8,9 @@ import org.buffer.android.boilerplate.domain.executor.PostExecutionThread
 import org.buffer.android.boilerplate.domain.repository.BufferooRepository
 import kim.rom.exchange.injection.ApplicationComponent
 import kim.rom.exchange.injection.module.ActivityBindingModule
-import org.buffer.android.boilerplate.ui.injection.module.TestApplicationModule
+import kim.rom.exchange.test.injection.module.TestApplicationModule
 import kim.rom.exchange.injection.scopes.PerApplication
-import org.buffer.android.boilerplate.ui.test.TestApplication
+import kim.rom.exchange.test.test.TestApplication
 
 @Component(modules = arrayOf(TestApplicationModule::class, ActivityBindingModule::class,
         AndroidSupportInjectionModule::class))
