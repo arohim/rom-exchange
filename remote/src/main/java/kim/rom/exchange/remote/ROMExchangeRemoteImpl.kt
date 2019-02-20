@@ -4,7 +4,6 @@ import io.reactivex.Single
 import kim.rom.exchange.data.model.rom.ItemEntity
 import kim.rom.exchange.data.repository.BufferooRemote
 import kim.rom.exchange.data.repository.ROMExchangeRemote
-import kim.rom.exchange.remote.mapper.BufferooEntityMapper
 import kim.rom.exchange.remote.mapper.rom.ItemEntityMapper
 import javax.inject.Inject
 
