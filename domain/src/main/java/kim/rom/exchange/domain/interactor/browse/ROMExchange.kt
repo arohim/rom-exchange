@@ -14,6 +14,8 @@ data class ROMExchangeRequest(
         val type: Int,
         val sort: String,
         val sortDir: String,
+        val sortServer: String,
+        val sortRange: String,
         val page: Int
 )
 
@@ -29,6 +31,8 @@ open class ROMExchange @Inject constructor(private val romExchangeRepository: RO
                 type = params?.type ?: 0,
                 sort = params?.sort ?: "",
                 sortDir = params?.sortDir ?: "",
+                sortServer = params?.sortServer ?: "",
+                sortRange = params?.sortRange ?: "",
                 page = params?.page ?: 1
         )
     }

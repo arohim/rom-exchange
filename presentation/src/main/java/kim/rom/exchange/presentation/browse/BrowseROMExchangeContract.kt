@@ -32,7 +32,7 @@ interface BrowseROMExchangeContract {
 
     interface Presenter : BasePresenter {
 
-        fun retrieveBufferoos()
+        fun retrieveROMExchangeItems()
 
     }
 

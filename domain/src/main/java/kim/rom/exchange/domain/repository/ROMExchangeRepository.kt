@@ -10,6 +10,6 @@ import kim.rom.exchange.domain.model.rom.Item
  */
 interface ROMExchangeRepository {
 
-    fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, page: Int): Single<List<Item>>
+    fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, sortServer: String, sortRange: String, page: Int): Single<List<Item>>
 
 }

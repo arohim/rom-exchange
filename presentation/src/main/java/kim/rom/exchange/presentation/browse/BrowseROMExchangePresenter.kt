@@ -17,15 +17,27 @@ class BrowseROMExchangePresenter @Inject constructor(val browseView: BrowseROMEx
     }
 
     override fun start() {
-        retrieveBufferoos()
+        retrieveROMExchangeItems()
     }
 
     override fun stop() {
         getROMEXchangeUseCase.dispose()
     }
 
-    override fun retrieveBufferoos() {
-        getROMEXchangeUseCase.execute(ROMExchangeSubscriber())
+    override fun retrieveROMExchangeItems() {
+        getROMEXchangeUseCase.execute(
+                singleObserver = ROMExchangeSubscriber(),
+                params = ROMExchangeRequest(
+                        kw = "",
+                        exact = false,
+                        sort = "change",
+                        sortDir = "desc",
+                        sortServer = "both",
+                        sortRange = "all",
+                        type = 0,
+                        page = 1
+                )
+        )
     }
 
     internal fun handleGetROMExchangeItemsSuccess(items: List<Item>) {
