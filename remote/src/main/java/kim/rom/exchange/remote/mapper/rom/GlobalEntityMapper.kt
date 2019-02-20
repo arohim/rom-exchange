@@ -16,11 +16,11 @@ class GlobalEntityMapper @Inject constructor(
     override fun mapFromRemote(type: GlobalModel): GlobalEntity {
         return GlobalEntity(
                 all = type.all?.let { allEntityMapper.mapFromRemote(it) }
-                        ?: AllEntity(listOf(), 0),
+                        ?: AllEntity(listOf(), 0.0),
                 week = type.week?.let { weekEntityMapper.mapFromRemote(it) }
-                        ?: WeekEntity(listOf(), 0),
+                        ?: WeekEntity(listOf(), 0.0),
                 month = type.month?.let { monthEntityMapper.mapFromRemote(it) }
-                        ?: MonthEntity(listOf(), 0),
+                        ?: MonthEntity(listOf(), 0.0),
                 latest = type.latest ?: 0
         )
     }

@@ -10,7 +10,7 @@ class MonthEntityMapper @Inject constructor(private val dataItemEntityMapper: Da
         return MonthEntity(
                 data = type.data?.map { it.let { it1 -> dataItemEntityMapper.mapFromRemote(it1) } }
                         ?: listOf(),
-                change = type.change ?: 0
+                change = type.change ?: 0.0
         )
     }
 }

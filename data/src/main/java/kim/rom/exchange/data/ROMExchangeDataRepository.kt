@@ -4,7 +4,6 @@ import io.reactivex.Single
 import kim.rom.exchange.data.mapper.rom.ItemMapper
 import kim.rom.exchange.data.source.ROMExchangeDataStoreFactory
 import kim.rom.exchange.domain.model.rom.Item
-import kim.rom.exchange.domain.repository.BufferooRepository
 import kim.rom.exchange.domain.repository.ROMExchangeRepository
 import javax.inject.Inject
 

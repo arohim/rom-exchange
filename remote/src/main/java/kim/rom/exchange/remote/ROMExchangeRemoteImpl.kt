@@ -3,14 +3,12 @@ package kim.rom.exchange.remote
 import io.reactivex.Single
 import kim.rom.exchange.data.model.rom.ItemEntity
 import kim.rom.exchange.data.repository.ROMExchangeRemote
-import kim.rom.exchange.data.mapper.rom.ItemMapper
 import kim.rom.exchange.remote.mapper.rom.ItemEntityMapper
 import javax.inject.Inject
 
 class ROMExchangeRemoteImpl @Inject constructor(private val romExchangeService: ROMExchangeService,
                                                 private val entityMapper: ItemEntityMapper) : ROMExchangeRemote {
-
-    override fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, page: Int): Single<List<ItemEntity>> {
+    override fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, sortServer: String, sortRange: String, page: Int): Single<List<ItemEntity>> {
         return romExchangeService.getItems(
                 kw = kw,
                 exact = exact,

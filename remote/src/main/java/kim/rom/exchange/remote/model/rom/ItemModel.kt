@@ -22,5 +22,5 @@ data class ItemModel(
         val sea: SeaModel? = null,
 
         @field:SerializedName("global_sea_diff")
-        val globalSeaDiff: Int? = null
+        val globalSeaDiff: Double? = null
 )

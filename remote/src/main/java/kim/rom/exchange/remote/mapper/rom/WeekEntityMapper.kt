@@ -10,7 +10,7 @@ class WeekEntityMapper @Inject constructor(private val dataItemEntityMapper: Dat
         return WeekEntity(
                 data = type.data?.map { it.let { it1 -> dataItemEntityMapper.mapFromRemote(it1) } }
                         ?: listOf(),
-                change = type.change ?: 0
+                change = type.change ?: 0.0
         )
     }
 }

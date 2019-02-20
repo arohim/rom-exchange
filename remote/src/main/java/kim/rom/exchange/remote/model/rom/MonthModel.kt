@@ -10,5 +10,5 @@ data class MonthModel(
 	val data: List<DataItemModel>? = null,
 
         @field:SerializedName("change")
-	val change: Int? = null
+	val change: Double? = null
 )

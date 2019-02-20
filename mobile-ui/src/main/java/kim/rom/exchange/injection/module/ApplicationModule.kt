@@ -19,6 +19,11 @@ import kim.rom.exchange.domain.executor.PostExecutionThread
 import kim.rom.exchange.domain.executor.ThreadExecutor
 import kim.rom.exchange.domain.repository.BufferooRepository
 import kim.rom.exchange.UiThread
+import kim.rom.exchange.data.ROMExchangeDataRepository
+import kim.rom.exchange.data.mapper.rom.ItemMapper
+import kim.rom.exchange.data.repository.ROMExchangeRemote
+import kim.rom.exchange.data.source.ROMExchangeDataStoreFactory
+import kim.rom.exchange.domain.repository.ROMExchangeRepository
 import kim.rom.exchange.injection.scopes.PerApplication
 import kim.rom.exchange.remote.*
 
@@ -62,6 +67,19 @@ open class ApplicationModule {
     internal fun provideBufferooRemote(service: BufferooService,
                                        factory: kim.rom.exchange.remote.mapper.BufferooEntityMapper): BufferooRemote {
         return BufferooRemoteImpl(service, factory)
+    }
+
+    @Provides
+    @PerApplication
+    internal fun provideROMExchangeDataRepository(factory: ROMExchangeDataStoreFactory, mapper: ItemMapper): ROMExchangeRepository {
+        return ROMExchangeDataRepository(factory, mapper)
+    }
+
+    @Provides
+    @PerApplication
+    internal fun provideROMExchangeRemote(service: ROMExchangeService,
+                                          factory: kim.rom.exchange.remote.mapper.rom.ItemEntityMapper): ROMExchangeRemote {
+        return ROMExchangeRemoteImpl(service, factory)
     }
 
     @Provides
