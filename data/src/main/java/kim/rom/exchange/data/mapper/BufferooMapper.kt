@@ -1,6 +1,6 @@
-package org.buffer.android.boilerplate.data.mapper
+package kim.rom.exchange.data.mapper
 
-import org.buffer.android.boilerplate.data.model.BufferooEntity
+import kim.rom.exchange.data.model.BufferooEntity
 import org.buffer.android.boilerplate.domain.model.Bufferoo
 import javax.inject.Inject
 

@@ -1,6 +1,6 @@
 package org.buffer.android.boilerplate.remote.mapper
 
-import org.buffer.android.boilerplate.data.model.BufferooEntity
+import kim.rom.exchange.data.model.BufferooEntity
 import org.buffer.android.boilerplate.remote.model.BufferooModel
 import javax.inject.Inject
 

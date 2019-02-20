@@ -5,8 +5,9 @@ import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Completable
 import io.reactivex.Single
-import org.buffer.android.boilerplate.data.model.BufferooEntity
-import org.buffer.android.boilerplate.data.repository.BufferooCache
+import kim.rom.exchange.data.model.BufferooEntity
+import kim.rom.exchange.data.repository.BufferooCache
+import kim.rom.exchange.data.source.BufferooCacheDataStore
 import org.buffer.android.boilerplate.data.test.factory.BufferooFactory
 import org.junit.Before
 import org.junit.Test

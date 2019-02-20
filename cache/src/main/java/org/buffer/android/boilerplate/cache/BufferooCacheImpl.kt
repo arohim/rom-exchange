@@ -9,8 +9,8 @@ import org.buffer.android.boilerplate.cache.db.constants.BufferooConstants
 import org.buffer.android.boilerplate.cache.db.mapper.BufferooMapper
 import org.buffer.android.boilerplate.cache.mapper.BufferooEntityMapper
 import org.buffer.android.boilerplate.cache.model.CachedBufferoo
-import org.buffer.android.boilerplate.data.model.BufferooEntity
-import org.buffer.android.boilerplate.data.repository.BufferooCache
+import kim.rom.exchange.data.model.BufferooEntity
+import kim.rom.exchange.data.repository.BufferooCache
 import javax.inject.Inject
 
 /**

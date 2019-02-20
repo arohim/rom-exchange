@@ -6,9 +6,9 @@ import com.nhaarman.mockito_kotlin.mock
 import dagger.Module
 import dagger.Provides
 import org.buffer.android.boilerplate.cache.PreferencesHelper
-import org.buffer.android.boilerplate.data.executor.JobExecutor
-import org.buffer.android.boilerplate.data.repository.BufferooCache
-import org.buffer.android.boilerplate.data.repository.BufferooRemote
+import kim.rom.exchange.data.executor.JobExecutor
+import kim.rom.exchange.data.repository.BufferooCache
+import kim.rom.exchange.data.repository.BufferooRemote
 import org.buffer.android.boilerplate.domain.executor.PostExecutionThread
 import org.buffer.android.boilerplate.domain.executor.ThreadExecutor
 import org.buffer.android.boilerplate.domain.repository.BufferooRepository

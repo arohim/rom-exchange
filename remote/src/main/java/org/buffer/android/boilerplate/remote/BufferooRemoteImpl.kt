@@ -1,8 +1,8 @@
 package org.buffer.android.boilerplate.remote
 
 import io.reactivex.Single
-import org.buffer.android.boilerplate.data.model.BufferooEntity
-import org.buffer.android.boilerplate.data.repository.BufferooRemote
+import kim.rom.exchange.data.model.BufferooEntity
+import kim.rom.exchange.data.repository.BufferooRemote
 import org.buffer.android.boilerplate.remote.mapper.BufferooEntityMapper
 import javax.inject.Inject
 

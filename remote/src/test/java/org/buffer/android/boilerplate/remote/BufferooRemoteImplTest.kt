@@ -3,7 +3,7 @@ package org.buffer.android.boilerplate.remote
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
-import org.buffer.android.boilerplate.data.model.BufferooEntity
+import kim.rom.exchange.data.model.BufferooEntity
 import org.buffer.android.boilerplate.remote.mapper.BufferooEntityMapper
 import org.buffer.android.boilerplate.remote.test.factory.BufferooFactory
 import org.junit.Before

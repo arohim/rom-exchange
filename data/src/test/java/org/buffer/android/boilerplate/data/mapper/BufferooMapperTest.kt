@@ -1,6 +1,7 @@
 package org.buffer.android.boilerplate.data.mapper
 
-import org.buffer.android.boilerplate.data.model.BufferooEntity
+import kim.rom.exchange.data.mapper.BufferooMapper
+import kim.rom.exchange.data.model.BufferooEntity
 import org.buffer.android.boilerplate.data.test.factory.BufferooFactory
 import org.buffer.android.boilerplate.domain.model.Bufferoo
 import org.junit.Before

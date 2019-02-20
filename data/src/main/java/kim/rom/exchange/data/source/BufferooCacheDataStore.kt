@@ -1,10 +1,10 @@
-package org.buffer.android.boilerplate.data.source
+package kim.rom.exchange.data.source
 
 import io.reactivex.Completable
 import io.reactivex.Single
-import org.buffer.android.boilerplate.data.model.BufferooEntity
-import org.buffer.android.boilerplate.data.repository.BufferooCache
-import org.buffer.android.boilerplate.data.repository.BufferooDataStore
+import kim.rom.exchange.data.model.BufferooEntity
+import kim.rom.exchange.data.repository.BufferooCache
+import kim.rom.exchange.data.repository.BufferooDataStore
 import javax.inject.Inject
 
 /**

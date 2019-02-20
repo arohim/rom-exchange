@@ -1,7 +1,7 @@
-package org.buffer.android.boilerplate.data.source
+package kim.rom.exchange.data.source
 
-import org.buffer.android.boilerplate.data.repository.BufferooCache
-import org.buffer.android.boilerplate.data.repository.BufferooDataStore
+import kim.rom.exchange.data.repository.BufferooCache
+import kim.rom.exchange.data.repository.BufferooDataStore
 import javax.inject.Inject
 
 /**

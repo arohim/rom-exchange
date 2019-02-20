@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.data.model
+package kim.rom.exchange.data.model
 
 /**
  * Representation for a [BufferooEntity] fetched from an external layer data source

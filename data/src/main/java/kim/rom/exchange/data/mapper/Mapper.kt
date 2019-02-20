@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.data.mapper
+package kim.rom.exchange.data.mapper
 
 /**
  * Interface for model mappers. It provides helper methods that facilitate

@@ -1,8 +1,8 @@
-package org.buffer.android.boilerplate.data.repository
+package kim.rom.exchange.data.repository
 
 import io.reactivex.Completable
 import io.reactivex.Single
-import org.buffer.android.boilerplate.data.model.BufferooEntity
+import kim.rom.exchange.data.model.BufferooEntity
 
 /**
  * Interface defining methods for the caching of Bufferroos. This is to be implemented by the

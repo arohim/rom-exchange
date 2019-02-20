@@ -2,7 +2,10 @@ package org.buffer.android.boilerplate.data.source
 
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
-import org.buffer.android.boilerplate.data.repository.BufferooCache
+import kim.rom.exchange.data.repository.BufferooCache
+import kim.rom.exchange.data.source.BufferooCacheDataStore
+import kim.rom.exchange.data.source.BufferooDataStoreFactory
+import kim.rom.exchange.data.source.BufferooRemoteDataStore
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

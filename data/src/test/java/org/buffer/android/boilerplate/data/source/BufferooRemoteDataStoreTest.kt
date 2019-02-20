@@ -3,8 +3,9 @@ package org.buffer.android.boilerplate.data.source
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
-import org.buffer.android.boilerplate.data.model.BufferooEntity
-import org.buffer.android.boilerplate.data.repository.BufferooRemote
+import kim.rom.exchange.data.model.BufferooEntity
+import kim.rom.exchange.data.repository.BufferooRemote
+import kim.rom.exchange.data.source.BufferooRemoteDataStore
 import org.buffer.android.boilerplate.data.test.factory.BufferooFactory
 import org.junit.Before
 import org.junit.Test
