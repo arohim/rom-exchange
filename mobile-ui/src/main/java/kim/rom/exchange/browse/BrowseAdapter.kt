@@ -4,10 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import kim.rom.exchange.R
 import kim.rom.exchange.model.ROMExchangeItemViewModel
 import javax.inject.Inject
@@ -19,7 +16,10 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<BrowseAdapter.V
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.nameText.text = item.name
-        holder.textSeaPrice.text = item.price
+        holder.textSeaPrice.text = item.seaPrice
+        holder.textGlobalPrice.text = item.globalPrice
+        holder.textSeaChange.text = item.seaChange
+        holder.textGlobalChange.text = item.globalChange
 
 //        Glide.with(holder.itemView.context)
 //                .load(item.avatar)

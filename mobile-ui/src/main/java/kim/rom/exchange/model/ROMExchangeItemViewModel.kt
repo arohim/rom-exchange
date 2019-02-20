@@ -5,6 +5,8 @@ package kim.rom.exchange.model
  */
 class ROMExchangeItemViewModel(
         val name: String,
-        val price: String,
-        val avatar: String
+        val globalPrice: String,
+        val seaPrice: String,
+        val globalChange: String,
+        val seaChange: String
 )
