@@ -1,3 +1,5 @@
 package kim.rom.exchange.data.model.rom
 
-data class WeekEntity(val data: List<DataItemEntity>, val change: Int)
+import kim.rom.exchange.domain.model.rom.DataItem
+
+data class WeekEntity(val data: List<DataItem>, val change: Int)

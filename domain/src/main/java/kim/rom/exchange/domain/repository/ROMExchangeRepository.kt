@@ -1,7 +1,7 @@
 package kim.rom.exchange.domain.repository
 
 import io.reactivex.Single
-import kim.rom.exchange.domain.model.Bufferoo
+import kim.rom.exchange.domain.model.rom.Item
 
 /**
  * Interface defining methods for how the data layer can pass data to and from the Domain layer.
@@ -10,6 +10,6 @@ import kim.rom.exchange.domain.model.Bufferoo
  */
 interface ROMExchangeRepository {
 
-    fun getItems(): Single<List<Bufferoo>>
+    fun getItems(): Single<List<Item>>
 
 }
