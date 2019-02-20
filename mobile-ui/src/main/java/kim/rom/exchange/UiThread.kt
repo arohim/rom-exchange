@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui
+package kim.rom.exchange
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers

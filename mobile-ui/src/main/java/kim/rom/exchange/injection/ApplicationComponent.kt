@@ -1,13 +1,13 @@
-package org.buffer.android.boilerplate.ui.injection
+package kim.rom.exchange.injection
 
 import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
-import org.buffer.android.boilerplate.ui.BufferooApplication
-import org.buffer.android.boilerplate.ui.injection.module.ActivityBindingModule
-import org.buffer.android.boilerplate.ui.injection.module.ApplicationModule
-import org.buffer.android.boilerplate.ui.injection.scopes.PerApplication
+import kim.rom.exchange.BufferooApplication
+import kim.rom.exchange.injection.module.ActivityBindingModule
+import kim.rom.exchange.injection.module.ApplicationModule
+import kim.rom.exchange.injection.scopes.PerApplication
 
 @PerApplication
 @Component(modules = arrayOf(ActivityBindingModule::class, ApplicationModule::class,

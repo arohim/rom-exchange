@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.injection.scopes
+package kim.rom.exchange.injection.scopes
 
 import javax.inject.Scope
 

@@ -1,9 +1,10 @@
-package org.buffer.android.boilerplate.ui.injection.module
+package kim.rom.exchange.injection.module
 
 import android.app.Application
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import kim.rom.exchange.BuildConfig
 import org.buffer.android.boilerplate.cache.BufferooCacheImpl
 import org.buffer.android.boilerplate.cache.PreferencesHelper
 import org.buffer.android.boilerplate.cache.db.DbOpenHelper
@@ -20,9 +21,8 @@ import org.buffer.android.boilerplate.domain.repository.BufferooRepository
 import org.buffer.android.boilerplate.remote.BufferooRemoteImpl
 import org.buffer.android.boilerplate.remote.BufferooService
 import org.buffer.android.boilerplate.remote.BufferooServiceFactory
-import org.buffer.android.boilerplate.ui.BuildConfig
-import org.buffer.android.boilerplate.ui.UiThread
-import org.buffer.android.boilerplate.ui.injection.scopes.PerApplication
+import kim.rom.exchange.UiThread
+import kim.rom.exchange.injection.scopes.PerApplication
 
 /**
  * Module used to provide dependencies at an application-level.

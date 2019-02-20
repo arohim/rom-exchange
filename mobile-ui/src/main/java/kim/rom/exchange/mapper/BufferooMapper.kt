@@ -1,7 +1,7 @@
-package org.buffer.android.boilerplate.ui.mapper
+package kim.rom.exchange.mapper
 
 import org.buffer.android.boilerplate.presentation.model.BufferooView
-import org.buffer.android.boilerplate.ui.model.BufferooViewModel
+import kim.rom.exchange.model.BufferooViewModel
 import javax.inject.Inject
 
 /**

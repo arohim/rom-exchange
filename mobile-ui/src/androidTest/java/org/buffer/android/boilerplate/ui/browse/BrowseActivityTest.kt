@@ -9,6 +9,7 @@ import android.support.test.runner.AndroidJUnit4
 import android.support.v7.widget.RecyclerView
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
+import kim.rom.exchange.browse.BrowseActivity
 import org.buffer.android.boilerplate.domain.model.Bufferoo
 import org.buffer.android.boilerplate.ui.R
 import org.buffer.android.boilerplate.ui.test.TestApplication

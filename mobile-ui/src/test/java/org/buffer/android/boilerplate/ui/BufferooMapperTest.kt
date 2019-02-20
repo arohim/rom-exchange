@@ -1,6 +1,6 @@
 package org.buffer.android.boilerplate.ui
 
-import org.buffer.android.boilerplate.ui.mapper.BufferooMapper
+import kim.rom.exchange.mapper.BufferooMapper
 import org.buffer.android.boilerplate.ui.test.factory.BufferooFactory
 import org.junit.Before
 import org.junit.Test

@@ -6,10 +6,10 @@ import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import org.buffer.android.boilerplate.domain.executor.PostExecutionThread
 import org.buffer.android.boilerplate.domain.repository.BufferooRepository
-import org.buffer.android.boilerplate.ui.injection.ApplicationComponent
-import org.buffer.android.boilerplate.ui.injection.module.ActivityBindingModule
+import kim.rom.exchange.injection.ApplicationComponent
+import kim.rom.exchange.injection.module.ActivityBindingModule
 import org.buffer.android.boilerplate.ui.injection.module.TestApplicationModule
-import org.buffer.android.boilerplate.ui.injection.scopes.PerApplication
+import kim.rom.exchange.injection.scopes.PerApplication
 import org.buffer.android.boilerplate.ui.test.TestApplication
 
 @Component(modules = arrayOf(TestApplicationModule::class, ActivityBindingModule::class,

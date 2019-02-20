@@ -1,9 +1,9 @@
-package org.buffer.android.boilerplate.ui.injection.module
+package kim.rom.exchange.injection.module
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import org.buffer.android.boilerplate.ui.browse.BrowseActivity
-import org.buffer.android.boilerplate.ui.injection.scopes.PerActivity
+import kim.rom.exchange.browse.BrowseActivity
+import kim.rom.exchange.injection.scopes.PerActivity
 
 @Module
 abstract class ActivityBindingModule {

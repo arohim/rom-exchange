@@ -1,17 +1,18 @@
-package org.buffer.android.boilerplate.ui
+package kim.rom.exchange
 
 import android.app.Activity
 import android.app.Application
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
-import org.buffer.android.boilerplate.ui.injection.DaggerApplicationComponent
+import kim.rom.exchange.injection.DaggerApplicationComponent
 import timber.log.Timber
 import javax.inject.Inject
 
 class BufferooApplication : Application(), HasActivityInjector {
 
-    @Inject lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+    @Inject
+    lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
     override fun onCreate() {
         super.onCreate()

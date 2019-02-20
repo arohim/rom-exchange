@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.browse
+package kim.rom.exchange.browse
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import org.buffer.android.boilerplate.ui.R
-import org.buffer.android.boilerplate.ui.model.BufferooViewModel
+import kim.rom.exchange.R
+import kim.rom.exchange.model.BufferooViewModel
 import javax.inject.Inject
 
 class BrowseAdapter @Inject constructor(): RecyclerView.Adapter<BrowseAdapter.ViewHolder>() {

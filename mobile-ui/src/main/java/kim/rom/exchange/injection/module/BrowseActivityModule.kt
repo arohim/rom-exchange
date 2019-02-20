@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.ui.injection.module
+package kim.rom.exchange.injection.module
 
 import dagger.Module
 import dagger.Provides
@@ -6,8 +6,8 @@ import org.buffer.android.boilerplate.domain.interactor.browse.GetBufferoos
 import org.buffer.android.boilerplate.presentation.browse.BrowseBufferoosContract
 import org.buffer.android.boilerplate.presentation.browse.BrowseBufferoosPresenter
 import org.buffer.android.boilerplate.presentation.mapper.BufferooMapper
-import org.buffer.android.boilerplate.ui.browse.BrowseActivity
-import org.buffer.android.boilerplate.ui.injection.scopes.PerActivity
+import kim.rom.exchange.browse.BrowseActivity
+import kim.rom.exchange.injection.scopes.PerActivity
 
 
 

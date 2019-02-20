@@ -13,8 +13,8 @@ import org.buffer.android.boilerplate.domain.executor.PostExecutionThread
 import org.buffer.android.boilerplate.domain.executor.ThreadExecutor
 import org.buffer.android.boilerplate.domain.repository.BufferooRepository
 import org.buffer.android.boilerplate.remote.BufferooService
-import org.buffer.android.boilerplate.ui.UiThread
-import org.buffer.android.boilerplate.ui.injection.scopes.PerApplication
+import kim.rom.exchange.UiThread
+import kim.rom.exchange.injection.scopes.PerApplication
 
 @Module
 class TestApplicationModule {

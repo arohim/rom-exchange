@@ -1,22 +1,25 @@
-package org.buffer.android.boilerplate.ui.browse
+package kim.rom.exchange.browse
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import dagger.android.AndroidInjection
+import kim.rom.exchange.R
 import kotlinx.android.synthetic.main.activity_browse.*
 import org.buffer.android.boilerplate.presentation.browse.BrowseBufferoosContract
 import org.buffer.android.boilerplate.presentation.model.BufferooView
-import org.buffer.android.boilerplate.ui.R
-import org.buffer.android.boilerplate.ui.mapper.BufferooMapper
+import kim.rom.exchange.mapper.BufferooMapper
 import javax.inject.Inject
 
-class BrowseActivity: AppCompatActivity(), BrowseBufferoosContract.View {
+class BrowseActivity : AppCompatActivity(), BrowseBufferoosContract.View {
 
-    @Inject lateinit var onboardingPresenter: BrowseBufferoosContract.Presenter
-    @Inject lateinit var browseAdapter: BrowseAdapter
-    @Inject lateinit var mapper: BufferooMapper
+    @Inject
+    lateinit var onboardingPresenter: BrowseBufferoosContract.Presenter
+    @Inject
+    lateinit var browseAdapter: BrowseAdapter
+    @Inject
+    lateinit var mapper: BufferooMapper
 
     override fun setPresenter(presenter: BrowseBufferoosContract.Presenter) {
         onboardingPresenter = presenter
