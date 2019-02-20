@@ -1,6 +1,6 @@
 package kim.rom.exchange.test.test.factory
 
-import org.buffer.android.boilerplate.presentation.model.BufferooView
+import kim.rom.exchange.presentation.model.BufferooView
 import kim.rom.exchange.test.test.factory.DataFactory.Factory.randomUuid
 
 /**

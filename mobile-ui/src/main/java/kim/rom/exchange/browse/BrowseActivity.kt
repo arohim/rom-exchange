@@ -7,8 +7,8 @@ import android.view.View
 import dagger.android.AndroidInjection
 import kim.rom.exchange.R
 import kotlinx.android.synthetic.main.activity_browse.*
-import org.buffer.android.boilerplate.presentation.browse.BrowseBufferoosContract
-import org.buffer.android.boilerplate.presentation.model.BufferooView
+import kim.rom.exchange.presentation.browse.BrowseBufferoosContract
+import kim.rom.exchange.presentation.model.BufferooView
 import kim.rom.exchange.mapper.BufferooMapper
 import javax.inject.Inject
 

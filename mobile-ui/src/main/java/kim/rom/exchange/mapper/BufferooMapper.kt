@@ -1,6 +1,6 @@
 package kim.rom.exchange.mapper
 
-import org.buffer.android.boilerplate.presentation.model.BufferooView
+import kim.rom.exchange.presentation.model.BufferooView
 import kim.rom.exchange.model.BufferooViewModel
 import javax.inject.Inject
 

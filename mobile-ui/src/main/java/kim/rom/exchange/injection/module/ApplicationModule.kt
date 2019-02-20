@@ -15,12 +15,12 @@ import kim.rom.exchange.data.mapper.BufferooMapper
 import kim.rom.exchange.data.repository.BufferooCache
 import kim.rom.exchange.data.repository.BufferooRemote
 import kim.rom.exchange.data.source.BufferooDataStoreFactory
-import org.buffer.android.boilerplate.domain.executor.PostExecutionThread
-import org.buffer.android.boilerplate.domain.executor.ThreadExecutor
-import org.buffer.android.boilerplate.domain.repository.BufferooRepository
-import org.buffer.android.boilerplate.remote.BufferooRemoteImpl
-import org.buffer.android.boilerplate.remote.BufferooService
-import org.buffer.android.boilerplate.remote.BufferooServiceFactory
+import kim.rom.exchange.domain.executor.PostExecutionThread
+import kim.rom.exchange.domain.executor.ThreadExecutor
+import kim.rom.exchange.domain.repository.BufferooRepository
+import kim.rom.exchange.remote.BufferooRemoteImpl
+import kim.rom.exchange.remote.BufferooService
+import kim.rom.exchange.remote.BufferooServiceFactory
 import kim.rom.exchange.UiThread
 import kim.rom.exchange.injection.scopes.PerApplication
 
@@ -62,7 +62,7 @@ open class ApplicationModule {
     @Provides
     @PerApplication
     internal fun provideBufferooRemote(service: BufferooService,
-                                       factory: org.buffer.android.boilerplate.remote.mapper.BufferooEntityMapper): BufferooRemote {
+                                       factory: kim.rom.exchange.remote.mapper.BufferooEntityMapper): BufferooRemote {
         return BufferooRemoteImpl(service, factory)
     }
 

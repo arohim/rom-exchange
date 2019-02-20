@@ -6,8 +6,8 @@ import kim.rom.exchange.data.mapper.BufferooMapper
 import kim.rom.exchange.data.model.BufferooEntity
 import kim.rom.exchange.data.source.BufferooDataStoreFactory
 import kim.rom.exchange.data.source.BufferooRemoteDataStore
-import org.buffer.android.boilerplate.domain.model.Bufferoo
-import org.buffer.android.boilerplate.domain.repository.BufferooRepository
+import kim.rom.exchange.domain.model.Bufferoo
+import kim.rom.exchange.domain.repository.BufferooRepository
 import javax.inject.Inject
 
 /**

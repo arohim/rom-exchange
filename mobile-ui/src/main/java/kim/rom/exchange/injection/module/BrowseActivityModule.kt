@@ -2,10 +2,10 @@ package kim.rom.exchange.injection.module
 
 import dagger.Module
 import dagger.Provides
-import org.buffer.android.boilerplate.domain.interactor.browse.GetBufferoos
-import org.buffer.android.boilerplate.presentation.browse.BrowseBufferoosContract
-import org.buffer.android.boilerplate.presentation.browse.BrowseBufferoosPresenter
-import org.buffer.android.boilerplate.presentation.mapper.BufferooMapper
+import kim.rom.exchange.domain.interactor.browse.GetBufferoos
+import kim.rom.exchange.presentation.browse.BrowseBufferoosContract
+import kim.rom.exchange.presentation.browse.BrowseBufferoosPresenter
+import kim.rom.exchange.presentation.mapper.BufferooMapper
 import kim.rom.exchange.browse.BrowseActivity
 import kim.rom.exchange.injection.scopes.PerActivity
 

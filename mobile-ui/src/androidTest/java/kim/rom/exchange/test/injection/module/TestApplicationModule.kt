@@ -9,10 +9,10 @@ import org.buffer.android.boilerplate.cache.PreferencesHelper
 import kim.rom.exchange.data.executor.JobExecutor
 import kim.rom.exchange.data.repository.BufferooCache
 import kim.rom.exchange.data.repository.BufferooRemote
-import org.buffer.android.boilerplate.domain.executor.PostExecutionThread
-import org.buffer.android.boilerplate.domain.executor.ThreadExecutor
-import org.buffer.android.boilerplate.domain.repository.BufferooRepository
-import org.buffer.android.boilerplate.remote.BufferooService
+import kim.rom.exchange.domain.executor.PostExecutionThread
+import kim.rom.exchange.domain.executor.ThreadExecutor
+import kim.rom.exchange.domain.repository.BufferooRepository
+import kim.rom.exchange.remote.BufferooService
 import kim.rom.exchange.UiThread
 import kim.rom.exchange.injection.scopes.PerApplication
 

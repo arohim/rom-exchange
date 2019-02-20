@@ -14,7 +14,7 @@ import kim.rom.exchange.browse.BrowseActivity
 import kim.rom.exchange.test.TestApplication
 import kim.rom.exchange.test.test.factory.ui.BufferooFactory
 import kim.rom.exchange.test.test.util.RecyclerViewMatcher
-import org.buffer.android.boilerplate.domain.model.Bufferoo
+import kim.rom.exchange.domain.model.Bufferoo
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

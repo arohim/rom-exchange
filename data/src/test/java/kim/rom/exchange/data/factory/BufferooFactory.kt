@@ -2,7 +2,7 @@ package kim.rom.exchange.data.factory
 
 import kim.rom.exchange.data.model.BufferooEntity
 import kim.rom.exchange.data.factory.DataFactory.Factory.randomUuid
-import org.buffer.android.boilerplate.domain.model.Bufferoo
+import kim.rom.exchange.domain.model.Bufferoo
 
 /**
  * Factory class for Bufferoo related instances

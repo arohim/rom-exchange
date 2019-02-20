@@ -2,7 +2,7 @@ package kim.rom.exchange
 
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
-import org.buffer.android.boilerplate.domain.executor.PostExecutionThread
+import kim.rom.exchange.domain.executor.PostExecutionThread
 import javax.inject.Inject
 
 /**

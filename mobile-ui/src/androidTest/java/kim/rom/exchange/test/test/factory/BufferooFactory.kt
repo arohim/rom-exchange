@@ -1,6 +1,6 @@
 package kim.rom.exchange.test.test.factory.ui
 
-import org.buffer.android.boilerplate.domain.model.Bufferoo
+import kim.rom.exchange.domain.model.Bufferoo
 
 /**
  * Factory class for Bufferoo related instances

@@ -10,7 +10,7 @@ import kim.rom.exchange.data.source.BufferooCacheDataStore
 import kim.rom.exchange.data.source.BufferooDataStoreFactory
 import kim.rom.exchange.data.source.BufferooRemoteDataStore
 import kim.rom.exchange.data.factory.BufferooFactory
-import org.buffer.android.boilerplate.domain.model.Bufferoo
+import kim.rom.exchange.domain.model.Bufferoo
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
