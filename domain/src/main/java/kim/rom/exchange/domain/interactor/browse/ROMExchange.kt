@@ -4,20 +4,9 @@ import io.reactivex.Single
 import kim.rom.exchange.domain.executor.PostExecutionThread
 import kim.rom.exchange.domain.executor.ThreadExecutor
 import kim.rom.exchange.domain.interactor.SingleUseCase
-import kim.rom.exchange.domain.model.rom.Item
+import kim.rom.exchange.domain.model.rom.*
 import kim.rom.exchange.domain.repository.ROMExchangeRepository
 import javax.inject.Inject
-
-data class ROMExchangeRequest(
-        val kw: String,
-        val exact: Boolean,
-        val type: Int,
-        val sort: String,
-        val sortDir: String,
-        val sortServer: String,
-        val sortRange: String,
-        val page: Int
-)
 
 open class ROMExchange @Inject constructor(private val romExchangeRepository: ROMExchangeRepository,
                                            threadExecutor: ThreadExecutor,
@@ -28,10 +17,10 @@ open class ROMExchange @Inject constructor(private val romExchangeRepository: RO
         return romExchangeRepository.getItems(
                 kw = params?.kw ?: "",
                 exact = params?.exact ?: false,
-                type = params?.type ?: 0,
-                sort = params?.sort ?: "",
-                sortDir = params?.sortDir ?: "",
-                sortServer = params?.sortServer ?: "",
+                type = params?.type?.itemId ?: 0,
+                sort = params?.sort?.value ?: Sort.CHANGE.value,
+                sortDir = params?.sortDir?.value ?: SortDir.DESC.value,
+                sortServer = params?.sortServer?.value ?: SortServer.ALL.value,
                 sortRange = params?.sortRange ?: "",
                 page = params?.page ?: 1
         )
