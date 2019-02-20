@@ -6,22 +6,25 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import dagger.android.AndroidInjection
 import kim.rom.exchange.R
+import kim.rom.exchange.mapper.ROMExchangeItemMapper
+import kim.rom.exchange.presentation.browse.BrowseROMExchangeContract
+import kim.rom.exchange.presentation.model.ROMExchangeItemView
 import kotlinx.android.synthetic.main.activity_browse.*
-import kim.rom.exchange.presentation.browse.BrowseBufferoosContract
-import kim.rom.exchange.presentation.model.BufferooView
-import kim.rom.exchange.mapper.BufferooMapper
 import javax.inject.Inject
 
-class BrowseActivity : AppCompatActivity(), BrowseBufferoosContract.View {
+class BrowseActivity : AppCompatActivity(), BrowseROMExchangeContract.View {
 
     @Inject
-    lateinit var onboardingPresenter: BrowseBufferoosContract.Presenter
+    lateinit var onboardingPresenter: BrowseROMExchangeContract.Presenter
+
     @Inject
     lateinit var browseAdapter: BrowseAdapter
-    @Inject
-    lateinit var mapper: BufferooMapper
 
-    override fun setPresenter(presenter: BrowseBufferoosContract.Presenter) {
+    @Inject
+    lateinit var mapper: ROMExchangeItemMapper
+
+
+    override fun setPresenter(presenter: BrowseROMExchangeContract.Presenter) {
         onboardingPresenter = presenter
     }
 
@@ -33,13 +36,13 @@ class BrowseActivity : AppCompatActivity(), BrowseBufferoosContract.View {
         progress.visibility = View.GONE
     }
 
-    override fun showBufferoos(bufferoos: List<BufferooView>) {
-        browseAdapter.bufferoos = bufferoos.map { mapper.mapToViewModel(it) }
+    override fun showROMExchangeItems(romExchangeItems: List<ROMExchangeItemView>) {
+        browseAdapter.bufferoos = romExchangeItems.map { mapper.mapToViewModel(it) }
         browseAdapter.notifyDataSetChanged()
         recycler_browse.visibility = View.VISIBLE
     }
 
-    override fun hideBufferoos() {
+    override fun hideItems() {
         recycler_browse.visibility = View.VISIBLE
     }
 

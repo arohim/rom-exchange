@@ -16,9 +16,9 @@ interface BrowseROMExchangeContract {
 
         fun hideProgress()
 
-        fun showBufferoos(bufferoos: List<ROMExchangeItemView>)
+        fun showROMExchangeItems(romExchangeItems: List<ROMExchangeItemView>)
 
-        fun hideBufferoos()
+        fun hideItems()
 
         fun showErrorState()
 

@@ -9,7 +9,7 @@ import kim.rom.exchange.injection.DaggerApplicationComponent
 import timber.log.Timber
 import javax.inject.Inject
 
-class BufferooApplication : Application(), HasActivityInjector {
+class ROMExchangeApplication : Application(), HasActivityInjector {
 
     @Inject
     lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>

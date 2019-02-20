@@ -9,12 +9,12 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import kim.rom.exchange.R
-import kim.rom.exchange.model.BufferooViewModel
+import kim.rom.exchange.model.ROMExchangeItemViewModel
 import javax.inject.Inject
 
-class BrowseAdapter @Inject constructor(): RecyclerView.Adapter<BrowseAdapter.ViewHolder>() {
+class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<BrowseAdapter.ViewHolder>() {
 
-    var bufferoos: List<BufferooViewModel> = arrayListOf()
+    var bufferoos: List<ROMExchangeItemViewModel> = arrayListOf()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val bufferoo = bufferoos[position]

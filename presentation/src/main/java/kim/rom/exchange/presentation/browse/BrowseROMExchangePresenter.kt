@@ -2,8 +2,7 @@ package kim.rom.exchange.presentation.browse
 
 import io.reactivex.observers.DisposableSingleObserver
 import kim.rom.exchange.domain.interactor.SingleUseCase
-import kim.rom.exchange.domain.interactor.browse.ROMExchangeRequest
-import kim.rom.exchange.domain.model.rom.Item
+import kim.rom.exchange.domain.model.rom.*
 import kim.rom.exchange.presentation.mapper.ROMExchangeItemMapper
 import javax.inject.Inject
 
@@ -30,11 +29,11 @@ class BrowseROMExchangePresenter @Inject constructor(val browseView: BrowseROMEx
                 params = ROMExchangeRequest(
                         kw = "",
                         exact = false,
-                        sort = "change",
-                        sortDir = "desc",
-                        sortServer = "both",
-                        sortRange = "all",
-                        type = 0,
+                        sort = Sort.CHANGE,
+                        sortDir = SortDir.DESC,
+                        sortServer = SortServer.BOTH,
+                        sortRange = SortRange.ALL,
+                        type = Type.All,
                         page = 1
                 )
         )
@@ -44,9 +43,9 @@ class BrowseROMExchangePresenter @Inject constructor(val browseView: BrowseROMEx
         browseView.hideErrorState()
         if (items.isNotEmpty()) {
             browseView.hideEmptyState()
-            browseView.showBufferoos(items.map { bufferooMapper.mapToView(it) })
+            browseView.showROMExchangeItems(items.map { bufferooMapper.mapToView(it) })
         } else {
-            browseView.hideBufferoos()
+            browseView.hideItems()
             browseView.showEmptyState()
         }
     }
@@ -57,7 +56,7 @@ class BrowseROMExchangePresenter @Inject constructor(val browseView: BrowseROMEx
         }
 
         override fun onError(e: Throwable) {
-            browseView.hideBufferoos()
+            browseView.hideItems()
             browseView.hideEmptyState()
             browseView.showErrorState()
         }

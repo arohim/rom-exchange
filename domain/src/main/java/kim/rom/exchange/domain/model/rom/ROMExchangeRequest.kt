@@ -12,7 +12,7 @@ enum class SortDir(val value: String) {
 }
 
 enum class SortServer(val value: String) {
-    ALL("all"),
+    BOTH("both"),
     GLOBAL("global"),
     SEA("sea")
 }
@@ -24,6 +24,7 @@ enum class SortRange(val value: String) {
 }
 
 enum class Type(val itemId: Int, val itemName: String) {
+    All(0, "All"),
     Weapons(1, "Weapons"),
     OffHand(2, "OffHand"),
     Armors(3, "Armors"),
@@ -60,6 +61,6 @@ data class ROMExchangeRequest(
         val sort: Sort,
         val sortDir: SortDir,
         val sortServer: SortServer,
-        val sortRange: String,
+        val sortRange: SortRange,
         val page: Int
 )

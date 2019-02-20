@@ -4,7 +4,7 @@ import android.app.Application
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
-import kim.rom.exchange.BufferooApplication
+import kim.rom.exchange.ROMExchangeApplication
 import kim.rom.exchange.injection.module.ActivityBindingModule
 import kim.rom.exchange.injection.module.ApplicationModule
 import kim.rom.exchange.injection.scopes.PerApplication
@@ -20,6 +20,6 @@ interface ApplicationComponent {
         fun build(): ApplicationComponent
     }
 
-    fun inject(app: BufferooApplication)
+    fun inject(app: ROMExchangeApplication)
 
 }

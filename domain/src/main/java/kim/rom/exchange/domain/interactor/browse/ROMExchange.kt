@@ -20,8 +20,8 @@ open class ROMExchange @Inject constructor(private val romExchangeRepository: RO
                 type = params?.type?.itemId ?: 0,
                 sort = params?.sort?.value ?: Sort.CHANGE.value,
                 sortDir = params?.sortDir?.value ?: SortDir.DESC.value,
-                sortServer = params?.sortServer?.value ?: SortServer.ALL.value,
-                sortRange = params?.sortRange ?: "",
+                sortServer = params?.sortServer?.value ?: SortServer.BOTH.value,
+                sortRange = params?.sortRange?.value ?: "",
                 page = params?.page ?: 1
         )
     }
