@@ -1,7 +1,8 @@
 package kim.rom.exchange.remote.mapper.rom
 
+import kim.rom.exchange.data.mapper.rom.GlobalMapper
+import kim.rom.exchange.data.mapper.rom.SeaMapper
 import kim.rom.exchange.data.model.rom.*
-import kim.rom.exchange.domain.model.rom.*
 import kim.rom.exchange.remote.mapper.EntityMapper
 import kim.rom.exchange.remote.model.rom.ItemModel
 import javax.inject.Inject
