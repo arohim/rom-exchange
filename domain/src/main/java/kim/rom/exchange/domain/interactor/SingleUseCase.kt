@@ -9,7 +9,6 @@ import kim.rom.exchange.domain.executor.PostExecutionThread
 import kim.rom.exchange.domain.executor.ThreadExecutor
 
 
-
 /**
  * Abstract class for a UseCase that returns an instance of a [Single].
  */

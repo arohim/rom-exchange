@@ -13,7 +13,7 @@ import javax.inject.Inject
  */
 open class GetBufferoos @Inject constructor(val bufferooRepository: BufferooRepository,
                                             threadExecutor: ThreadExecutor,
-                                            postExecutionThread: PostExecutionThread):
+                                            postExecutionThread: PostExecutionThread) :
         SingleUseCase<List<Bufferoo>, Void?>(threadExecutor, postExecutionThread) {
 
     public override fun buildUseCaseObservable(params: Void?): Single<List<Bufferoo>> {

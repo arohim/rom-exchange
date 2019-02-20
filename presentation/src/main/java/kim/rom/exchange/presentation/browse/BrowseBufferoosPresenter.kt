@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class BrowseBufferoosPresenter @Inject constructor(val browseView: BrowseBufferoosContract.View,
                                                    val getBufferoosUseCase: SingleUseCase<List<Bufferoo>, Void>,
-                                                   val bufferooMapper: BufferooMapper):
+                                                   val bufferooMapper: BufferooMapper) :
         BrowseBufferoosContract.Presenter {
 
     init {
@@ -38,7 +38,7 @@ class BrowseBufferoosPresenter @Inject constructor(val browseView: BrowseBuffero
         }
     }
 
-    inner class BufferooSubscriber: DisposableSingleObserver<List<Bufferoo>>() {
+    inner class BufferooSubscriber : DisposableSingleObserver<List<Bufferoo>>() {
 
         override fun onSuccess(t: List<Bufferoo>) {
             handleGetBufferoosSuccess(t)
