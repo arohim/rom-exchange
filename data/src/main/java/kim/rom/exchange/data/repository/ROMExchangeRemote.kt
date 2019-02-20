@@ -5,5 +5,5 @@ import kim.rom.exchange.data.model.rom.ItemEntity
 
 interface ROMExchangeRemote {
 
-    fun getItems(): Single<List<ItemEntity>>
+    fun getItems(exact: Boolean, type: Int, sort: String, sortDir: String, page: Int): Single<List<ItemEntity>>
 }
