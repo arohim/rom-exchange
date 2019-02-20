@@ -4,7 +4,7 @@ import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
 
 @Generated("com.robohorse.robopojogenerator")
-data class ItemEntity(
+data class ItemModel(
 
         @field:SerializedName("image")
         val image: Any? = null,
@@ -13,13 +13,13 @@ data class ItemEntity(
         val name: String? = null,
 
         @field:SerializedName("global")
-        val global: GlobalEntity? = null,
+        val global: GlobalModel? = null,
 
         @field:SerializedName("type")
         val type: Int? = null,
 
         @field:SerializedName("sea")
-        val sea: SeaEntity? = null,
+        val sea: SeaModel? = null,
 
         @field:SerializedName("global_sea_diff")
         val globalSeaDiff: Int? = null

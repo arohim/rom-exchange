@@ -4,11 +4,11 @@ import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
 
 @Generated("com.robohorse.robopojogenerator")
-data class AllEntity(
+data class AllModel(
 
-        @field:SerializedName("data")
-	val data: List<DataItemEntity?>? = null,
+		@field:SerializedName("data")
+	val data: List<DataItemModel?>? = null,
 
-        @field:SerializedName("change")
+		@field:SerializedName("change")
 	val change: Int? = null
 )

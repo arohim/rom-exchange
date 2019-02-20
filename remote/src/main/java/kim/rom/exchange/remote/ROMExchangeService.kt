@@ -1,7 +1,7 @@
 package kim.rom.exchange.remote
 
 import io.reactivex.Single
-import kim.rom.exchange.remote.model.rom.ItemEntity
+import kim.rom.exchange.remote.model.rom.ItemModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -18,6 +18,6 @@ interface ROMExchangeService {
     ): Single<ItemResponse>
 
     class ItemResponse {
-        lateinit var team: List<ItemEntity>
+        lateinit var team: List<ItemModel>
     }
 }
