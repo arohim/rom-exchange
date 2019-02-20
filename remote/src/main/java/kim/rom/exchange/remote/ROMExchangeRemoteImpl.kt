@@ -13,11 +13,11 @@ import javax.inject.Inject
  * operations in which data store implementation layers can carry out.
  */
 class ROMExchangeRemoteImpl @Inject constructor(private val romExchangeService: ROMExchangeService,
-                                                private val entityMapper: ItemEntityMapper) :
-        ROMExchangeRemote {
+                                                private val entityMapper: ItemEntityMapper) : ROMExchangeRemote {
 
-    override fun getItems(exact: Boolean, type: Int, sort: String, sortDir: String, page: Int): Single<List<ItemEntity>> {
+    override fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, page: Int): Single<List<ItemEntity>> {
         return romExchangeService.getItems(
+                kw = kw,
                 exact = exact,
                 type = type,
                 sort = sort,

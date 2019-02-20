@@ -9,6 +9,7 @@ interface ROMExchangeService {
 
     @GET("/api")
     fun getItems(
+            @Query("item") kw: String,
             @Query("exact") exact: Boolean,
             @Query("type") type: Int,
             @Query("sort") sort: String,
