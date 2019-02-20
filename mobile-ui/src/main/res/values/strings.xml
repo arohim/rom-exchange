@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ROM Exchange</string>
+    <string name="global">Global</string>
+    <string name="sea">Sea</string>
 </resources>

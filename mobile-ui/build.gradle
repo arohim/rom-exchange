@@ -84,6 +84,8 @@ dependencies {
     implementation mobileUiDependencies.glide
     implementation mobileUiDependencies.dagger
     implementation mobileUiDependencies.daggerSupport
+    implementation mobileUiDependencies.constraintLayout
+    implementation mobileUiDependencies.cardView
 
     testImplementation mobileUiTestDependencies.kotlinJUnit
 

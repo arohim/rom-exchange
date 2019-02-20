@@ -19,12 +19,12 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<BrowseAdapter.V
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.nameText.text = item.name
-        holder.textPrice.text = item.price
+        holder.textSeaPrice.text = item.price
 
-        Glide.with(holder.itemView.context)
-                .load(item.avatar)
-                .apply(RequestOptions.circleCropTransform())
-                .into(holder.iconImage)
+//        Glide.with(holder.itemView.context)
+//                .load(item.avatar)
+//                .apply(RequestOptions.circleCropTransform())
+//                .into(holder.iconImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -39,14 +39,20 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<BrowseAdapter.V
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var iconImage: ImageView
+        //        var iconImage: ImageView
         var nameText: TextView
-        var textPrice: TextView
+        var textGlobalPrice: TextView
+        var textSeaPrice: TextView
+        var textGlobalChange: TextView
+        var textSeaChange: TextView
 
         init {
-            iconImage = view.findViewById(R.id.icon_avatar)
+//            iconImage = view.findViewById(R.id.icon_avatar)
             nameText = view.findViewById(R.id.text_name)
-            textPrice = view.findViewById(R.id.text_price)
+            textGlobalPrice = view.findViewById(R.id.text_global_price)
+            textSeaPrice = view.findViewById(R.id.text_sea_price)
+            textGlobalChange = view.findViewById(R.id.text_global_change)
+            textSeaChange = view.findViewById(R.id.text_sea_change)
         }
     }
 
