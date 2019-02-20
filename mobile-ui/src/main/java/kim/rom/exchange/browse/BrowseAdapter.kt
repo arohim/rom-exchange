@@ -14,39 +14,39 @@ import javax.inject.Inject
 
 class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<BrowseAdapter.ViewHolder>() {
 
-    var bufferoos: List<ROMExchangeItemViewModel> = arrayListOf()
+    var items: List<ROMExchangeItemViewModel> = arrayListOf()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val bufferoo = bufferoos[position]
-        holder.nameText.text = bufferoo.name
-        holder.titleText.text = bufferoo.title
+        val item = items[position]
+        holder.nameText.text = item.name
+        holder.textPrice.text = item.price
 
         Glide.with(holder.itemView.context)
-                .load(bufferoo.avatar)
+                .load(item.avatar)
                 .apply(RequestOptions.circleCropTransform())
-                .into(holder.avatarImage)
+                .into(holder.iconImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater
                 .from(parent.context)
-                .inflate(R.layout.item_bufferoo, parent, false)
+                .inflate(R.layout.item_rom_exchange_item, parent, false)
         return ViewHolder(itemView)
     }
 
     override fun getItemCount(): Int {
-        return bufferoos.size
+        return items.size
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var avatarImage: ImageView
+        var iconImage: ImageView
         var nameText: TextView
-        var titleText: TextView
+        var textPrice: TextView
 
         init {
-            avatarImage = view.findViewById(R.id.image_avatar)
+            iconImage = view.findViewById(R.id.icon_avatar)
             nameText = view.findViewById(R.id.text_name)
-            titleText = view.findViewById(R.id.text_title)
+            textPrice = view.findViewById(R.id.text_price)
         }
     }
 

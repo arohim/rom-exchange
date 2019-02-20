@@ -11,6 +11,6 @@ import javax.inject.Inject
  */
 open class ROMExchangeItemMapper @Inject constructor() : Mapper<ROMExchangeItemViewModel, ROMExchangeItemView> {
     override fun mapToViewModel(type: ROMExchangeItemView): ROMExchangeItemViewModel {
-        return ROMExchangeItemViewModel(type.name, type.title, type.avatar)
+        return ROMExchangeItemViewModel(type.name, "${type.price}Z", type.avatar)
     }
 }

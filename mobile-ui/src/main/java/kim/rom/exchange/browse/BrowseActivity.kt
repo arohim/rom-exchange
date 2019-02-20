@@ -37,7 +37,7 @@ class BrowseActivity : AppCompatActivity(), BrowseROMExchangeContract.View {
     }
 
     override fun showROMExchangeItems(romExchangeItems: List<ROMExchangeItemView>) {
-        browseAdapter.bufferoos = romExchangeItems.map { mapper.mapToViewModel(it) }
+        browseAdapter.items = romExchangeItems.map { mapper.mapToViewModel(it) }
         browseAdapter.notifyDataSetChanged()
         recycler_browse.visibility = View.VISIBLE
     }

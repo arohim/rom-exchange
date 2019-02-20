@@ -24,7 +24,7 @@ class BufferooMapperTest {
         val bufferooViewModel = bufferooMapper.mapToViewModel(bufferooView)
 
         assertEquals(bufferooView.name, bufferooViewModel.name)
-        assertEquals(bufferooView.title, bufferooViewModel.title)
+        assertEquals(bufferooView.title, bufferooViewModel.price)
         assertEquals(bufferooView.avatar, bufferooViewModel.avatar)
     }
 
