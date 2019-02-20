@@ -18,11 +18,9 @@ import kim.rom.exchange.data.source.BufferooDataStoreFactory
 import kim.rom.exchange.domain.executor.PostExecutionThread
 import kim.rom.exchange.domain.executor.ThreadExecutor
 import kim.rom.exchange.domain.repository.BufferooRepository
-import kim.rom.exchange.remote.BufferooRemoteImpl
-import kim.rom.exchange.remote.BufferooService
-import kim.rom.exchange.remote.BufferooServiceFactory
 import kim.rom.exchange.UiThread
 import kim.rom.exchange.injection.scopes.PerApplication
+import kim.rom.exchange.remote.*
 
 /**
  * Module used to provide dependencies at an application-level.
@@ -82,5 +80,11 @@ open class ApplicationModule {
     @PerApplication
     internal fun provideBufferooService(): BufferooService {
         return BufferooServiceFactory.makeBuffeoorService(BuildConfig.DEBUG)
+    }
+
+    @Provides
+    @PerApplication
+    internal fun provideROMExchangeService(): ROMExchangeService {
+        return ROMExchangeServiceFactory.makeROMExchangeService(BuildConfig.DEBUG)
     }
 }
