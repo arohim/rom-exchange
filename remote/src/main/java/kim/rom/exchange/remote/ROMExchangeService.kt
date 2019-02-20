@@ -16,9 +16,5 @@ interface ROMExchangeService {
             @Query("sort_dir") sortDir: String,
             @Query("page") page: Int
 
-    ): Single<ItemResponse>
-
-    class ItemResponse {
-        lateinit var team: List<ItemModel>
-    }
+    ): Single<List<ItemModel>>
 }
