@@ -1,8 +1,7 @@
-package org.buffer.android.boilerplate.data.mapper
+package kim.rom.exchange.data.mapper
 
-import kim.rom.exchange.data.mapper.BufferooMapper
 import kim.rom.exchange.data.model.BufferooEntity
-import org.buffer.android.boilerplate.data.test.factory.BufferooFactory
+import kim.rom.exchange.data.factory.BufferooFactory
 import org.buffer.android.boilerplate.domain.model.Bufferoo
 import org.junit.Before
 import org.junit.Test

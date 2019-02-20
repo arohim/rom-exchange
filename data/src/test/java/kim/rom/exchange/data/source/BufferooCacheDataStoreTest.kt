@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.data.source
+package kim.rom.exchange.data.source
 
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.mock
@@ -7,8 +7,7 @@ import io.reactivex.Completable
 import io.reactivex.Single
 import kim.rom.exchange.data.model.BufferooEntity
 import kim.rom.exchange.data.repository.BufferooCache
-import kim.rom.exchange.data.source.BufferooCacheDataStore
-import org.buffer.android.boilerplate.data.test.factory.BufferooFactory
+import kim.rom.exchange.data.factory.BufferooFactory
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

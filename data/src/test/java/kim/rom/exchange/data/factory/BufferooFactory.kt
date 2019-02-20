@@ -1,7 +1,7 @@
-package org.buffer.android.boilerplate.data.test.factory
+package kim.rom.exchange.data.factory
 
 import kim.rom.exchange.data.model.BufferooEntity
-import org.buffer.android.boilerplate.data.test.factory.DataFactory.Factory.randomUuid
+import kim.rom.exchange.data.factory.DataFactory.Factory.randomUuid
 import org.buffer.android.boilerplate.domain.model.Bufferoo
 
 /**

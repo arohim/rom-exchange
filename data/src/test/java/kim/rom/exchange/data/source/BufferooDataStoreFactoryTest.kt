@@ -1,4 +1,4 @@
-package org.buffer.android.boilerplate.data.source
+package kim.rom.exchange.data.source
 
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever

@@ -1,16 +1,15 @@
-package org.buffer.android.boilerplate.data
+package kim.rom.exchange.data
 
 import com.nhaarman.mockito_kotlin.*
 import io.reactivex.Completable
 import io.reactivex.Single
-import kim.rom.exchange.data.BufferooDataRepository
 import kim.rom.exchange.data.mapper.BufferooMapper
 import kim.rom.exchange.data.model.BufferooEntity
 import kim.rom.exchange.data.repository.BufferooDataStore
 import kim.rom.exchange.data.source.BufferooCacheDataStore
 import kim.rom.exchange.data.source.BufferooDataStoreFactory
 import kim.rom.exchange.data.source.BufferooRemoteDataStore
-import org.buffer.android.boilerplate.data.test.factory.BufferooFactory
+import kim.rom.exchange.data.factory.BufferooFactory
 import org.buffer.android.boilerplate.domain.model.Bufferoo
 import org.junit.Before
 import org.junit.Test
