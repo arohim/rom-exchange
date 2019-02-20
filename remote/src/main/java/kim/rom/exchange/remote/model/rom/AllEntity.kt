@@ -4,11 +4,11 @@ import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
 
 @Generated("com.robohorse.robopojogenerator")
-data class Week(
+data class AllEntity(
 
         @field:SerializedName("data")
-        val data: List<DataItem?>? = null,
+	val data: List<DataItemEntity?>? = null,
 
         @field:SerializedName("change")
-        val change: Int? = null
+	val change: Int? = null
 )

@@ -13,13 +13,13 @@ data class ItemEntity(
         val name: String? = null,
 
         @field:SerializedName("global")
-        val global: Global? = null,
+        val global: GlobalEntity? = null,
 
         @field:SerializedName("type")
         val type: Int? = null,
 
         @field:SerializedName("sea")
-        val sea: Sea? = null,
+        val sea: SeaEntity? = null,
 
         @field:SerializedName("global_sea_diff")
         val globalSeaDiff: Int? = null

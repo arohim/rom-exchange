@@ -4,7 +4,7 @@ import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
 
 @Generated("com.robohorse.robopojogenerator")
-data class DataItem(
+data class DataItemEntity(
 
         @field:SerializedName("price")
         val price: Int? = null,

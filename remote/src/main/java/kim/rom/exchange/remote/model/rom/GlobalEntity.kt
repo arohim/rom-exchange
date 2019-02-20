@@ -4,16 +4,16 @@ import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
 
 @Generated("com.robohorse.robopojogenerator")
-data class Global(
+data class GlobalEntity(
 
         @field:SerializedName("all")
-        val all: All? = null,
+        val all: AllEntity? = null,
 
         @field:SerializedName("week")
-        val week: Week? = null,
+        val week: WeekEntity? = null,
 
         @field:SerializedName("month")
-        val month: Month? = null,
+        val month: MonthEntity? = null,
 
         @field:SerializedName("latest")
         val latest: Int? = null
