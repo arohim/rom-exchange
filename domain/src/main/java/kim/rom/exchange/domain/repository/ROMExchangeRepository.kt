@@ -1,6 +1,5 @@
 package kim.rom.exchange.domain.repository
 
-import io.reactivex.Completable
 import io.reactivex.Single
 import kim.rom.exchange.domain.model.Bufferoo
 

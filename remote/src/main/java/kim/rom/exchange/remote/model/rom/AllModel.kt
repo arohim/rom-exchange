@@ -6,9 +6,9 @@ import com.google.gson.annotations.SerializedName
 @Generated("com.robohorse.robopojogenerator")
 data class AllModel(
 
-		@field:SerializedName("data")
-	val data: List<DataItemModel?>? = null,
+        @field:SerializedName("data")
+        val data: List<DataItemModel>? = null,
 
-		@field:SerializedName("change")
-	val change: Int? = null
+        @field:SerializedName("change")
+        val change: Int? = null
 )

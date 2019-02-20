@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 data class MonthModel(
 
         @field:SerializedName("data")
-	val data: List<DataItemModel?>? = null,
+	val data: List<DataItemModel>? = null,
 
         @field:SerializedName("change")
 	val change: Int? = null

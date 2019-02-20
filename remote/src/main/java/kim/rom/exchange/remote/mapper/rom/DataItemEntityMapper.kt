@@ -7,6 +7,7 @@ import javax.inject.Inject
 
 class DataItemEntityMapper @Inject constructor() : EntityMapper<DataItemModel, DataItemEntity> {
     override fun mapFromRemote(type: DataItemModel): DataItemEntity {
-        return DataItemEntity(price = type.price, time = type.time, snap = type.snap)
+        return DataItemEntity(price = type.price ?: 0, time = type.time ?: "", snap = type.snap
+                ?: false)
     }
 }

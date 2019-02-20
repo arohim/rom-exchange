@@ -8,8 +8,9 @@ import javax.inject.Inject
 class WeekEntityMapper @Inject constructor(private val dataItemEntityMapper: DataItemEntityMapper) : EntityMapper<WeekModel, WeekEntity> {
     override fun mapFromRemote(type: WeekModel): WeekEntity {
         return WeekEntity(
-                data = type.data?.map { it?.let { it1 -> dataItemEntityMapper.mapFromRemote(it1) } },
-                change = type.change
+                data = type.data?.map { it.let { it1 -> dataItemEntityMapper.mapFromRemote(it1) } }
+                        ?: listOf(),
+                change = type.change ?: 0
         )
     }
 }
