@@ -9,12 +9,13 @@ import kim.rom.exchange.domain.repository.ROMExchangeRepository
 import javax.inject.Inject
 
 /**
- * Provides an implementation of the [BufferooRepository] interface for communicating to and from
+ * Provides an implementation of the [ROMExchangeRepository] interface for communicating to and from
  * data sources
  */
 class ROMExchangeDataRepository @Inject constructor(private val factory: ROMExchangeDataStoreFactory,
                                                     private val itemMapper: ItemMapper) :
         ROMExchangeRepository {
+
     override fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, sortServer: String, sortRange: String, page: Int): Single<List<Item>> {
         val dataStore = factory.retrieveDataStore()
         return dataStore.getItems(
