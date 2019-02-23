@@ -1,0 +1,14 @@
+package net.rom.exchange.remote.model.rom
+
+import javax.annotation.Generated
+import com.google.gson.annotations.SerializedName
+
+@Generated("com.robohorse.robopojogenerator")
+data class WeekModel(
+
+        @field:SerializedName("data")
+        val data: List<DataItemModel>? = null,
+
+        @field:SerializedName("change")
+        val change: Double? = null
+)
