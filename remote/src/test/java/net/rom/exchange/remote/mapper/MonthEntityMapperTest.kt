@@ -10,7 +10,7 @@ import org.junit.runners.JUnit4
 import kotlin.test.assertEquals
 
 @RunWith(JUnit4::class)
-class WeekEntityMapperTest {
+class MonthEntityMapperTest {
 
     private lateinit var weekItemMapper: WeekEntityMapper
 
@@ -21,11 +21,11 @@ class WeekEntityMapperTest {
 
     @Test
     fun mapFromRemoteMapsData() {
-        val weekItemModel = ROMExchangeFactory.makeWeekModel()
-        val weekItemEntity = weekItemMapper.mapFromRemote(weekItemModel)
+        val dataItemModel = ROMExchangeFactory.makeWeekModel()
+        val dataItemEntity = weekItemMapper.mapFromRemote(dataItemModel)
 
-        assertEquals(weekItemModel.data?.size, weekItemEntity.data.size)
-        assertEquals(weekItemModel.change, weekItemEntity.change)
+        assertEquals(dataItemModel.data?.size, dataItemEntity.data.size)
+        assertEquals(dataItemModel.change, dataItemEntity.change)
     }
 
 }
