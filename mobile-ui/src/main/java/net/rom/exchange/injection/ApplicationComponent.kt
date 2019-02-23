@@ -10,13 +10,14 @@ import net.rom.exchange.injection.module.ApplicationModule
 import net.rom.exchange.injection.scopes.PerApplication
 
 @PerApplication
-@Component(modules = arrayOf(ActivityBindingModule::class, ApplicationModule::class,
-        AndroidSupportInjectionModule::class))
+@Component(modules = [ActivityBindingModule::class, ApplicationModule::class, AndroidSupportInjectionModule::class])
 interface ApplicationComponent {
 
     @Component.Builder
     interface Builder {
-        @BindsInstance fun application(application: Application): Builder
+        @BindsInstance
+        fun application(application: Application): Builder
+
         fun build(): ApplicationComponent
     }
 
