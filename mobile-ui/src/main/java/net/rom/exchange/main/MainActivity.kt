@@ -2,6 +2,7 @@ package net.rom.exchange.main
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -11,6 +12,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import net.rom.exchange.R
+import net.rom.exchange.browse.BrowseFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // TODO: we will have favorite feature in the next feature.
+        // TODO: we will have favourite feature soon.
 //        menuInflater.inflate(R.menu.main, menu)
         return true
     }
@@ -50,13 +52,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+    override fun onAttachFragment(fragment: android.app.Fragment?) {
+        super.onAttachFragment(fragment)
+    }
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
+        var fragment: Fragment? = null
         when (item.itemId) {
             R.id.nav_favorite -> {
                 // Handle the camera action
-                Toast.makeText(this, "Favorite feature coming soon!!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Favourite feature coming soon!!", Toast.LENGTH_LONG).show()
             }
+            else -> {
+                fragment = BrowseFragment.newInstance("")
+            }
+        }
+
+        fragment?.let {
+            val ft = supportFragmentManager.beginTransaction()
+            ft.replace(net.rom.exchange.R.id.content_main, it)
+            ft.commit()
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
