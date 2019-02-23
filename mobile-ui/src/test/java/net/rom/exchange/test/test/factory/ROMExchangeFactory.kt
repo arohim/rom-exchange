@@ -1,6 +1,5 @@
 package net.rom.exchange.test.test.factory
 
-import net.rom.exchange.presentation.model.BufferooView
 import net.rom.exchange.presentation.model.ROMExchangeItemView
 import net.rom.exchange.test.test.factory.DataFactory.Factory.randomUuid
 
