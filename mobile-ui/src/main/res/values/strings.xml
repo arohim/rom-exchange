@@ -5,5 +5,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Item Types</string>
-    <string name="favorites">Favorites</string>
+    <string name="favourite_title">Favourites</string>
+    <string name="item_types">Item Types</string>
+    <string name="search">Search</string>
 </resources>
