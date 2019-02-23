@@ -87,6 +87,7 @@ dependencies {
     implementation mobileUiDependencies.constraintLayout
     implementation mobileUiDependencies.cardView
 
+
     testImplementation mobileUiTestDependencies.kotlinJUnit
 
     kapt mobileUiDependencies.daggerCompiler
