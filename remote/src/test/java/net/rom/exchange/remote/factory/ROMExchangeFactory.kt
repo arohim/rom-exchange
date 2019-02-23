@@ -6,10 +6,7 @@ import net.rom.exchange.remote.factory.DataFactory.Factory.randomBoolean
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomDouble
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomInt
 import net.rom.exchange.remote.model.BufferooModel
-import net.rom.exchange.remote.model.rom.AllModel
-import net.rom.exchange.remote.model.rom.DataItemModel
-import net.rom.exchange.remote.model.rom.MonthModel
-import net.rom.exchange.remote.model.rom.WeekModel
+import net.rom.exchange.remote.model.rom.*
 
 /**
  * Factory class for Bufferoo related instances
@@ -70,6 +67,15 @@ class ROMExchangeFactory {
             return AllModel(
                     data = makeDataItemModelList(2),
                     change = randomDouble()
+            )
+        }
+
+        fun makeSeaModel(): SeaModel {
+            return SeaModel(
+                    makeAllModel(),
+                    makeWeekModel(),
+                    makeMonthModel(),
+                    randomInt()
             )
         }
 
