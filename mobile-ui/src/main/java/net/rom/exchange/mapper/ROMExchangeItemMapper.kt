@@ -1,12 +1,11 @@
 package net.rom.exchange.mapper
 
-import net.rom.exchange.presentation.model.BufferooView
 import net.rom.exchange.model.ROMExchangeItemViewModel
 import net.rom.exchange.presentation.model.ROMExchangeItemView
 import javax.inject.Inject
 
 /**
- * Map a [BufferooView] to and from a [ROMExchangeItemViewModel] instance when data is moving between
+ * Map a [ROMExchangeItemView] to and from a [ROMExchangeItemViewModel] instance when data is moving between
  * this layer and the Domain layer
  */
 open class ROMExchangeItemMapper @Inject constructor() : Mapper<ROMExchangeItemViewModel, ROMExchangeItemView> {
