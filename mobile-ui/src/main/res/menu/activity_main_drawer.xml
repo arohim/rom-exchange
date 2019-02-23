@@ -10,15 +10,40 @@
     </group>
 
     <item android:title="@string/item_types">
+
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+            <!--<item-->
+            <!--android:id="@+id/nav_send"-->
+            <!--android:icon="@drawable/ic_menu_send"-->
+            <!--android:title="Send" />-->
+            <item android:title="All" />
+            <item android:title="Weapons" />
+            <item android:title="OffHand" />
+            <item android:title="Armors" />
+            <item android:title="Garments" />
+            <item android:title="Foot gears" />
+            <item android:title="Accessory" />
+            <item android:title="Blueprint" />
+            <item android:title="Potion / Effect" />
+            <item android:title="Refine" />
+            <item android:title="Scroll / Album" />
+            <item android:title="Material" />
+            <item android:title="Holiday material" />
+            <item android:title="Pet material" />
+            <item android:title="Premium" />
+            <item android:title="Costume" />
+            <item android:title="Head" />
+            <item android:title="Face" />
+            <item android:title="Back" />
+            <item android:title="Mouth" />
+            <item android:title="Tail" />
+            <item android:title="Weapon card" />
+            <item android:title="Off-hand Card" />
+            <item android:title="Armor card" />
+            <item android:title="Garments Card" />
+            <item android:title="Shoe card" />
+            <item android:title="Accessory card" />
+            <item android:title="Head wear card" />
         </menu>
     </item>
 
