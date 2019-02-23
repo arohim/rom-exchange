@@ -88,6 +88,17 @@ class ROMExchangeFactory {
             )
         }
 
+        fun makeItemModel(): ItemModel {
+            return ItemModel(
+                    image = randomUuid(),
+                    name = randomUuid(),
+                    global = makeGlobalModel(),
+                    sea = makeSeaModel(),
+                    type = randomInt(),
+                    globalSeaDiff = randomDouble()
+            )
+        }
+
     }
 
 }
