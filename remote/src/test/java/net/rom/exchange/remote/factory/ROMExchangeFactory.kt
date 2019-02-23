@@ -79,6 +79,15 @@ class ROMExchangeFactory {
             )
         }
 
+        fun makeGlobalModel(): GlobalModel {
+            return GlobalModel(
+                    makeAllModel(),
+                    makeWeekModel(),
+                    makeMonthModel(),
+                    randomInt()
+            )
+        }
+
     }
 
 }
