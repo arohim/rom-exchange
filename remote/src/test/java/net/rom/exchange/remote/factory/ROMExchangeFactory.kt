@@ -3,9 +3,11 @@ package net.rom.exchange.remote.factory
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomUuid
 import net.rom.exchange.remote.BufferooService
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomBoolean
+import net.rom.exchange.remote.factory.DataFactory.Factory.randomDouble
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomInt
 import net.rom.exchange.remote.model.BufferooModel
 import net.rom.exchange.remote.model.rom.DataItemModel
+import net.rom.exchange.remote.model.rom.WeekModel
 
 /**
  * Factory class for Bufferoo related instances
@@ -37,6 +39,21 @@ class ROMExchangeFactory {
                     price = randomInt(),
                     time = randomUuid(),
                     snap = randomBoolean()
+            )
+        }
+
+        fun makeDataItemModelList(count: Int): List<DataItemModel> {
+            val dataItemEntities = mutableListOf<DataItemModel>()
+            repeat(count) {
+                dataItemEntities.add(makeDataItemModel())
+            }
+            return dataItemEntities
+        }
+
+        fun makeWeekModel(): WeekModel {
+            return WeekModel(
+                    data = makeDataItemModelList(2),
+                    change = randomDouble()
             )
         }
 
