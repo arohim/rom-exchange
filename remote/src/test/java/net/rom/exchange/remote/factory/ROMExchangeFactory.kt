@@ -6,6 +6,7 @@ import net.rom.exchange.remote.factory.DataFactory.Factory.randomBoolean
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomDouble
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomInt
 import net.rom.exchange.remote.model.BufferooModel
+import net.rom.exchange.remote.model.rom.AllModel
 import net.rom.exchange.remote.model.rom.DataItemModel
 import net.rom.exchange.remote.model.rom.MonthModel
 import net.rom.exchange.remote.model.rom.WeekModel
@@ -60,6 +61,13 @@ class ROMExchangeFactory {
 
         fun makeMonthModel(): MonthModel {
             return MonthModel(
+                    data = makeDataItemModelList(2),
+                    change = randomDouble()
+            )
+        }
+
+        fun makeAllModel(): AllModel {
+            return AllModel(
                     data = makeDataItemModelList(2),
                     change = randomDouble()
             )
