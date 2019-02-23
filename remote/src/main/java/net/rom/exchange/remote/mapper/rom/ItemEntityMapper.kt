@@ -1,7 +1,6 @@
 package net.rom.exchange.remote.mapper.rom
 
 import net.rom.exchange.data.model.rom.*
-import org.rom.exchange.data.model.rom.*
 import net.rom.exchange.remote.mapper.EntityMapper
 import net.rom.exchange.remote.model.rom.ItemModel
 import javax.inject.Inject

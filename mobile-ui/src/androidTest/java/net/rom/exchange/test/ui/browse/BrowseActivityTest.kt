@@ -1,4 +1,4 @@
-package net.rom.exchange.test.browse
+package net.rom.exchange.test.ui.browse
 
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.assertion.ViewAssertions.matches
@@ -9,11 +9,11 @@ import android.support.test.runner.AndroidJUnit4
 import android.support.v7.widget.RecyclerView
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
-import org.rom.exchange.R
+import net.rom.exchange.R
 import net.rom.exchange.browse.BrowseActivity
-import net.rom.exchange.test.TestApplication
-import org.rom.exchange.test.test.factory.ui.BufferooFactory
-import net.rom.exchange.test.test.util.RecyclerViewMatcher
+import net.rom.exchange.test.ui.TestApplication
+import net.rom.exchange.test.ui.factory.BufferooFactory
+import net.rom.exchange.test.ui.util.RecyclerViewMatcher
 import net.rom.exchange.domain.model.Bufferoo
 import org.junit.Rule
 import org.junit.Test

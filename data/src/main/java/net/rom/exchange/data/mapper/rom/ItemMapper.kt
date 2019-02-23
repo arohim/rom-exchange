@@ -2,7 +2,6 @@ package net.rom.exchange.data.mapper.rom
 
 import net.rom.exchange.data.mapper.Mapper
 import net.rom.exchange.data.model.rom.ItemEntity
-import org.rom.exchange.data.model.rom.*
 import net.rom.exchange.domain.model.rom.Item
 import javax.inject.Inject
 

@@ -5,7 +5,6 @@ import net.rom.exchange.domain.executor.PostExecutionThread
 import net.rom.exchange.domain.executor.ThreadExecutor
 import net.rom.exchange.domain.interactor.SingleUseCase
 import net.rom.exchange.domain.model.rom.*
-import org.rom.exchange.domain.model.rom.*
 import net.rom.exchange.domain.repository.ROMExchangeRepository
 import javax.inject.Inject
 

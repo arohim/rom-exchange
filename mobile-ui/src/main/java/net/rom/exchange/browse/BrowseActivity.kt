@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import dagger.android.AndroidInjection
-import org.rom.exchange.R
 import net.rom.exchange.mapper.ROMExchangeItemMapper
 import net.rom.exchange.presentation.browse.BrowseROMExchangeContract
 import net.rom.exchange.presentation.model.ROMExchangeItemView
 import kotlinx.android.synthetic.main.activity_browse.*
+import net.rom.exchange.R
 import javax.inject.Inject
 
 class BrowseActivity : AppCompatActivity(), BrowseROMExchangeContract.View {

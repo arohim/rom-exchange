@@ -1,4 +1,4 @@
-package net.rom.exchange.test.injection.module
+package net.rom.exchange.test.ui.injection.module
 
 import android.app.Application
 import android.content.Context

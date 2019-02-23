@@ -9,7 +9,7 @@ import org.junit.runners.JUnit4
 import kotlin.test.assertEquals
 
 @RunWith(JUnit4::class)
-class BufferooMapperTest {
+class ROMExchangeMapperTest {
 
     private lateinit var bufferooMapper: ROMExchangeItemMapper
 
@@ -25,7 +25,6 @@ class BufferooMapperTest {
 
         assertEquals(bufferooView.name, bufferooViewModel.name)
         assertEquals(bufferooView.title, bufferooViewModel.globalPrice)
-        assertEquals(bufferooView.avatar, bufferooViewModel.avatar)
     }
 
 }

@@ -27,7 +27,6 @@ import net.rom.exchange.domain.repository.ROMExchangeRepository
 import net.rom.exchange.injection.scopes.PerApplication
 import net.rom.exchange.remote.*
 import net.rom.exchange.remote.mapper.rom.ItemEntityMapper
-import org.rom.exchange.remote.*
 
 /**
  * Module used to provide dependencies at an application-level.

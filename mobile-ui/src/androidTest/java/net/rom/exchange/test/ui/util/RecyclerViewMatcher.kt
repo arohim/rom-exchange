@@ -1,4 +1,4 @@
-package net.rom.exchange.test.test.util
+package net.rom.exchange.test.ui.util
 
 import android.content.res.Resources
 import android.support.v7.widget.RecyclerView

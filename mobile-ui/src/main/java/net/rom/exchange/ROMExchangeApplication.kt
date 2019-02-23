@@ -5,7 +5,7 @@ import android.app.Application
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
-import org.rom.exchange.injection.DaggerApplicationComponent
+import net.rom.exchange.injection.DaggerApplicationComponent
 import timber.log.Timber
 import javax.inject.Inject
 

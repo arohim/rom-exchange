@@ -1,4 +1,4 @@
-package org.rom.exchange.test.test.factory.ui
+package net.rom.exchange.test.ui.factory
 
 import java.util.concurrent.ThreadLocalRandom
 

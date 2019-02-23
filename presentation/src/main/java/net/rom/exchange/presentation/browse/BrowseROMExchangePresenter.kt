@@ -3,7 +3,6 @@ package net.rom.exchange.presentation.browse
 import io.reactivex.observers.DisposableSingleObserver
 import net.rom.exchange.domain.interactor.SingleUseCase
 import net.rom.exchange.domain.model.rom.*
-import org.rom.exchange.domain.model.rom.*
 import net.rom.exchange.presentation.mapper.ROMExchangeItemMapper
 import javax.inject.Inject
 

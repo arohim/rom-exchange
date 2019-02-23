@@ -1,4 +1,4 @@
-package net.rom.exchange.test.test
+package net.rom.exchange.test.ui
 
 import android.app.Application
 import android.content.Context
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.test.runner.AndroidJUnitRunner
 import io.reactivex.plugins.RxJavaPlugins
 import io.reactivex.schedulers.Schedulers
-import net.rom.exchange.test.TestApplication
 
 class TestRunner : AndroidJUnitRunner() {
 

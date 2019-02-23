@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import org.rom.exchange.R
+import net.rom.exchange.R
 import net.rom.exchange.model.ROMExchangeItemViewModel
 import javax.inject.Inject
 

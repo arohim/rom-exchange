@@ -13,7 +13,6 @@ class BufferooFactory {
         fun makeBufferooView(): BufferooView {
             return BufferooView(randomUuid(), randomUuid(), randomUuid())
         }
-
     }
 
 }
