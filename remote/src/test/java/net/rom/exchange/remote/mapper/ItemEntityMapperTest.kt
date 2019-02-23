@@ -24,9 +24,7 @@ class ItemEntityMapperTest {
                 seaEntityMapper = SeaEntityMapper(
                         allEntityMapper = AllEntityMapper(DataItemEntityMapper()),
                         weekEntityMapper = WeekEntityMapper(DataItemEntityMapper()),
-                        monthEntityMapper = MonthEntityMapper(DataItemEntityMapper()
-                        )
-
+                        monthEntityMapper = MonthEntityMapper(DataItemEntityMapper())
                 )
         )
     }
