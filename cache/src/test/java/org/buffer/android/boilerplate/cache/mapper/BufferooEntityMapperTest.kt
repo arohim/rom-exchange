@@ -2,7 +2,7 @@ package org.buffer.android.boilerplate.cache.mapper
 
 import org.buffer.android.boilerplate.cache.model.CachedBufferoo
 import org.buffer.android.boilerplate.cache.test.factory.BufferooFactory
-import kim.rom.exchange.data.model.BufferooEntity
+import org.rom.exchange.data.model.BufferooEntity
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith

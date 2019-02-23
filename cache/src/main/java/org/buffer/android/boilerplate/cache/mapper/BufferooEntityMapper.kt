@@ -1,7 +1,7 @@
 package org.buffer.android.boilerplate.cache.mapper
 
 import org.buffer.android.boilerplate.cache.model.CachedBufferoo
-import kim.rom.exchange.data.model.BufferooEntity
+import org.rom.exchange.data.model.BufferooEntity
 import javax.inject.Inject
 
 /**
