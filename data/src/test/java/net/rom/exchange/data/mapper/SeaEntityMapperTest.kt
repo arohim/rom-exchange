@@ -28,25 +28,25 @@ class SeaEntityMapperTest {
     @Test
     fun mapFromEntityMapsData() {
         // GIVEN
-        val data = ItemExchangeFactory.makeSeaEntity()
+        val entity = ItemExchangeFactory.makeSeaEntity()
 
         // WHEN
-        val entity = seaMapper.mapFromEntity(data)
+        val data = seaMapper.mapFromEntity(entity)
 
         // THEN
-        assertDataEquality(data, entity)
+        assertDataEquality(entity, data)
     }
 
     @Test
     fun mapToEntityMapsData() {
         // GIVEN
-        val dataItem = ItemExchangeFactory.makeSea()
+        val data = ItemExchangeFactory.makeSea()
 
         // WHEN
-        val dataItemEntity = seaMapper.mapToEntity(dataItem)
+        val entity = seaMapper.mapToEntity(data)
 
         // THEN
-        assertDataEquality(dataItemEntity, dataItem)
+        assertDataEquality(entity, data)
     }
 
     private fun assertDataEquality(entity: SeaEntity, data: Sea) {
