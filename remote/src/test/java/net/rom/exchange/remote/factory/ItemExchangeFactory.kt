@@ -16,18 +16,6 @@ class ItemExchangeFactory {
 
     companion object Factory {
 
-        fun makeBufferooModelList(count: Int): List<BufferooModel> {
-            val bufferooEntities = mutableListOf<BufferooModel>()
-            repeat(count) {
-                bufferooEntities.add(makeBufferooModel())
-            }
-            return bufferooEntities
-        }
-
-        fun makeBufferooModel(): BufferooModel {
-            return BufferooModel(randomUuid(), randomUuid(), randomUuid())
-        }
-
         fun makeItemExchangeModelList(count: Int): List<ItemModel> {
             val entities = mutableListOf<ItemModel>()
             repeat(count) {
@@ -101,8 +89,6 @@ class ItemExchangeFactory {
                     globalSeaDiff = randomDouble()
             )
         }
-
-
     }
 
 }
