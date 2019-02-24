@@ -54,7 +54,7 @@ enum class Type(val itemId: Int, val itemName: String) {
     HeadWearCard(27, "Head wear card")
 }
 
-data class ROMExchangeRequest(
+data class ItemExchangeRequest(
         val kw: String,
         val exact: Boolean,
         val type: Type,

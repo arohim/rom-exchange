@@ -10,7 +10,7 @@ import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.activity_browse.*
 import net.rom.exchange.R
 import net.rom.exchange.mapper.ROMExchangeItemMapper
-import net.rom.exchange.presentation.browse.BrowseROMExchangeContract
+import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
 import net.rom.exchange.presentation.model.ROMExchangeItemView
 import javax.inject.Inject
 
@@ -27,12 +27,12 @@ private const val ARG_PARAM1 = "param1"
  * create an instance of this fragment.
  *
  */
-class BrowseFragment : Fragment(), BrowseROMExchangeContract.View {
+class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
 
     @Inject
-    lateinit var onboardingPresenter: BrowseROMExchangeContract.Presenter
+    lateinit var onboardingPresenter: BrowseItemExchangeContract.Presenter
 
     @Inject
     lateinit var browseAdapter: BrowseAdapter
@@ -70,7 +70,7 @@ class BrowseFragment : Fragment(), BrowseROMExchangeContract.View {
         recycler_browse.adapter = browseAdapter
     }
 
-    override fun setPresenter(presenter: BrowseROMExchangeContract.Presenter) {
+    override fun setPresenter(presenter: BrowseItemExchangeContract.Presenter) {
         onboardingPresenter = presenter
     }
 

@@ -6,16 +6,16 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import dagger.android.AndroidInjection
 import net.rom.exchange.mapper.ROMExchangeItemMapper
-import net.rom.exchange.presentation.browse.BrowseROMExchangeContract
+import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
 import net.rom.exchange.presentation.model.ROMExchangeItemView
 import kotlinx.android.synthetic.main.activity_browse.*
 import net.rom.exchange.R
 import javax.inject.Inject
 
-class BrowseActivity : AppCompatActivity(), BrowseROMExchangeContract.View {
+class BrowseActivity : AppCompatActivity(), BrowseItemExchangeContract.View {
 
     @Inject
-    lateinit var onboardingPresenter: BrowseROMExchangeContract.Presenter
+    lateinit var onboardingPresenter: BrowseItemExchangeContract.Presenter
 
     @Inject
     lateinit var browseAdapter: BrowseAdapter
@@ -24,7 +24,7 @@ class BrowseActivity : AppCompatActivity(), BrowseROMExchangeContract.View {
     lateinit var mapper: ROMExchangeItemMapper
 
 
-    override fun setPresenter(presenter: BrowseROMExchangeContract.Presenter) {
+    override fun setPresenter(presenter: BrowseItemExchangeContract.Presenter) {
         onboardingPresenter = presenter
     }
 

@@ -14,21 +14,21 @@ import java.util.concurrent.TimeUnit
  * Provide "make" methods to create instances of [ROMServiceServiceFactory]
  * and its related dependencies, such as OkHttpClient, Gson, etc.
  */
-object ROMExchangeServiceFactory {
+object ItemExchangeServiceFactory {
 
-    fun makeROMExchangeService(isDebug: Boolean): ROMExchangeService {
+    fun makeROMExchangeService(isDebug: Boolean): ItemExchangeService {
         val okHttpClient = makeOkHttpClient(makeLoggingInterceptor(isDebug))
         return makeBufferooService(okHttpClient, makeGson())
     }
 
-    private fun makeBufferooService(okHttpClient: OkHttpClient, gson: Gson): ROMExchangeService {
+    private fun makeBufferooService(okHttpClient: OkHttpClient, gson: Gson): ItemExchangeService {
         val retrofit = Retrofit.Builder()
                 .baseUrl("https://www.romexchange.com")
                 .client(okHttpClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
-        return retrofit.create(ROMExchangeService::class.java)
+        return retrofit.create(ItemExchangeService::class.java)
     }
 
     private fun makeOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {

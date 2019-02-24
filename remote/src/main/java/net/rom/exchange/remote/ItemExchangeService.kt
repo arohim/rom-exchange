@@ -6,7 +6,7 @@ import net.rom.exchange.remote.model.rom.ItemModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ROMExchangeService {
+interface ItemExchangeService {
     @GET("/api")
     fun getItems(
             @Query("item") kw: String,

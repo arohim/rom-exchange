@@ -2,7 +2,7 @@ package net.rom.exchange.remote.factory
 
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomUuid
 import net.rom.exchange.remote.BufferooService
-import net.rom.exchange.remote.ROMExchangeService
+import net.rom.exchange.remote.ItemExchangeService
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomBoolean
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomDouble
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomInt
@@ -12,15 +12,9 @@ import net.rom.exchange.remote.model.rom.*
 /**
  * Factory class for Bufferoo related instances
  */
-class ROMExchangeFactory {
+class ItemExchangeFactory {
 
     companion object Factory {
-
-        fun makeBufferooResponse(): BufferooService.BufferooResponse {
-            val bufferooResponse = BufferooService.BufferooResponse()
-            bufferooResponse.team = makeBufferooModelList(5)
-            return bufferooResponse
-        }
 
         fun makeBufferooModelList(count: Int): List<BufferooModel> {
             val bufferooEntities = mutableListOf<BufferooModel>()
@@ -34,13 +28,7 @@ class ROMExchangeFactory {
             return BufferooModel(randomUuid(), randomUuid(), randomUuid())
         }
 
-        fun makeROMExchangeResponse(): ROMExchangeService.ROMExchangeResponse {
-            val response = ROMExchangeService.ROMExchangeResponse()
-            response.team = makeROMExchangeModelList(5)
-            return response
-        }
-
-        fun makeROMExchangeModelList(count: Int): List<ItemModel> {
+        fun makeItemExchangeModelList(count: Int): List<ItemModel> {
             val entities = mutableListOf<ItemModel>()
             repeat(count) {
                 entities.add(makeItemModel())

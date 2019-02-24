@@ -7,7 +7,7 @@ import net.rom.exchange.presentation.model.ROMExchangeItemView
 /**
  * Defines a contract of operations between the Browse Presenter and Browse View
  */
-interface BrowseROMExchangeContract {
+interface BrowseItemExchangeContract {
 
     interface View : BaseView<Presenter> {
 

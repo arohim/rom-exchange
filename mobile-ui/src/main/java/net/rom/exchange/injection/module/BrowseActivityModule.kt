@@ -3,11 +3,11 @@ package net.rom.exchange.injection.module
 import dagger.Module
 import dagger.Provides
 import net.rom.exchange.browse.BrowseActivity
-import net.rom.exchange.domain.interactor.browse.ROMExchange
+import net.rom.exchange.domain.interactor.browse.ItemExchange
 import net.rom.exchange.injection.scopes.PerActivity
-import net.rom.exchange.presentation.browse.BrowseROMExchangeContract
-import net.rom.exchange.presentation.browse.BrowseROMExchangePresenter
-import net.rom.exchange.presentation.mapper.ROMExchangeItemMapper
+import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
+import net.rom.exchange.presentation.browse.BrowseItemExchangePresenter
+import net.rom.exchange.presentation.mapper.ItemExchangeMapper
 
 
 /**
@@ -18,16 +18,16 @@ open class BrowseActivityModule {
 
     @PerActivity
     @Provides
-    internal fun provideBrowseView(browseActivity: BrowseActivity): BrowseROMExchangeContract.View {
+    internal fun provideBrowseView(browseActivity: BrowseActivity): BrowseItemExchangeContract.View {
         return browseActivity
     }
 
     @PerActivity
     @Provides
-    internal fun provideBrowsePresenter(mainView: BrowseROMExchangeContract.View,
-                                        romExchange: ROMExchange, mapper: ROMExchangeItemMapper):
-            BrowseROMExchangeContract.Presenter {
-        return BrowseROMExchangePresenter(mainView, romExchange, mapper)
+    internal fun provideBrowsePresenter(mainView: BrowseItemExchangeContract.View,
+                                        romExchange: ItemExchange, mapper: ItemExchangeMapper):
+            BrowseItemExchangeContract.Presenter {
+        return BrowseItemExchangePresenter(mainView, romExchange, mapper)
     }
 
 }

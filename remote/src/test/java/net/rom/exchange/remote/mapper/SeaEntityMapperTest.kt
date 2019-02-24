@@ -1,6 +1,6 @@
 package net.rom.exchange.remote.mapper
 
-import net.rom.exchange.remote.factory.ROMExchangeFactory
+import net.rom.exchange.remote.factory.ItemExchangeFactory
 import net.rom.exchange.remote.mapper.rom.*
 import org.junit.Before
 import org.junit.Test
@@ -24,7 +24,7 @@ class SeaEntityMapperTest {
 
     @Test
     fun mapFromRemoteMapsData() {
-        val seaModel = ROMExchangeFactory.makeSeaModel()
+        val seaModel = ItemExchangeFactory.makeSeaModel()
         val seaEntity = seaEntityMapper.mapFromRemote(seaModel)
 
         assertEquals(seaModel.all?.data?.size, seaEntity.all.data.size)

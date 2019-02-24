@@ -1,6 +1,6 @@
 package net.rom.exchange.remote.mapper
 
-import net.rom.exchange.remote.factory.ROMExchangeFactory
+import net.rom.exchange.remote.factory.ItemExchangeFactory
 import net.rom.exchange.remote.mapper.rom.*
 import org.junit.Before
 import org.junit.Test
@@ -24,7 +24,7 @@ class GlobalEntityMapperTest {
 
     @Test
     fun mapFromRemoteMapsData() {
-        val globalModel = ROMExchangeFactory.makeGlobalModel()
+        val globalModel = ItemExchangeFactory.makeGlobalModel()
         val globalEntity = globalEntityMapper.mapFromRemote(globalModel)
 
         assertEquals(globalModel.all?.data?.size, globalEntity.all.data.size)

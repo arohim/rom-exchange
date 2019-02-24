@@ -1,6 +1,6 @@
 package net.rom.exchange.remote.mapper
 
-import net.rom.exchange.remote.factory.ROMExchangeFactory
+import net.rom.exchange.remote.factory.ItemExchangeFactory
 import net.rom.exchange.remote.mapper.rom.*
 import org.junit.Before
 import org.junit.Test
@@ -31,7 +31,7 @@ class ItemEntityMapperTest {
 
     @Test
     fun mapFromRemoteMapsData() {
-        val itemModel = ROMExchangeFactory.makeItemModel()
+        val itemModel = ItemExchangeFactory.makeItemModel()
         val itemEntity = itemEntityMapper.mapFromRemote(itemModel)
 
         assertEquals(itemModel.image, itemEntity.image)

@@ -3,13 +3,13 @@ package net.rom.exchange.presentation.browse
 import io.reactivex.observers.DisposableSingleObserver
 import net.rom.exchange.domain.interactor.SingleUseCase
 import net.rom.exchange.domain.model.rom.*
-import net.rom.exchange.presentation.mapper.ROMExchangeItemMapper
+import net.rom.exchange.presentation.mapper.ItemExchangeMapper
 import javax.inject.Inject
 
-class BrowseROMExchangePresenter @Inject constructor(val browseView: BrowseROMExchangeContract.View,
-                                                     val getROMEXchangeUseCase: SingleUseCase<List<Item>, ROMExchangeRequest>,
-                                                     val bufferooMapper: ROMExchangeItemMapper) :
-        BrowseROMExchangeContract.Presenter {
+class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItemExchangeContract.View,
+                                                      val getROMEXchangeUseCase: SingleUseCase<List<Item>, ItemExchangeRequest>,
+                                                      val bufferooMapper: ItemExchangeMapper) :
+        BrowseItemExchangeContract.Presenter {
 
     init {
         browseView.setPresenter(this)
@@ -27,7 +27,7 @@ class BrowseROMExchangePresenter @Inject constructor(val browseView: BrowseROMEx
         browseView.showProgress()
         getROMEXchangeUseCase.execute(
                 singleObserver = ROMExchangeSubscriber(),
-                params = ROMExchangeRequest(
+                params = ItemExchangeRequest(
                         kw = "",
                         exact = false,
                         sort = Sort.CHANGE,

@@ -8,7 +8,7 @@ import net.rom.exchange.data.model.rom.ItemEntity
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomBoolean
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomInt
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomUuid
-import net.rom.exchange.remote.factory.ROMExchangeFactory
+import net.rom.exchange.remote.factory.ItemExchangeFactory
 import net.rom.exchange.remote.mapper.rom.ItemEntityMapper
 import net.rom.exchange.remote.model.rom.ItemModel
 import org.junit.Before
@@ -17,25 +17,25 @@ import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
 @RunWith(JUnit4::class)
-class ROMExchangeRemoteImplTest {
+class ItemRemoteImplTest {
 
     private lateinit var entityMapper: ItemEntityMapper
-    private lateinit var service: ROMExchangeService
+    private lateinit var service: ItemExchangeService
 
-    private lateinit var remoteImpl: ROMExchangeRemoteImpl
+    private lateinit var remoteImpl: ItemExchangeRemoteImpl
 
     @Before
     fun setup() {
         entityMapper = mock()
         service = mock()
-        remoteImpl = ROMExchangeRemoteImpl(service, entityMapper)
+        remoteImpl = ItemExchangeRemoteImpl(service, entityMapper)
     }
 
     //<editor-fold desc="Get Items">
     @Test
-    fun getROMExchangeCompletes() {
+    fun getItemExchangeCompletes() {
         // GIVEN
-        stubROMExchangeServiceGetItems(Single.just(ROMExchangeFactory.makeROMExchangeModelList(5)))
+        stubItemExchangeServiceGetItems(Single.just(ItemExchangeFactory.makeItemExchangeModelList(5)))
         val kw = randomUuid()
         val exact = randomBoolean()
         val type = randomInt()
@@ -55,8 +55,8 @@ class ROMExchangeRemoteImplTest {
     @Test
     fun getItemsReturnsData() {
         // GIVEN
-        val response = ROMExchangeFactory.makeROMExchangeModelList(5)
-        stubROMExchangeServiceGetItems(Single.just(response))
+        val response = ItemExchangeFactory.makeItemExchangeModelList(5)
+        stubItemExchangeServiceGetItems(Single.just(response))
         val entities = mutableListOf<ItemEntity>()
         response.forEach {
             entities.add(entityMapper.mapFromRemote(it))
@@ -78,7 +78,7 @@ class ROMExchangeRemoteImplTest {
     }
 
     //</editor-fold>
-    private fun stubROMExchangeServiceGetItems(single: Single<List<ItemModel>>) {
+    private fun stubItemExchangeServiceGetItems(single: Single<List<ItemModel>>) {
         whenever(service.getItems(any(), any(), any(), any(), any(), any())).thenReturn(single)
     }
 }

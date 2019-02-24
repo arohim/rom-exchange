@@ -23,7 +23,7 @@ import net.rom.exchange.data.ROMExchangeDataRepository
 import net.rom.exchange.data.mapper.rom.ItemMapper
 import net.rom.exchange.data.repository.ROMExchangeRemote
 import net.rom.exchange.data.source.ROMExchangeDataStoreFactory
-import net.rom.exchange.domain.repository.ROMExchangeRepository
+import net.rom.exchange.domain.repository.ItemExchangeRepository
 import net.rom.exchange.injection.scopes.PerApplication
 import net.rom.exchange.remote.*
 import net.rom.exchange.remote.mapper.rom.ItemEntityMapper
@@ -72,15 +72,15 @@ open class ApplicationModule {
 
     @Provides
     @PerApplication
-    internal fun provideROMExchangeDataRepository(factory: ROMExchangeDataStoreFactory, mapper: ItemMapper): ROMExchangeRepository {
+    internal fun provideROMExchangeDataRepository(factory: ROMExchangeDataStoreFactory, mapper: ItemMapper): ItemExchangeRepository {
         return ROMExchangeDataRepository(factory, mapper)
     }
 
     @Provides
     @PerApplication
-    internal fun provideROMExchangeRemote(service: ROMExchangeService,
+    internal fun provideROMExchangeRemote(service: ItemExchangeService,
                                           factory: ItemEntityMapper): ROMExchangeRemote {
-        return ROMExchangeRemoteImpl(service, factory)
+        return ItemExchangeRemoteImpl(service, factory)
     }
 
     @Provides
@@ -103,7 +103,7 @@ open class ApplicationModule {
 
     @Provides
     @PerApplication
-    internal fun provideROMExchangeService(): ROMExchangeService {
-        return ROMExchangeServiceFactory.makeROMExchangeService(BuildConfig.DEBUG)
+    internal fun provideROMExchangeService(): ItemExchangeService {
+        return ItemExchangeServiceFactory.makeROMExchangeService(BuildConfig.DEBUG)
     }
 }

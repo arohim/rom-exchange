@@ -4,7 +4,7 @@ import net.rom.exchange.presentation.model.ROMExchangeItemView
 import net.rom.exchange.test.test.factory.DataFactory.Factory.randomUuid
 
 /**
- * Factory class for ROMExchange related instances
+ * Factory class for ItemExchange related instances
  */
 class ROMExchangeFactory {
 
