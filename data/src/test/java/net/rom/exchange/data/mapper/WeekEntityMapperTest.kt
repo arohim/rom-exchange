@@ -24,25 +24,25 @@ class WeekEntityMapperTest {
     @Test
     fun mapFromEntityMapsData() {
         // GIVEN
-        val data = ItemExchangeFactory.makeWeekEntity()
+        val entity = ItemExchangeFactory.makeWeekEntity()
 
         // WHEN
-        val entity = weekMapper.mapFromEntity(data)
+        val data = weekMapper.mapFromEntity(entity)
 
         // THEN
-        assertDataEquality(data, entity)
+        assertDataEquality(entity, data)
     }
 
     @Test
     fun mapToEntityMapsData() {
         // GIVEN
-        val dataItem = ItemExchangeFactory.makeWeek()
+        val data = ItemExchangeFactory.makeWeek()
 
         // WHEN
-        val dataItemEntity = weekMapper.mapToEntity(dataItem)
+        val entity = weekMapper.mapToEntity(data)
 
         // THEN
-        assertDataEquality(dataItemEntity, dataItem)
+        assertDataEquality(entity, data)
     }
 
     private fun assertDataEquality(entity: WeekEntity, data: Week) {

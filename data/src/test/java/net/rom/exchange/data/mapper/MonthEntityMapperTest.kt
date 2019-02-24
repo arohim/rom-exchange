@@ -24,25 +24,25 @@ class MonthEntityMapperTest {
     @Test
     fun mapFromEntityMapsData() {
         // GIVEN
-        val data = ItemExchangeFactory.makeMonthEntity()
+        val entity = ItemExchangeFactory.makeMonthEntity()
 
         // WHEN
-        val entity = monthMapper.mapFromEntity(data)
+        val data = monthMapper.mapFromEntity(entity)
 
         // THEN
-        assertDataEquality(data, entity)
+        assertDataEquality(entity, data)
     }
 
     @Test
     fun mapToEntityMapsData() {
         // GIVEN
-        val dataItem = ItemExchangeFactory.makeMonth()
+        val data = ItemExchangeFactory.makeMonth()
 
         // WHEN
-        val dataItemEntity = monthMapper.mapToEntity(dataItem)
+        val entity = monthMapper.mapToEntity(data)
 
         // THEN
-        assertDataEquality(dataItemEntity, dataItem)
+        assertDataEquality(entity, data)
     }
 
     private fun assertDataEquality(entity: MonthEntity, data: Month) {

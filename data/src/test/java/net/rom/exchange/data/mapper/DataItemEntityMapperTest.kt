@@ -23,13 +23,13 @@ class DataItemEntityMapperTest {
     @Test
     fun mapFromEntityMapsData() {
         // GIVEN
-        val data = ItemExchangeFactory.makeDataItemEntity()
+        val entity = ItemExchangeFactory.makeDataItemEntity()
 
         // WHEN
-        val dataItemEntity = dataItemMapper.mapFromEntity(data)
+        val data = dataItemMapper.mapFromEntity(entity)
 
         // THEN
-        assertDataItemEquality(data, dataItemEntity)
+        assertDataItemEquality(entity, data)
     }
 
     @Test
@@ -38,10 +38,10 @@ class DataItemEntityMapperTest {
         val data = ItemExchangeFactory.makeDataItem()
 
         // WHEN
-        val dataItemEntity = dataItemMapper.mapToEntity(data)
+        val entity = dataItemMapper.mapToEntity(data)
 
         // THEN
-        assertDataItemEquality(dataItemEntity, data)
+        assertDataItemEquality(entity, data)
     }
 
     private fun assertDataItemEquality(entity: DataItemEntity, data: DataItem) {

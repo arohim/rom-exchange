@@ -24,25 +24,25 @@ class AllEntityMapperTest {
     @Test
     fun mapFromEntityMapsData() {
         // GIVEN
-        val data = ItemExchangeFactory.makeAllEntity()
+        val entity = ItemExchangeFactory.makeAllEntity()
 
         // WHEN
-        val entity = allMapper.mapFromEntity(data)
+        val data = allMapper.mapFromEntity(entity)
 
         // THEN
-        assertDataEquality(data, entity)
+        assertDataEquality(entity, data)
     }
 
     @Test
     fun mapToEntityMapsData() {
         // GIVEN
-        val dataItem = ItemExchangeFactory.makeAll()
+        val data = ItemExchangeFactory.makeAll()
 
         // WHEN
-        val dataItemEntity = allMapper.mapToEntity(dataItem)
+        val entity = allMapper.mapToEntity(data)
 
         // THEN
-        assertDataEquality(dataItemEntity, dataItem)
+        assertDataEquality(entity, data)
     }
 
     private fun assertDataEquality(entity: AllEntity, data: All) {
