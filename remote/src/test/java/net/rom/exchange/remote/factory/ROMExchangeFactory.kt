@@ -40,7 +40,7 @@ class ROMExchangeFactory {
             return response
         }
 
-        private fun makeROMExchangeModelList(count: Int): List<ItemModel> {
+        fun makeROMExchangeModelList(count: Int): List<ItemModel> {
             val entities = mutableListOf<ItemModel>()
             repeat(count) {
                 entities.add(makeItemModel())

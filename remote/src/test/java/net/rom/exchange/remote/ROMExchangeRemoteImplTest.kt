@@ -10,6 +10,7 @@ import net.rom.exchange.remote.factory.DataFactory.Factory.randomInt
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomUuid
 import net.rom.exchange.remote.factory.ROMExchangeFactory
 import net.rom.exchange.remote.mapper.rom.ItemEntityMapper
+import net.rom.exchange.remote.model.rom.ItemModel
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -34,7 +35,7 @@ class ROMExchangeRemoteImplTest {
     @Test
     fun getROMExchangeCompletes() {
         // GIVEN
-        stubROMExchangeServiceGetItems(Single.just(ROMExchangeFactory.makeROMExchangeResponse()))
+        stubROMExchangeServiceGetItems(Single.just(ROMExchangeFactory.makeROMExchangeModelList(5)))
         val kw = randomUuid()
         val exact = randomBoolean()
         val type = randomInt()
@@ -54,10 +55,10 @@ class ROMExchangeRemoteImplTest {
     @Test
     fun getItemsReturnsData() {
         // GIVEN
-        val response = ROMExchangeFactory.makeROMExchangeResponse()
+        val response = ROMExchangeFactory.makeROMExchangeModelList(5)
         stubROMExchangeServiceGetItems(Single.just(response))
         val entities = mutableListOf<ItemEntity>()
-        response.team.forEach {
+        response.forEach {
             entities.add(entityMapper.mapFromRemote(it))
         }
         val kw = randomUuid()
@@ -77,7 +78,7 @@ class ROMExchangeRemoteImplTest {
     }
 
     //</editor-fold>
-    private fun stubROMExchangeServiceGetItems(single: Single<ROMExchangeService.ROMExchangeResponse>) {
+    private fun stubROMExchangeServiceGetItems(single: Single<List<ItemModel>>) {
         whenever(service.getItems(any(), any(), any(), any(), any(), any())).thenReturn(single)
     }
 }
