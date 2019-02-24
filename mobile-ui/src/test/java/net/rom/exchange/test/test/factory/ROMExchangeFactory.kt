@@ -1,6 +1,6 @@
 package net.rom.exchange.test.test.factory
 
-import net.rom.exchange.presentation.model.ROMExchangeItemView
+import net.rom.exchange.presentation.model.ItemExchangeView
 import net.rom.exchange.test.test.factory.DataFactory.Factory.randomUuid
 
 /**
@@ -10,8 +10,8 @@ class ROMExchangeFactory {
 
     companion object Factory {
 
-        fun makeROMExchangeItemView(): ROMExchangeItemView {
-            return ROMExchangeItemView(randomUuid(), randomUuid(), randomUuid(), randomUuid(), randomUuid())
+        fun makeROMExchangeItemView(): ItemExchangeView {
+            return ItemExchangeView(randomUuid(), randomUuid(), randomUuid(), randomUuid(), randomUuid())
         }
     }
 

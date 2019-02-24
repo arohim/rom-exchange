@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
  */
 object ItemExchangeServiceFactory {
 
-    fun makeROMExchangeService(isDebug: Boolean): ItemExchangeService {
+    fun makeItemExchangeService(isDebug: Boolean): ItemExchangeService {
         val okHttpClient = makeOkHttpClient(makeLoggingInterceptor(isDebug))
         return makeBufferooService(okHttpClient, makeGson())
     }

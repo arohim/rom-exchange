@@ -19,10 +19,10 @@ import net.rom.exchange.domain.executor.PostExecutionThread
 import net.rom.exchange.domain.executor.ThreadExecutor
 import net.rom.exchange.domain.repository.BufferooRepository
 import net.rom.exchange.UiThread
-import net.rom.exchange.data.ROMExchangeDataRepository
+import net.rom.exchange.data.ItemExchangeDataRepository
 import net.rom.exchange.data.mapper.rom.ItemMapper
-import net.rom.exchange.data.repository.ROMExchangeRemote
-import net.rom.exchange.data.source.ROMExchangeDataStoreFactory
+import net.rom.exchange.data.repository.ItemExchangeRemote
+import net.rom.exchange.data.source.ItemExchangeDataStoreFactory
 import net.rom.exchange.domain.repository.ItemExchangeRepository
 import net.rom.exchange.injection.scopes.PerApplication
 import net.rom.exchange.remote.*
@@ -72,14 +72,14 @@ open class ApplicationModule {
 
     @Provides
     @PerApplication
-    internal fun provideROMExchangeDataRepository(factory: ROMExchangeDataStoreFactory, mapper: ItemMapper): ItemExchangeRepository {
-        return ROMExchangeDataRepository(factory, mapper)
+    internal fun provideItemExchangeDataRepository(factory: ItemExchangeDataStoreFactory, mapper: ItemMapper): ItemExchangeRepository {
+        return ItemExchangeDataRepository(factory, mapper)
     }
 
     @Provides
     @PerApplication
-    internal fun provideROMExchangeRemote(service: ItemExchangeService,
-                                          factory: ItemEntityMapper): ROMExchangeRemote {
+    internal fun provideItemExchangeRemote(service: ItemExchangeService,
+                                          factory: ItemEntityMapper): ItemExchangeRemote {
         return ItemExchangeRemoteImpl(service, factory)
     }
 
@@ -103,7 +103,7 @@ open class ApplicationModule {
 
     @Provides
     @PerApplication
-    internal fun provideROMExchangeService(): ItemExchangeService {
-        return ItemExchangeServiceFactory.makeROMExchangeService(BuildConfig.DEBUG)
+    internal fun provideItemExchangeService(): ItemExchangeService {
+        return ItemExchangeServiceFactory.makeItemExchangeService(BuildConfig.DEBUG)
     }
 }

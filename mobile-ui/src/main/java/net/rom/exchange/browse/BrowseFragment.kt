@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.activity_browse.*
 import net.rom.exchange.R
-import net.rom.exchange.mapper.ROMExchangeItemMapper
+import net.rom.exchange.mapper.ItemExchangeMapper
 import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
-import net.rom.exchange.presentation.model.ROMExchangeItemView
+import net.rom.exchange.presentation.model.ItemExchangeView
 import javax.inject.Inject
 
 // TODO: Rename parameter arguments, choose names that match
@@ -38,7 +38,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     lateinit var browseAdapter: BrowseAdapter
 
     @Inject
-    lateinit var mapper: ROMExchangeItemMapper
+    lateinit var mapper: ItemExchangeMapper
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,8 +82,8 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
         progress.visibility = View.VISIBLE
     }
 
-    override fun showROMExchangeItems(romExchangeItems: List<ROMExchangeItemView>) {
-        browseAdapter.items = romExchangeItems.map { mapper.mapToViewModel(it) }
+    override fun showItemExchange(itemExchange: List<ItemExchangeView>) {
+        browseAdapter.items = itemExchange.map { mapper.mapToViewModel(it) }
         browseAdapter.notifyDataSetChanged()
         recycler_browse.visibility = View.VISIBLE
     }

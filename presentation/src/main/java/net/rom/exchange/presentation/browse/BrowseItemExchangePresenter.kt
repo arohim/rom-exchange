@@ -44,7 +44,7 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
         browseView.hideErrorState()
         if (items.isNotEmpty()) {
             browseView.hideEmptyState()
-            browseView.showROMExchangeItems(items.map { bufferooMapper.mapToView(it) })
+            browseView.showItemExchange(items.map { bufferooMapper.mapToView(it) })
         } else {
             browseView.hideItems()
             browseView.showEmptyState()

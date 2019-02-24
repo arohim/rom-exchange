@@ -5,9 +5,9 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import dagger.android.AndroidInjection
-import net.rom.exchange.mapper.ROMExchangeItemMapper
+import net.rom.exchange.mapper.ItemExchangeMapper
 import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
-import net.rom.exchange.presentation.model.ROMExchangeItemView
+import net.rom.exchange.presentation.model.ItemExchangeView
 import kotlinx.android.synthetic.main.activity_browse.*
 import net.rom.exchange.R
 import javax.inject.Inject
@@ -21,7 +21,7 @@ class BrowseActivity : AppCompatActivity(), BrowseItemExchangeContract.View {
     lateinit var browseAdapter: BrowseAdapter
 
     @Inject
-    lateinit var mapper: ROMExchangeItemMapper
+    lateinit var mapper: ItemExchangeMapper
 
 
     override fun setPresenter(presenter: BrowseItemExchangeContract.Presenter) {
@@ -36,8 +36,8 @@ class BrowseActivity : AppCompatActivity(), BrowseItemExchangeContract.View {
         progress.visibility = View.GONE
     }
 
-    override fun showROMExchangeItems(romExchangeItems: List<ROMExchangeItemView>) {
-        browseAdapter.items = romExchangeItems.map { mapper.mapToViewModel(it) }
+    override fun showItemExchange(itemExchange: List<ItemExchangeView>) {
+        browseAdapter.items = itemExchange.map { mapper.mapToViewModel(it) }
         browseAdapter.notifyDataSetChanged()
         recycler_browse.visibility = View.VISIBLE
     }

@@ -25,9 +25,9 @@ open class BrowseActivityModule {
     @PerActivity
     @Provides
     internal fun provideBrowsePresenter(mainView: BrowseItemExchangeContract.View,
-                                        romExchange: ItemExchange, mapper: ItemExchangeMapper):
+                                        itemExchange: ItemExchange, mapper: ItemExchangeMapper):
             BrowseItemExchangeContract.Presenter {
-        return BrowseItemExchangePresenter(mainView, romExchange, mapper)
+        return BrowseItemExchangePresenter(mainView, itemExchange, mapper)
     }
 
 }

@@ -2,7 +2,7 @@ package net.rom.exchange.presentation.browse
 
 import net.rom.exchange.presentation.BasePresenter
 import net.rom.exchange.presentation.BaseView
-import net.rom.exchange.presentation.model.ROMExchangeItemView
+import net.rom.exchange.presentation.model.ItemExchangeView
 
 /**
  * Defines a contract of operations between the Browse Presenter and Browse View
@@ -15,7 +15,7 @@ interface BrowseItemExchangeContract {
 
         fun hideProgress()
 
-        fun showROMExchangeItems(romExchangeItems: List<ROMExchangeItemView>)
+        fun showItemExchange(itemExchange: List<ItemExchangeView>)
 
         fun hideItems()
 

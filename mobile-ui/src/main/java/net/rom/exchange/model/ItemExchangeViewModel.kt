@@ -1,9 +1,9 @@
 package net.rom.exchange.model
 
 /**
- * Representation for a [ROMExchangeItemViewModel] fetched from an external layer data source
+ * Representation for a [ItemExchangeViewModel] fetched from an external layer data source
  */
-class ROMExchangeItemViewModel(
+class ItemExchangeViewModel(
         val name: String,
         val globalPrice: String,
         val seaPrice: String,

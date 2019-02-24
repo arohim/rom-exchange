@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import net.rom.exchange.R
-import net.rom.exchange.model.ROMExchangeItemViewModel
+import net.rom.exchange.model.ItemExchangeViewModel
 import javax.inject.Inject
 
 class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<BrowseAdapter.ViewHolder>() {
 
-    var items: List<ROMExchangeItemViewModel> = arrayListOf()
+    var items: List<ItemExchangeViewModel> = arrayListOf()
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]

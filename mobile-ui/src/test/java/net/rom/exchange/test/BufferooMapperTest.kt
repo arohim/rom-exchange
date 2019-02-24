@@ -1,6 +1,6 @@
 package net.rom.exchange.test
 
-import net.rom.exchange.mapper.ROMExchangeItemMapper
+import net.rom.exchange.mapper.ItemExchangeMapper
 import net.rom.exchange.test.test.factory.ROMExchangeFactory
 import org.junit.Before
 import org.junit.Test
@@ -11,11 +11,11 @@ import kotlin.test.assertEquals
 @RunWith(JUnit4::class)
 class ROMExchangeMapperTest {
 
-    private lateinit var rOMExchangeItemMapper: ROMExchangeItemMapper
+    private lateinit var rOMExchangeItemMapper: ItemExchangeMapper
 
     @Before
     fun setUp() {
-        rOMExchangeItemMapper = ROMExchangeItemMapper()
+        rOMExchangeItemMapper = ItemExchangeMapper()
     }
 
     @Test
