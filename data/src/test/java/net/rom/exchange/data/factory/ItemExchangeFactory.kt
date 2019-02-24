@@ -147,6 +147,14 @@ class ItemExchangeFactory {
             )
         }
 
+        fun makeItemEntityList(count: Int): List<ItemEntity>{
+            val items = mutableListOf<ItemEntity>()
+            repeat(count) {
+                items.add(makeItemEntity())
+            }
+            return items
+        }
+
     }
 
 }
