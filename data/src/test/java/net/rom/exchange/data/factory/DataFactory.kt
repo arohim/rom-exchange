@@ -21,6 +21,10 @@ class DataFactory {
             return randomInt().toLong()
         }
 
+        fun randomDouble(): Double {
+            return randomInt().toDouble()
+        }
+
         fun randomBoolean(): Boolean {
             return Math.random() < 0.5
         }
