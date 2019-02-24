@@ -8,12 +8,12 @@ import net.rom.exchange.domain.model.rom.*
 import net.rom.exchange.domain.repository.ItemExchangeRepository
 import javax.inject.Inject
 
-open class ItemExchange @Inject constructor(private val ItemExchangeRepository: ItemExchangeRepository,
-                                            threadExecutor: ThreadExecutor,
-                                            postExecutionThread: PostExecutionThread) :
+open class GetItemExchange @Inject constructor(private val ItemExchangeRepository: ItemExchangeRepository,
+                                               threadExecutor: ThreadExecutor,
+                                               postExecutionThread: PostExecutionThread) :
         SingleUseCase<List<Item>, ItemExchangeRequest>(threadExecutor, postExecutionThread) {
 
-    override fun buildUseCaseObservable(params: ItemExchangeRequest?): Single<List<Item>> {
+    public override fun buildUseCaseObservable(params: ItemExchangeRequest?): Single<List<Item>> {
         return ItemExchangeRepository.getItems(
                 kw = params?.kw ?: "",
                 exact = params?.exact ?: false,

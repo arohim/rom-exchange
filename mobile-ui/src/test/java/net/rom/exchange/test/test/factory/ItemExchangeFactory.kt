@@ -4,9 +4,9 @@ import net.rom.exchange.presentation.model.ItemExchangeView
 import net.rom.exchange.test.test.factory.DataFactory.Factory.randomUuid
 
 /**
- * Factory class for ItemExchange related instances
+ * Factory class for GetItemExchange related instances
  */
-class ROMExchangeFactory {
+class ItemExchangeFactory {
 
     companion object Factory {
 
