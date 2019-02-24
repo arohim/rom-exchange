@@ -23,30 +23,30 @@ class DataItemEntityMapperTest {
     @Test
     fun mapFromEntityMapsData() {
         // GIVEN
-        val dataItem = ItemExchangeFactory.makeDataItemEntity()
+        val data = ItemExchangeFactory.makeDataItemEntity()
 
         // WHEN
-        val dataItemEntity = dataItemMapper.mapFromEntity(dataItem)
+        val dataItemEntity = dataItemMapper.mapFromEntity(data)
 
         // THEN
-        assertDataItemEquality(dataItem, dataItemEntity)
+        assertDataItemEquality(data, dataItemEntity)
     }
 
     @Test
     fun mapToEntityMapsData() {
         // GIVEN
-        val dataItem = ItemExchangeFactory.makeDataItem()
+        val data = ItemExchangeFactory.makeDataItem()
 
         // WHEN
-        val dataItemEntity = dataItemMapper.mapToEntity(dataItem)
+        val dataItemEntity = dataItemMapper.mapToEntity(data)
 
         // THEN
-        assertDataItemEquality(dataItemEntity, dataItem)
+        assertDataItemEquality(dataItemEntity, data)
     }
 
-    private fun assertDataItemEquality(dataItemEntity: DataItemEntity, dataItem: DataItem) {
-        assertEquals(dataItemEntity.price, dataItem.price)
-        assertEquals(dataItemEntity.time, dataItem.time)
-        assertEquals(dataItemEntity.snap, dataItem.snap)
+    private fun assertDataItemEquality(entity: DataItemEntity, data: DataItem) {
+        assertEquals(entity.price, data.price)
+        assertEquals(entity.time, data.time)
+        assertEquals(entity.snap, data.snap)
     }
 }
