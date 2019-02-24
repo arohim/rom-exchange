@@ -8,10 +8,6 @@ import javax.inject.Inject
  */
 open class ItemExchangeDataStoreFactory @Inject constructor(private val itemExchangeRemoteDataStore: ItemExchangeRemoteDataStore) {
 
-    /**
-     * Returns a DataStore based on whether or not there is content in the cache and the cache
-     * has not expired
-     */
     open fun retrieveDataStore(): ItemExchangeDataStore {
         return itemExchangeRemoteDataStore
     }
