@@ -17,7 +17,7 @@ class ROMExchangeRemoteImpl @Inject constructor(private val romExchangeService: 
                 sortDir = sortDir,
                 page = page
         ).map {
-            it.map { listItem ->
+            it.team.map { listItem ->
                 entityMapper.mapFromRemote(listItem)
             }
         }

@@ -2,6 +2,7 @@ package net.rom.exchange.remote.factory
 
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomUuid
 import net.rom.exchange.remote.BufferooService
+import net.rom.exchange.remote.ROMExchangeService
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomBoolean
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomDouble
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomInt
@@ -31,6 +32,20 @@ class ROMExchangeFactory {
 
         fun makeBufferooModel(): BufferooModel {
             return BufferooModel(randomUuid(), randomUuid(), randomUuid())
+        }
+
+        fun makeROMExchangeResponse(): ROMExchangeService.ROMExchangeResponse {
+            val response = ROMExchangeService.ROMExchangeResponse()
+            response.team = makeROMExchangeModelList(5)
+            return response
+        }
+
+        private fun makeROMExchangeModelList(count: Int): List<ItemModel> {
+            val entities = mutableListOf<ItemModel>()
+            repeat(count) {
+                entities.add(makeItemModel())
+            }
+            return entities
         }
 
         fun makeDataItemModel(): DataItemModel {
@@ -98,6 +113,7 @@ class ROMExchangeFactory {
                     globalSeaDiff = randomDouble()
             )
         }
+
 
     }
 

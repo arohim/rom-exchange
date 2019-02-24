@@ -5,7 +5,7 @@ import net.rom.exchange.remote.mapper.EntityMapper
 import net.rom.exchange.remote.model.rom.ItemModel
 import javax.inject.Inject
 
-class ItemEntityMapper @Inject constructor(private val globalEntityMapper: GlobalEntityMapper, private val seaEntityMapper: SeaEntityMapper) : EntityMapper<ItemModel, ItemEntity> {
+open class ItemEntityMapper @Inject constructor(private val globalEntityMapper: GlobalEntityMapper, private val seaEntityMapper: SeaEntityMapper) : EntityMapper<ItemModel, ItemEntity> {
     override fun mapFromRemote(type: ItemModel): ItemEntity {
         return ItemEntity(
                 image = type.image ?: Any(),
