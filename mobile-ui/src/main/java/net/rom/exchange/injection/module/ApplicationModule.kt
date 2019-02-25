@@ -20,7 +20,7 @@ import net.rom.exchange.domain.executor.ThreadExecutor
 import net.rom.exchange.domain.repository.BufferooRepository
 import net.rom.exchange.UiThread
 import net.rom.exchange.data.ItemExchangeDataRepository
-import net.rom.exchange.data.mapper.rom.ItemMapper
+import net.rom.exchange.data.mapper.rom.ItemExchangeMapper
 import net.rom.exchange.data.repository.ItemExchangeRemote
 import net.rom.exchange.data.source.ItemExchangeDataStoreFactory
 import net.rom.exchange.domain.repository.ItemExchangeRepository
@@ -72,7 +72,7 @@ open class ApplicationModule {
 
     @Provides
     @PerApplication
-    internal fun provideItemExchangeDataRepository(factory: ItemExchangeDataStoreFactory, mapper: ItemMapper): ItemExchangeRepository {
+    internal fun provideItemExchangeDataRepository(factory: ItemExchangeDataStoreFactory, mapper: ItemExchangeMapper): ItemExchangeRepository {
         return ItemExchangeDataRepository(factory, mapper)
     }
 

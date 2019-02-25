@@ -5,7 +5,7 @@ import net.rom.exchange.data.model.rom.ItemExchangeEntity
 import net.rom.exchange.domain.model.rom.ItemExchange
 import javax.inject.Inject
 
-class ItemMapper @Inject constructor(private val globalMapper: GlobalMapper, private val seaMapper: SeaMapper) : Mapper<ItemExchangeEntity, ItemExchange> {
+class ItemExchangeMapper @Inject constructor(private val globalMapper: GlobalMapper, private val seaMapper: SeaMapper) : Mapper<ItemExchangeEntity, ItemExchange> {
     override fun mapFromEntity(type: ItemExchangeEntity): ItemExchange {
         return ItemExchange(
                 image = type.image,
