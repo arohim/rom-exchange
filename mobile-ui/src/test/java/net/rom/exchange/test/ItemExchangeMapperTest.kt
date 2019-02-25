@@ -9,7 +9,7 @@ import org.junit.runners.JUnit4
 import kotlin.test.assertEquals
 
 @RunWith(JUnit4::class)
-class ROMExchangeMapperTest {
+class ItemExchangeMapperTest {
 
     private lateinit var rOMExchangeItemMapper: ItemExchangeMapper
 
@@ -20,7 +20,7 @@ class ROMExchangeMapperTest {
 
     @Test
     fun mapToViewMapsData() {
-        val romExchangeItem = ItemExchangeFactory.makeROMExchangeItemView()
+        val romExchangeItem = ItemExchangeFactory.makeItemExchangeItemView()
         val romExchangeViewModel = rOMExchangeItemMapper.mapToViewModel(romExchangeItem)
 
         assertEquals(romExchangeItem.name, romExchangeViewModel.name)

@@ -10,7 +10,7 @@ class ItemExchangeFactory {
 
     companion object Factory {
 
-        fun makeROMExchangeItemView(): ItemExchangeView {
+        fun makeItemExchangeItemView(): ItemExchangeView {
             return ItemExchangeView(randomUuid(), randomUuid(), randomUuid(), randomUuid(), randomUuid())
         }
     }
