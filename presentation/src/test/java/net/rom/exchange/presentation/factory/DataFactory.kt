@@ -1,6 +1,5 @@
 package net.rom.exchange.presentation.factory
 
-import net.rom.exchange.domain.factory.DataFactory
 import java.util.concurrent.ThreadLocalRandom
 
 /**
@@ -20,6 +19,10 @@ class DataFactory {
 
         fun randomInt(): Int {
             return ThreadLocalRandom.current().nextInt(0, 1000 + 1)
+        }
+
+        fun randomBoolean(): Boolean {
+            return Math.random() < 0.5
         }
 
     }

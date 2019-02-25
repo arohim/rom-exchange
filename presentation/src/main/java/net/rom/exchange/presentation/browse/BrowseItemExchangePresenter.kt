@@ -16,14 +16,14 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
     }
 
     override fun start() {
-        retrieveROMExchangeItems()
+        retrieveItemExchange()
     }
 
     override fun stop() {
         getROMEXchangeUseCase.dispose()
     }
 
-    override fun retrieveROMExchangeItems() {
+    override fun retrieveItemExchange() {
         browseView.showProgress()
         getROMEXchangeUseCase.execute(
                 singleObserver = ROMExchangeSubscriber(),

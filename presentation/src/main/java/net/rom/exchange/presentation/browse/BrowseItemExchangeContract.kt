@@ -31,7 +31,7 @@ interface BrowseItemExchangeContract {
 
     interface Presenter : BasePresenter {
 
-        fun retrieveROMExchangeItems()
+        fun retrieveItemExchange()
 
     }
 

@@ -1,6 +1,5 @@
 package net.rom.exchange.presentation.factory
 
-import net.rom.exchange.domain.factory.DataFactory
 import net.rom.exchange.domain.model.rom.*
 import net.rom.exchange.presentation.factory.DataFactory.Factory.randomDouble
 import net.rom.exchange.presentation.factory.DataFactory.Factory.randomInt
