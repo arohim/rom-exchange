@@ -1,13 +1,13 @@
 package net.rom.exchange.data.mapper.rom
 
 import net.rom.exchange.data.mapper.Mapper
-import net.rom.exchange.data.model.rom.ItemEntity
-import net.rom.exchange.domain.model.rom.Item
+import net.rom.exchange.data.model.rom.ItemExchangeEntity
+import net.rom.exchange.domain.model.rom.ItemExchange
 import javax.inject.Inject
 
-class ItemMapper @Inject constructor(private val globalMapper: GlobalMapper, private val seaMapper: SeaMapper) : Mapper<ItemEntity, Item> {
-    override fun mapFromEntity(type: ItemEntity): Item {
-        return Item(
+class ItemMapper @Inject constructor(private val globalMapper: GlobalMapper, private val seaMapper: SeaMapper) : Mapper<ItemExchangeEntity, ItemExchange> {
+    override fun mapFromEntity(type: ItemExchangeEntity): ItemExchange {
+        return ItemExchange(
                 image = type.image,
                 name = type.name,
                 global = globalMapper.mapFromEntity(type.global),
@@ -17,8 +17,8 @@ class ItemMapper @Inject constructor(private val globalMapper: GlobalMapper, pri
         )
     }
 
-    override fun mapToEntity(type: Item): ItemEntity {
-        return ItemEntity(
+    override fun mapToEntity(type: ItemExchange): ItemExchangeEntity {
+        return ItemExchangeEntity(
                 image = type.image,
                 name = type.name,
                 global = globalMapper.mapToEntity(type.global),

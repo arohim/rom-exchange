@@ -1,8 +1,7 @@
 package net.rom.exchange.remote
 
 import io.reactivex.Single
-import net.rom.exchange.remote.model.BufferooModel
-import net.rom.exchange.remote.model.rom.ItemModel
+import net.rom.exchange.remote.model.rom.ItemExchangeModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -16,9 +15,9 @@ interface ItemExchangeService {
             @Query("sort_dir") sortDir: String,
             @Query("page") page: Int
 
-    ): Single<List<ItemModel>>
+    ): Single<List<ItemExchangeModel>>
 
     class ROMExchangeResponse {
-        lateinit var team: List<ItemModel>
+        lateinit var team: List<ItemExchangeModel>
     }
 }

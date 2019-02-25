@@ -11,9 +11,9 @@ import javax.inject.Inject
 open class GetItemExchange @Inject constructor(private val ItemExchangeRepository: ItemExchangeRepository,
                                                threadExecutor: ThreadExecutor,
                                                postExecutionThread: PostExecutionThread) :
-        SingleUseCase<List<Item>, ItemExchangeRequest>(threadExecutor, postExecutionThread) {
+        SingleUseCase<List<ItemExchange>, ItemExchangeRequest>(threadExecutor, postExecutionThread) {
 
-    public override fun buildUseCaseObservable(params: ItemExchangeRequest?): Single<List<Item>> {
+    public override fun buildUseCaseObservable(params: ItemExchangeRequest?): Single<List<ItemExchange>> {
         return ItemExchangeRepository.getItems(
                 kw = params?.kw ?: "",
                 exact = params?.exact ?: false,

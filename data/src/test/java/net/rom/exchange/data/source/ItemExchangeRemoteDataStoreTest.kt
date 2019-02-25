@@ -4,12 +4,11 @@ import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
-import net.rom.exchange.data.factory.BufferooFactory
 import net.rom.exchange.data.factory.DataFactory.Factory.randomBoolean
 import net.rom.exchange.data.factory.DataFactory.Factory.randomInt
 import net.rom.exchange.data.factory.DataFactory.Factory.randomUuid
 import net.rom.exchange.data.factory.ItemExchangeFactory
-import net.rom.exchange.data.model.rom.ItemEntity
+import net.rom.exchange.data.model.rom.ItemExchangeEntity
 import net.rom.exchange.data.repository.ItemExchangeRemote
 import org.junit.Before
 import org.junit.Test
@@ -53,7 +52,7 @@ class ItemExchangeRemoteDataStoreTest {
     //</editor-fold>
 
     //<editor-fold desc="Stub helper methods">
-    private fun stubItemExchangeCacheGetItem(single: Single<List<ItemEntity>>) {
+    private fun stubItemExchangeCacheGetItem(single: Single<List<ItemExchangeEntity>>) {
         whenever(itemExchangeRemote.getItems(any(), any(), any(), any(), any(), any(), any(), any())).thenReturn(single)
     }
     //</editor-fold>

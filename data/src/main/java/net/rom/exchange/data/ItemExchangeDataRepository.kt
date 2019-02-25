@@ -3,7 +3,7 @@ package net.rom.exchange.data
 import io.reactivex.Single
 import net.rom.exchange.data.mapper.rom.ItemMapper
 import net.rom.exchange.data.source.ItemExchangeDataStoreFactory
-import net.rom.exchange.domain.model.rom.Item
+import net.rom.exchange.domain.model.rom.ItemExchange
 import net.rom.exchange.domain.repository.ItemExchangeRepository
 import javax.inject.Inject
 
@@ -15,7 +15,7 @@ class ItemExchangeDataRepository @Inject constructor(private val factory: ItemEx
                                                      private val itemMapper: ItemMapper) :
         ItemExchangeRepository {
 
-    override fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, sortServer: String, sortRange: String, page: Int): Single<List<Item>> {
+    override fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, sortServer: String, sortRange: String, page: Int): Single<List<ItemExchange>> {
         val dataStore = factory.retrieveDataStore()
         return dataStore.getItems(
                 kw = kw,

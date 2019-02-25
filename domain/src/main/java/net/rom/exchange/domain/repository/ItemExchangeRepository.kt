@@ -1,7 +1,7 @@
 package net.rom.exchange.domain.repository
 
 import io.reactivex.Single
-import net.rom.exchange.domain.model.rom.Item
+import net.rom.exchange.domain.model.rom.ItemExchange
 
 /**
  * Interface defining methods for how the data layer can pass data to and from the Domain layer.
@@ -10,6 +10,6 @@ import net.rom.exchange.domain.model.rom.Item
  */
 interface ItemExchangeRepository {
 
-    fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, sortServer: String, sortRange: String, page: Int): Single<List<Item>>
+    fun getItems(kw: String, exact: Boolean, type: Int, sort: String, sortDir: String, sortServer: String, sortRange: String, page: Int): Single<List<ItemExchange>>
 
 }

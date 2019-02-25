@@ -4,13 +4,13 @@ import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Single
-import net.rom.exchange.data.model.rom.ItemEntity
+import net.rom.exchange.data.model.rom.ItemExchangeEntity
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomBoolean
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomInt
 import net.rom.exchange.remote.factory.DataFactory.Factory.randomUuid
 import net.rom.exchange.remote.factory.ItemExchangeFactory
 import net.rom.exchange.remote.mapper.rom.ItemEntityMapper
-import net.rom.exchange.remote.model.rom.ItemModel
+import net.rom.exchange.remote.model.rom.ItemExchangeModel
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -57,7 +57,7 @@ class ItemRemoteImplTest {
         // GIVEN
         val response = ItemExchangeFactory.makeItemExchangeModelList(5)
         stubItemExchangeServiceGetItems(Single.just(response))
-        val entities = mutableListOf<ItemEntity>()
+        val entities = mutableListOf<ItemExchangeEntity>()
         response.forEach {
             entities.add(entityMapper.mapFromRemote(it))
         }
@@ -78,7 +78,7 @@ class ItemRemoteImplTest {
     }
 
     //</editor-fold>
-    private fun stubItemExchangeServiceGetItems(single: Single<List<ItemModel>>) {
+    private fun stubItemExchangeServiceGetItems(single: Single<List<ItemExchangeModel>>) {
         whenever(service.getItems(any(), any(), any(), any(), any(), any())).thenReturn(single)
     }
 }

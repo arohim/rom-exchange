@@ -4,7 +4,7 @@ import javax.annotation.Generated
 import com.google.gson.annotations.SerializedName
 
 @Generated("com.robohorse.robopojogenerator")
-data class ItemModel(
+data class ItemExchangeModel(
 
         @field:SerializedName("image")
         val image: Any? = null,

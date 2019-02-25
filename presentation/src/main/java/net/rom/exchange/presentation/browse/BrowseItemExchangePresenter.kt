@@ -7,7 +7,7 @@ import net.rom.exchange.presentation.mapper.ItemExchangeMapper
 import javax.inject.Inject
 
 class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItemExchangeContract.View,
-                                                      val getROMEXchangeUseCase: SingleUseCase<List<Item>, ItemExchangeRequest>,
+                                                      val getROMEXchangeUseCase: SingleUseCase<List<ItemExchange>, ItemExchangeRequest>,
                                                       val bufferooMapper: ItemExchangeMapper) :
         BrowseItemExchangeContract.Presenter {
 
@@ -40,7 +40,7 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
         )
     }
 
-    internal fun handleGetROMExchangeItemsSuccess(items: List<Item>) {
+    internal fun handleGetROMExchangeItemsSuccess(items: List<ItemExchange>) {
         browseView.hideErrorState()
         if (items.isNotEmpty()) {
             browseView.hideEmptyState()
@@ -51,8 +51,8 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
         }
     }
 
-    inner class ROMExchangeSubscriber : DisposableSingleObserver<List<Item>>() {
-        override fun onSuccess(t: List<Item>) {
+    inner class ROMExchangeSubscriber : DisposableSingleObserver<List<ItemExchange>>() {
+        override fun onSuccess(t: List<ItemExchange>) {
             browseView.hideProgress()
             handleGetROMExchangeItemsSuccess(t)
         }

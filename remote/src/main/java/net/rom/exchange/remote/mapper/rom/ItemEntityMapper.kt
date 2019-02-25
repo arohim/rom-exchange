@@ -2,12 +2,12 @@ package net.rom.exchange.remote.mapper.rom
 
 import net.rom.exchange.data.model.rom.*
 import net.rom.exchange.remote.mapper.EntityMapper
-import net.rom.exchange.remote.model.rom.ItemModel
+import net.rom.exchange.remote.model.rom.ItemExchangeModel
 import javax.inject.Inject
 
-open class ItemEntityMapper @Inject constructor(private val globalEntityMapper: GlobalEntityMapper, private val seaEntityMapper: SeaEntityMapper) : EntityMapper<ItemModel, ItemEntity> {
-    override fun mapFromRemote(type: ItemModel): ItemEntity {
-        return ItemEntity(
+open class ItemEntityMapper @Inject constructor(private val globalEntityMapper: GlobalEntityMapper, private val seaEntityMapper: SeaEntityMapper) : EntityMapper<ItemExchangeModel, ItemExchangeEntity> {
+    override fun mapFromRemote(type: ItemExchangeModel): ItemExchangeEntity {
+        return ItemExchangeEntity(
                 image = type.image ?: Any(),
                 name = type.name ?: "",
                 global = type.global?.let { globalEntityMapper.mapFromRemote(it) }

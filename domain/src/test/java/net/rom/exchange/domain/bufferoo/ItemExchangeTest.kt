@@ -9,7 +9,7 @@ import net.rom.exchange.domain.executor.PostExecutionThread
 import net.rom.exchange.domain.executor.ThreadExecutor
 import net.rom.exchange.domain.factory.ItemExchangeFactory
 import net.rom.exchange.domain.interactor.browse.GetItemExchange
-import net.rom.exchange.domain.model.rom.Item
+import net.rom.exchange.domain.model.rom.ItemExchange
 import net.rom.exchange.domain.repository.ItemExchangeRepository
 import org.junit.Before
 import org.junit.Test
@@ -68,7 +68,7 @@ class ItemExchangeTest {
         testObserver.assertValue(itemExchange)
     }
 
-    private fun stubItemExchangeRepositoryGetItem(single: Single<List<Item>>) {
+    private fun stubItemExchangeRepositoryGetItem(single: Single<List<ItemExchange>>) {
         whenever(mockItemExchangeRepository.getItems(any(), any(), any(), any(), any(), any(), any()
                 , any())).thenReturn(single)
     }

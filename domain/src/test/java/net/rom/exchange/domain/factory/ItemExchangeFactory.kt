@@ -68,8 +68,8 @@ class ItemExchangeFactory {
             )
         }
 
-        fun makeItem(): Item {
-            return Item(
+        fun makeItem(): ItemExchange {
+            return ItemExchange(
                     image = randomUuid(),
                     name = randomUuid(),
                     global = makeGlobal(),
@@ -79,8 +79,8 @@ class ItemExchangeFactory {
             )
         }
 
-        fun makeItemList(count: Int): List<Item> {
-            val data = mutableListOf<Item>()
+        fun makeItemList(count: Int): List<ItemExchange> {
+            val data = mutableListOf<ItemExchange>()
             repeat(count) {
                 data.add(makeItem())
             }
