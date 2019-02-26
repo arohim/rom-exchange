@@ -109,7 +109,7 @@ class BrowseItemExchangePresenterTest {
     }
 
     @Test
-    fun retrieveWithKeywordShowsItemExchange() {
+    fun `Retrieve with keyword`() {
         // GIVEN
         val itemExchange = ItemExchangeFactory.makeItemExchangeList(2)
         val keyword = "keyword"
