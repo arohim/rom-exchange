@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
 
-        fragment?.let {
+        fragment?.also {
             val ft = supportFragmentManager.beginTransaction()
             ft.replace(R.id.content_main, it)
             ft.commit()

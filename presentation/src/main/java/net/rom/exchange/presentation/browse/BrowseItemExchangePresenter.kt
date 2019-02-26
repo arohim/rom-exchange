@@ -15,7 +15,6 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
         private const val VISIBLE_THRESHOLD = 5
     }
 
-
     override var currentPage: Int = 1
 
     override var itemExchangeRequest: ItemExchangeRequest? = null

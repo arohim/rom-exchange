@@ -83,7 +83,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
                 val visibleItemCount = linearLayoutManager.childCount
                 val lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition()
 
-//                browseItemExchangePresenter.listScrolled(visibleItemCount, lastVisibleItem, totalItemCount)
+                browseItemExchangePresenter.listScrolled(visibleItemCount, lastVisibleItem, totalItemCount)
             }
         })
     }
