@@ -113,13 +113,25 @@ class BrowseItemExchangePresenterTest {
         // GIVEN
         val itemExchange = ItemExchangeFactory.makeItemExchangeList(2)
         val keyword = "keyword"
+        browseItemExchangePresenter.itemExchangeRequest = ItemExchangeRequest(
+                kw = "",
+                exact = false,
+                sort = Sort.CHANGE,
+                sortDir = SortDir.DESC,
+                sortServer = SortServer.BOTH,
+                sortRange = SortRange.ALL,
+                type = Type.All,
+                page = 1
+        )
 
         // WHEN
         browseItemExchangePresenter.searchKeyword(keyword)
 
         // THEN
-        verify(mockGetItemExchange).execute(captor.capture(), any())
+        verify(mockGetItemExchange).execute(captor.capture(), requestCaptor.capture())
         captor.firstValue.onSuccess(itemExchange)
+        val request = requestCaptor.firstValue
+        assertEquals(keyword, request.kw)
         verify(mockBrowseItemExchangeView).showItemExchange(itemExchange.map { mockItemExchangeMapper.mapToView(it) })
     }
 
