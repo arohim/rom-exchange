@@ -10,7 +10,8 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
                                                       val getItemEXchangeUseCase: SingleUseCase<List<ItemExchange>, ItemExchangeRequest>,
                                                       val bufferooMapper: ItemExchangeMapper) :
         BrowseItemExchangeContract.Presenter {
-    var itemExchangeRequest: ItemExchangeRequest? = null
+
+    private var itemExchangeRequest: ItemExchangeRequest? = null
 
     init {
         browseView.setPresenter(this)
