@@ -3,6 +3,7 @@ package net.rom.exchange.browse
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,8 +73,19 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     }
 
     private fun setupBrowseRecycler() {
-        recycler_browse.layoutManager = LinearLayoutManager(context)
+        val linearLayoutManager = LinearLayoutManager(context)
+        recycler_browse.layoutManager = linearLayoutManager
         recycler_browse.adapter = browseAdapter
+        recycler_browse.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val totalItemCount = linearLayoutManager.itemCount
+                val visibleItemCount = linearLayoutManager.childCount
+                val lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition()
+
+//                browseItemExchangePresenter.listScrolled(visibleItemCount, lastVisibleItem, totalItemCount)
+            }
+        })
     }
 
     override fun setPresenter(presenter: BrowseItemExchangeContract.Presenter) {

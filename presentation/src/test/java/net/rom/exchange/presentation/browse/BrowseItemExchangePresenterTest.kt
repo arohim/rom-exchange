@@ -104,6 +104,21 @@ class BrowseItemExchangePresenterTest {
         captor.firstValue.onError(RuntimeException())
         verify(mockBrowseItemExchangeView).hideEmptyState()
     }
+
+    @Test
+    fun retrieveWithKeywordShowsItemExchange() {
+        // GIVEN
+        val itemExchange = ItemExchangeFactory.makeItemExchangeList(2)
+        val keyword = "keyword"
+
+        // WHEN
+        browseItemExchangePresenter.searchKeyword(keyword)
+
+        // THEN
+        verify(mockGetItemExchange).execute(captor.capture(), any())
+        captor.firstValue.onSuccess(itemExchange)
+        verify(mockBrowseItemExchangeView).showItemExchange(itemExchange.map { mockItemExchangeMapper.mapToView(it) })
+    }
     //</editor-fold>
 
 }
