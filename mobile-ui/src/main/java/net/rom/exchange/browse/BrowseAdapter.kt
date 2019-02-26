@@ -9,36 +9,82 @@ import net.rom.exchange.R
 import net.rom.exchange.model.ItemExchangeViewModel
 import javax.inject.Inject
 
-class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<BrowseAdapter.ViewHolder>() {
+class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var items: List<ItemExchangeViewModel> = arrayListOf()
+    private val VIEW_ITEM = 1
+    private val VIEW_PROG = 0
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    private var items: MutableList<ItemExchangeViewModel?> = arrayListOf()
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = items[position]
-        holder.nameText.text = item.name
-        holder.textSeaPrice.text = item.seaPrice
-        holder.textGlobalPrice.text = item.globalPrice
-        holder.textSeaChange.text = item.seaChange
-        holder.textGlobalChange.text = item.globalChange
+
+        if (holder is ItemViewHolder) {
+            holder.nameText.text = item?.name
+            holder.textSeaPrice.text = item?.seaPrice
+            holder.textGlobalPrice.text = item?.globalPrice
+            holder.textSeaChange.text = item?.seaChange
+            holder.textGlobalChange.text = item?.globalChange
 
 //        Glide.with(holder.itemView.context)
 //                .load(item.avatar)
 //                .apply(RequestOptions.circleCropTransform())
 //                .into(holder.iconImage)
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater
-                .from(parent.context)
-                .inflate(R.layout.item_rom_exchange_item, parent, false)
-        return ViewHolder(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        val itemView = when (viewType) {
+            VIEW_ITEM -> {
+                LayoutInflater
+                        .from(parent.context)
+                        .inflate(R.layout.item_rom_exchange_item, parent, false)
+            }
+            VIEW_PROG -> {
+                LayoutInflater
+                        .from(parent.context)
+                        .inflate(R.layout.progress_bar, parent, false)
+            }
+            else -> {
+                LayoutInflater
+                        .from(parent.context)
+                        .inflate(R.layout.progress_bar, parent, false)
+            }
+        }
+
+        return ItemViewHolder(itemView)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (items[position] != null) {
+            VIEW_ITEM
+        } else {
+            VIEW_PROG
+        }
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    fun submitItems(items: List<ItemExchangeViewModel?>) {
+        this.items.addAll(items)
+        notifyItemChanged(itemCount)
+    }
+
+    fun displayProgress() {
+        this.items.add(null)
+        notifyItemChanged(itemCount - 1)
+    }
+
+    fun hideProgress() {
+        this.items.removeAt(itemCount - 1)
+        notifyItemChanged(itemCount - 1)
+    }
+
+    inner class ProgressBarViewHolder(view: View) : RecyclerView.ViewHolder(view)
+
+    inner class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         //        var iconImage: ImageView
         var nameText: TextView
         var textGlobalPrice: TextView
