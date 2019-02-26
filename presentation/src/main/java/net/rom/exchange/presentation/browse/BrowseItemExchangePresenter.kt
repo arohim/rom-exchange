@@ -7,11 +7,10 @@ import net.rom.exchange.presentation.mapper.ItemExchangeMapper
 import javax.inject.Inject
 
 class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItemExchangeContract.View,
-                                                      val getROMEXchangeUseCase: SingleUseCase<List<ItemExchange>, ItemExchangeRequest>,
+                                                      val getItemEXchangeUseCase: SingleUseCase<List<ItemExchange>, ItemExchangeRequest>,
                                                       val bufferooMapper: ItemExchangeMapper) :
         BrowseItemExchangeContract.Presenter {
-
-    val itemExchangeRequest: ItemExchangeRequest? = null
+    var itemExchangeRequest: ItemExchangeRequest? = null
 
     init {
         browseView.setPresenter(this)
@@ -22,19 +21,24 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
     }
 
     override fun stop() {
-        getROMEXchangeUseCase.dispose()
+        getItemEXchangeUseCase.dispose()
     }
 
     override fun retrieveItemExchange() {
         browseView.showProgress()
-        getROMEXchangeUseCase.execute(
-                singleObserver = ROMExchangeSubscriber(),
-                params = getRequest()
-        )
+        getItemEXchangeUseCase.execute(singleObserver = ROMExchangeSubscriber(), params = getRequest())
     }
 
-    private fun getRequest(): ItemExchangeRequest {
-        return itemExchangeRequest ?: ItemExchangeRequest(
+    private fun getRequest(): ItemExchangeRequest? {
+        if (itemExchangeRequest == null) {
+            itemExchangeRequest = makeDefaultRequest()
+        }
+
+        return itemExchangeRequest
+    }
+
+    private fun makeDefaultRequest(): ItemExchangeRequest {
+        return ItemExchangeRequest(
                 kw = "",
                 exact = false,
                 sort = Sort.CHANGE,
@@ -55,6 +59,11 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
             browseView.hideItems()
             browseView.showEmptyState()
         }
+    }
+
+    override fun searchKeyword(keyword: String) {
+        itemExchangeRequest?.kw = keyword
+        retrieveItemExchange()
     }
 
     inner class ROMExchangeSubscriber : DisposableSingleObserver<List<ItemExchange>>() {

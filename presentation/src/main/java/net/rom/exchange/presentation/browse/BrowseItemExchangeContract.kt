@@ -33,6 +33,8 @@ interface BrowseItemExchangeContract {
 
         fun retrieveItemExchange()
 
+        fun searchKeyword(keyword: String)
+
     }
 
 }

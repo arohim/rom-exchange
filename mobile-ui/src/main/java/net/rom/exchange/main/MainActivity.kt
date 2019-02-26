@@ -6,8 +6,11 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -15,6 +18,8 @@ import net.rom.exchange.R
 import net.rom.exchange.browse.BrowseFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    var searchBoxListener: SearchBoxListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +31,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        search?.setOnEditorActionListener { v, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                searchBoxListener?.onSubmit(v?.text.toString())
+            }
+            true
+        }
+
         displayFragment(PAGE.ITEM)
     }
 
@@ -76,6 +89,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
             else -> {
                 fragment = BrowseFragment.newInstance("")
+                searchBoxListener = fragment.searchBoxListener
             }
         }
 
@@ -89,5 +103,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     enum class PAGE {
         ITEM,
         FAVOURITE
+    }
+
+    interface SearchBoxListener {
+        fun onSubmit(keyword: String)
     }
 }

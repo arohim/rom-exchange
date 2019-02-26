@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.activity_browse.*
 import net.rom.exchange.R
+import net.rom.exchange.main.MainActivity
 import net.rom.exchange.mapper.ItemExchangeMapper
 import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
 import net.rom.exchange.presentation.model.ItemExchangeView
@@ -32,7 +33,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     private var param1: String? = null
 
     @Inject
-    lateinit var onboardingPresenter: BrowseItemExchangeContract.Presenter
+    lateinit var browseItemExchangePresenter: BrowseItemExchangeContract.Presenter
 
     @Inject
     lateinit var browseAdapter: BrowseAdapter
@@ -40,6 +41,11 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     @Inject
     lateinit var mapper: ItemExchangeMapper
 
+    val searchBoxListener: MainActivity.SearchBoxListener = object : MainActivity.SearchBoxListener {
+        override fun onSubmit(keyword: String) {
+            browseItemExchangePresenter.searchKeyword(keyword)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,7 +68,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
 
     override fun onStart() {
         super.onStart()
-        onboardingPresenter.start()
+        browseItemExchangePresenter.start()
     }
 
     private fun setupBrowseRecycler() {
@@ -71,7 +77,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     }
 
     override fun setPresenter(presenter: BrowseItemExchangeContract.Presenter) {
-        onboardingPresenter = presenter
+        browseItemExchangePresenter = presenter
     }
 
     override fun hideProgress() {
