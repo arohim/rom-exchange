@@ -62,5 +62,5 @@ data class ItemExchangeRequest(
         val sortDir: SortDir,
         val sortServer: SortServer,
         val sortRange: SortRange,
-        val page: Int
+        var page: Int
 )

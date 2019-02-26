@@ -1,5 +1,6 @@
 package net.rom.exchange.presentation.browse
 
+import net.rom.exchange.domain.model.rom.ItemExchangeRequest
 import net.rom.exchange.presentation.BasePresenter
 import net.rom.exchange.presentation.BaseView
 import net.rom.exchange.presentation.model.ItemExchangeView
@@ -30,11 +31,15 @@ interface BrowseItemExchangeContract {
     }
 
     interface Presenter : BasePresenter {
+        var currentPage: Int
 
         fun retrieveItemExchange()
 
         fun searchKeyword(keyword: String)
 
+        fun listScrolled(visibleItemCount: Int, lastVisibleItem: Int, totalItemCount: Int)
+
+        var itemExchangeRequest: ItemExchangeRequest?
     }
 
 }

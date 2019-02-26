@@ -11,7 +11,14 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
                                                       val bufferooMapper: ItemExchangeMapper) :
         BrowseItemExchangeContract.Presenter {
 
-    private var itemExchangeRequest: ItemExchangeRequest? = null
+    companion object {
+        private const val VISIBLE_THRESHOLD = 5
+    }
+
+
+    override var currentPage: Int = 1
+
+    override var itemExchangeRequest: ItemExchangeRequest? = null
 
     init {
         browseView.setPresenter(this)
@@ -65,6 +72,14 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
     override fun searchKeyword(keyword: String) {
         itemExchangeRequest?.kw = keyword
         retrieveItemExchange()
+    }
+
+    override fun listScrolled(visibleItemCount: Int, lastVisibleItem: Int, totalItemCount: Int) {
+        if (visibleItemCount + lastVisibleItem + VISIBLE_THRESHOLD >= totalItemCount) {
+            currentPage++
+            itemExchangeRequest?.page = currentPage
+            retrieveItemExchange()
+        }
     }
 
     inner class ItemExchangeSubscriber : DisposableSingleObserver<List<ItemExchange>>() {
