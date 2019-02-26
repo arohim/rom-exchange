@@ -11,6 +11,8 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
                                                       val bufferooMapper: ItemExchangeMapper) :
         BrowseItemExchangeContract.Presenter {
 
+    val itemExchangeRequest: ItemExchangeRequest? = null
+
     init {
         browseView.setPresenter(this)
     }
@@ -27,16 +29,20 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
         browseView.showProgress()
         getROMEXchangeUseCase.execute(
                 singleObserver = ROMExchangeSubscriber(),
-                params = ItemExchangeRequest(
-                        kw = "",
-                        exact = false,
-                        sort = Sort.CHANGE,
-                        sortDir = SortDir.DESC,
-                        sortServer = SortServer.BOTH,
-                        sortRange = SortRange.ALL,
-                        type = Type.All,
-                        page = 1
-                )
+                params = getRequest()
+        )
+    }
+
+    private fun getRequest(): ItemExchangeRequest {
+        return itemExchangeRequest ?: ItemExchangeRequest(
+                kw = "",
+                exact = false,
+                sort = Sort.CHANGE,
+                sortDir = SortDir.DESC,
+                sortServer = SortServer.BOTH,
+                sortRange = SortRange.ALL,
+                type = Type.All,
+                page = 1
         )
     }
 

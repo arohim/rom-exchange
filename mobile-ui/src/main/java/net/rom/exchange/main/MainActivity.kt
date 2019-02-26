@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+        displayFragment(PAGE.ITEM)
     }
 
     override fun onBackPressed() {
@@ -52,15 +53,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    override fun onAttachFragment(fragment: android.app.Fragment?) {
-        super.onAttachFragment(fragment)
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
-        var fragment: Fragment? = null
         when (item.itemId) {
             R.id.nav_favorite -> {
+                displayFragment(PAGE.FAVOURITE)
+            }
+            else -> {
+                displayFragment(PAGE.ITEM)
+            }
+        }
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    private fun displayFragment(page: PAGE) {
+        var fragment: Fragment? = null
+        when (page) {
+            PAGE.FAVOURITE -> {
                 // Handle the camera action
                 Toast.makeText(this, "Favourite feature coming soon!!", Toast.LENGTH_LONG).show()
             }
@@ -71,11 +81,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         fragment?.let {
             val ft = supportFragmentManager.beginTransaction()
-            ft.replace(net.rom.exchange.R.id.content_main, it)
+            ft.replace(R.id.content_main, it)
             ft.commit()
         }
+    }
 
-        drawer_layout.closeDrawer(GravityCompat.START)
-        return true
+    enum class PAGE {
+        ITEM,
+        FAVOURITE
     }
 }
