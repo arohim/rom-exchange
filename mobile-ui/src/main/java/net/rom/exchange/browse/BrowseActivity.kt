@@ -37,7 +37,7 @@ class BrowseActivity : AppCompatActivity(), BrowseItemExchangeContract.View {
     }
 
     override fun showItemExchange(itemExchange: List<ItemExchangeView>) {
-        browseAdapter.items = itemExchange.map { mapper.mapToViewModel(it) }
+//        browseAdapter.items = itemExchange.map { mapper.mapToViewModel(it) }
         browseAdapter.notifyDataSetChanged()
         recycler_browse.visibility = View.VISIBLE
     }

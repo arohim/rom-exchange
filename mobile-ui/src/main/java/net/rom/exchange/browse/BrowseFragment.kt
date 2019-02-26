@@ -83,7 +83,8 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
                 val visibleItemCount = linearLayoutManager.childCount
                 val lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition()
 
-                browseItemExchangePresenter.listScrolled(visibleItemCount, lastVisibleItem, totalItemCount)
+                if (!browseAdapter.isLoading)
+                    browseItemExchangePresenter.listScrolled(visibleItemCount, lastVisibleItem, totalItemCount)
             }
         })
     }
@@ -93,16 +94,16 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     }
 
     override fun hideProgress() {
-        progress.visibility = View.GONE
+        browseAdapter.hideProgress()
     }
 
     override fun showProgress() {
-        progress.visibility = View.VISIBLE
+        browseAdapter.showProgress()
     }
 
     override fun showItemExchange(itemExchange: List<ItemExchangeView>) {
-        browseAdapter.items = itemExchange.map { mapper.mapToViewModel(it) }
-        browseAdapter.notifyDataSetChanged()
+        val itemExchangeViewModel = itemExchange.map { mapper.mapToViewModel(it) }
+        browseAdapter.submitItems(itemExchangeViewModel)
         recycler_browse.visibility = View.VISIBLE
     }
 

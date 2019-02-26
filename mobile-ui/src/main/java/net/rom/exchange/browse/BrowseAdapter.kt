@@ -11,6 +11,9 @@ import javax.inject.Inject
 
 class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+
+    var isLoading: Boolean = false
+
     private val VIEW_ITEM = 1
     private val VIEW_PROG = 0
 
@@ -33,26 +36,27 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val itemView = when (viewType) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        when (viewType) {
             VIEW_ITEM -> {
-                LayoutInflater
+                val itemView = LayoutInflater
                         .from(parent.context)
                         .inflate(R.layout.item_rom_exchange_item, parent, false)
+                return ItemViewHolder(itemView)
             }
             VIEW_PROG -> {
-                LayoutInflater
+                val itemView = LayoutInflater
                         .from(parent.context)
                         .inflate(R.layout.progress_bar, parent, false)
+                return ProgressBarViewHolder(itemView)
             }
             else -> {
-                LayoutInflater
+                val itemView = LayoutInflater
                         .from(parent.context)
                         .inflate(R.layout.progress_bar, parent, false)
+                return ProgressBarViewHolder(itemView)
             }
         }
-
-        return ItemViewHolder(itemView)
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -68,18 +72,22 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
     }
 
     fun submitItems(items: List<ItemExchangeViewModel?>) {
-        this.items.addAll(items)
+        items.forEach {
+            this.items.add(it)
+            notifyItemInserted(itemCount)
+        }
+    }
+
+    fun showProgress() {
+        isLoading = true
+        this.items.add(null)
         notifyItemChanged(itemCount)
     }
 
-    fun displayProgress() {
-        this.items.add(null)
-        notifyItemChanged(itemCount - 1)
-    }
-
     fun hideProgress() {
+        isLoading = false
         this.items.removeAt(itemCount - 1)
-        notifyItemChanged(itemCount - 1)
+        notifyItemRemoved(itemCount)
     }
 
     inner class ProgressBarViewHolder(view: View) : RecyclerView.ViewHolder(view)
