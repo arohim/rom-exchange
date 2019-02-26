@@ -27,7 +27,7 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
 
     override fun retrieveItemExchange() {
         browseView.showProgress()
-        getItemEXchangeUseCase.execute(singleObserver = ROMExchangeSubscriber(), params = getRequest())
+        getItemEXchangeUseCase.execute(singleObserver = ItemExchangeSubscriber(), params = getRequest())
     }
 
     private fun getRequest(): ItemExchangeRequest? {
@@ -67,7 +67,7 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
         retrieveItemExchange()
     }
 
-    inner class ROMExchangeSubscriber : DisposableSingleObserver<List<ItemExchange>>() {
+    inner class ItemExchangeSubscriber : DisposableSingleObserver<List<ItemExchange>>() {
         override fun onSuccess(t: List<ItemExchange>) {
             browseView.hideProgress()
             handleGetROMExchangeItemsSuccess(t)
