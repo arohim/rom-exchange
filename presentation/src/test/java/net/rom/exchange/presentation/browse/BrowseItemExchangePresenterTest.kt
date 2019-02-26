@@ -156,7 +156,6 @@ class BrowseItemExchangePresenterTest {
         val totalItemCount = 10
 
         // WHEN
-        // if (visibleItemCount + lastVisibleItem + VISIBLE_THRESHOLD >= totalItemCount) {
         browseItemExchangePresenter.listScrolled(visibleItemCount, lastVisibleItem, totalItemCount)
 
         // THEN
