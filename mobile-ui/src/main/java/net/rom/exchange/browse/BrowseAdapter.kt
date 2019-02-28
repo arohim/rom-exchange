@@ -77,7 +77,7 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
 
     fun showProgress() {
         this.items.add(null)
-        notifyItemChanged(itemCount)
+        notifyItemInserted(itemCount - 1)
     }
 
     fun hideProgress() {
