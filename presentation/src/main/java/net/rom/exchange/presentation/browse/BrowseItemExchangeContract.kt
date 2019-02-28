@@ -36,6 +36,8 @@ interface BrowseItemExchangeContract {
         var itemExchangeRequest: ItemExchangeRequest?
 
         var isLoading: Boolean
+        
+        var currentItemTitle: String?
 
         fun retrieveItemExchange()
 

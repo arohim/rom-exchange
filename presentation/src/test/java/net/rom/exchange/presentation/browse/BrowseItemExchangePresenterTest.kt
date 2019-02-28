@@ -136,6 +136,23 @@ class BrowseItemExchangePresenterTest {
     }
 
     @Test
+    fun `Retrieve with item type`() {
+        // GIVEN
+        val itemExchange = ItemExchangeFactory.makeItemExchangeList(2)
+        browseItemExchangePresenter.currentItemTitle = "Weapons"
+
+        // WHEN
+        browseItemExchangePresenter.start()
+
+        // THEN
+        verify(mockGetItemExchange).execute(captor.capture(), requestCaptor.capture())
+        captor.firstValue.onSuccess(itemExchange)
+        val request = requestCaptor.firstValue
+        assertEquals(Type.Weapons, request.type)
+        verify(mockBrowseItemExchangeView).showItemExchange(itemExchange.map { mockItemExchangeMapper.mapToView(it) })
+    }
+
+    @Test
     fun `Page 2 retrieve`() {
         // GIVEN
         val itemExchange = ItemExchangeFactory.makeItemExchangeList(2)

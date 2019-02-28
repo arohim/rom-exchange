@@ -10,10 +10,12 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
                                                       val getItemEXchangeUseCase: SingleUseCase<List<ItemExchange>, ItemExchangeRequest>,
                                                       val bufferooMapper: ItemExchangeMapper) :
         BrowseItemExchangeContract.Presenter {
-
     companion object {
+
         private const val VISIBLE_THRESHOLD = 5
     }
+
+    override var currentItemTitle: String? = null
 
     override var isLoading: Boolean = false
 
@@ -55,9 +57,13 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
                 sortDir = SortDir.DESC,
                 sortServer = SortServer.BOTH,
                 sortRange = SortRange.ALL,
-                type = Type.All,
+                type = getItemType(currentItemTitle),
                 page = 1
         )
+    }
+
+    private fun getItemType(currentItemTitle: String?): Type {
+        return Type.values().find { it.itemName == currentItemTitle } ?: Type.All
     }
 
     internal fun handleGetROMExchangeItemsSuccess(items: List<ItemExchange>) {

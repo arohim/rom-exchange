@@ -67,6 +67,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
 
     override fun onStart() {
         super.onStart()
+        browseItemExchangePresenter.currentItemTitle = itemTitle
         browseItemExchangePresenter.start()
     }
 
