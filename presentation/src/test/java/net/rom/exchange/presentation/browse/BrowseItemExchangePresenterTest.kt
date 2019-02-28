@@ -139,7 +139,7 @@ class BrowseItemExchangePresenterTest {
     }
 
     @Test
-    fun `Retrieve with item type`() {
+    fun `Retrieve with new item type`() {
         // GIVEN
         val itemExchange = ItemExchangeFactory.makeItemExchangeList(2)
         browseItemExchangePresenter.currentItemTitle = "Weapons"
@@ -152,6 +152,7 @@ class BrowseItemExchangePresenterTest {
         captor.firstValue.onSuccess(itemExchange)
         val request = requestCaptor.firstValue
         assertEquals(Type.Weapons, request.type)
+        assertEquals(1, request.page)
         verify(mockBrowseItemExchangeView).showItemExchange(itemExchange.map { mockItemExchangeMapper.mapToView(it) })
     }
 
