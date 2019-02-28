@@ -33,13 +33,16 @@ interface BrowseItemExchangeContract {
     interface Presenter : BasePresenter {
         var currentPage: Int
 
+        var itemExchangeRequest: ItemExchangeRequest?
+
+        var isLoading: Boolean
+
         fun retrieveItemExchange()
 
         fun searchKeyword(keyword: String)
 
         fun listScrolled(visibleItemCount: Int, lastVisibleItem: Int, totalItemCount: Int)
 
-        var itemExchangeRequest: ItemExchangeRequest?
     }
 
 }

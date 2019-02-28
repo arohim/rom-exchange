@@ -15,6 +15,8 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
         private const val VISIBLE_THRESHOLD = 5
     }
 
+    override var isLoading: Boolean = false
+
     override var currentPage: Int = 1
 
     override var itemExchangeRequest: ItemExchangeRequest? = null
@@ -32,6 +34,7 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
     }
 
     override fun retrieveItemExchange() {
+        isLoading = true
         browseView.showProgress()
         getItemEXchangeUseCase.execute(singleObserver = ItemExchangeSubscriber(), params = getRequest())
     }
@@ -74,20 +77,25 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
     }
 
     override fun listScrolled(visibleItemCount: Int, lastVisibleItem: Int, totalItemCount: Int) {
-        if (visibleItemCount + lastVisibleItem + VISIBLE_THRESHOLD >= totalItemCount) {
+        val displayedItems = visibleItemCount + lastVisibleItem + VISIBLE_THRESHOLD
+        if (shouldLoadMore(displayedItems, totalItemCount) && !isLoading) {
             currentPage++
             itemExchangeRequest?.page = currentPage
             retrieveItemExchange()
         }
     }
 
+    private fun shouldLoadMore(displayedItems: Int, totalItemCount: Int) = displayedItems >= totalItemCount
+
     inner class ItemExchangeSubscriber : DisposableSingleObserver<List<ItemExchange>>() {
         override fun onSuccess(t: List<ItemExchange>) {
+            isLoading = false
             browseView.hideProgress()
             handleGetROMExchangeItemsSuccess(t)
         }
 
         override fun onError(e: Throwable) {
+            isLoading = false
             browseView.hideProgress()
             browseView.hideItems()
             browseView.hideEmptyState()

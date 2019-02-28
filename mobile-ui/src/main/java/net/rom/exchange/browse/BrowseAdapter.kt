@@ -11,9 +11,6 @@ import javax.inject.Inject
 
 class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
-    var isLoading: Boolean = false
-
     private val VIEW_ITEM = 1
     private val VIEW_PROG = 0
 
@@ -79,13 +76,11 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
     }
 
     fun showProgress() {
-        isLoading = true
         this.items.add(null)
         notifyItemChanged(itemCount)
     }
 
     fun hideProgress() {
-        isLoading = false
         this.items.removeAt(itemCount - 1)
         notifyItemRemoved(itemCount)
     }

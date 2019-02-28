@@ -165,6 +165,23 @@ class BrowseItemExchangePresenterTest {
         assertEquals(2, request.page)
         verify(mockBrowseItemExchangeView).showItemExchange(itemExchange.map { mockItemExchangeMapper.mapToView(it) })
     }
+
+    @Test
+    fun `Scrolling to the end when loading`() {
+        // GIVEN
+        browseItemExchangePresenter.isLoading = true
+
+        val visibleItemCount = 7
+        val lastVisibleItem = 3
+        val totalItemCount = 10
+
+        // WHEN
+        browseItemExchangePresenter.listScrolled(visibleItemCount, lastVisibleItem, totalItemCount)
+
+        // THEN
+        verify(mockGetItemExchange, never()).execute(any(), any())
+    }
+
     //</editor-fold>
 
 }
