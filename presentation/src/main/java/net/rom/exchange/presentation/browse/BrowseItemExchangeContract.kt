@@ -28,6 +28,8 @@ interface BrowseItemExchangeContract {
 
         fun hideEmptyState()
 
+        fun resetItemExchange()
+
     }
 
     interface Presenter : BasePresenter {
@@ -36,7 +38,7 @@ interface BrowseItemExchangeContract {
         var itemExchangeRequest: ItemExchangeRequest?
 
         var isLoading: Boolean
-        
+
         var currentItemTitle: String?
 
         fun retrieveItemExchange()

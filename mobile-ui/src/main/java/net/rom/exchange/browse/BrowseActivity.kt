@@ -58,6 +58,9 @@ class BrowseActivity : AppCompatActivity(), BrowseItemExchangeContract.View {
     override fun hideEmptyState() {
     }
 
+    override fun resetItemExchange() {
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_browse)

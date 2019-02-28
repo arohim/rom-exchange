@@ -79,6 +79,7 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
 
     override fun searchKeyword(keyword: String) {
         itemExchangeRequest?.kw = keyword
+        browseView.resetItemExchange()
         retrieveItemExchange()
     }
 

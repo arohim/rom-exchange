@@ -75,6 +75,11 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
         }
     }
 
+    fun reset() {
+        items.clear()
+        notifyDataSetChanged()
+    }
+
     fun showProgress() {
         this.items.add(null)
         notifyItemInserted(itemCount - 1)

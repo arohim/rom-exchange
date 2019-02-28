@@ -102,7 +102,10 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     override fun showItemExchange(itemExchange: List<ItemExchangeView>) {
         val itemExchangeViewModel = itemExchange.map { mapper.mapToViewModel(it) }
         browseAdapter.submitItems(itemExchangeViewModel)
-        recycler_browse.visibility = View.VISIBLE
+    }
+
+    override fun resetItemExchange() {
+        browseAdapter.reset()
     }
 
     override fun hideItems() {

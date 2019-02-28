@@ -132,6 +132,7 @@ class BrowseItemExchangePresenterTest {
         captor.firstValue.onSuccess(itemExchange)
         val request = requestCaptor.firstValue
         assertEquals(keyword, request.kw)
+        verify(mockBrowseItemExchangeView).resetItemExchange()
         verify(mockBrowseItemExchangeView).showItemExchange(itemExchange.map { mockItemExchangeMapper.mapToView(it) })
     }
 
