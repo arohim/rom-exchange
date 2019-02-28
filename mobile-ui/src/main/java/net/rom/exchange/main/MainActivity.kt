@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         search?.setOnEditorActionListener { v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                unCheckAllMenuItems(nav_view.menu)
                 searchBoxListener?.onSubmit(v?.text.toString())
             }
             true
@@ -66,6 +67,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
+        unCheckAllMenuItems(nav_view.menu)
+        item.isChecked = true
         when (item.itemId) {
             R.id.nav_favorite -> {
                 displayFragment(PAGE.FAVOURITE)
@@ -76,6 +79,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun unCheckAllMenuItems(menu: Menu) {
+        val size = menu.size()
+        for (i in 0 until size) {
+            val item = menu.getItem(i)
+            if (item.hasSubMenu()) {
+                // Un check sub menu items
+                unCheckAllMenuItems(item.subMenu)
+            } else {
+                item.isChecked = false
+            }
+        }
     }
 
     private fun displayFragment(page: PAGE, itemTitle: String? = null) {
