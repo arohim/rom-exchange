@@ -120,8 +120,8 @@ class BrowseItemExchangePresenterTest {
                 sortDir = SortDir.DESC,
                 sortServer = SortServer.BOTH,
                 sortRange = SortRange.ALL,
-                type = Type.All,
-                page = 1
+                type = Type.Weapons,
+                page = 3
         )
 
         // WHEN
@@ -132,6 +132,8 @@ class BrowseItemExchangePresenterTest {
         captor.firstValue.onSuccess(itemExchange)
         val request = requestCaptor.firstValue
         assertEquals(keyword, request.kw)
+        assertEquals(Type.All, request.type)
+        assertEquals(1, request.page)
         verify(mockBrowseItemExchangeView).resetItemExchange()
         verify(mockBrowseItemExchangeView).showItemExchange(itemExchange.map { mockItemExchangeMapper.mapToView(it) })
     }

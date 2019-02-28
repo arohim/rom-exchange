@@ -57,7 +57,7 @@ enum class Type(val itemId: Int, val itemName: String) {
 data class ItemExchangeRequest(
         var kw: String,
         val exact: Boolean,
-        val type: Type,
+        var type: Type,
         val sort: Sort,
         val sortDir: SortDir,
         val sortServer: SortServer,
