@@ -6,11 +6,9 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
-import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -73,14 +71,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 displayFragment(PAGE.FAVOURITE)
             }
             else -> {
-                displayFragment(PAGE.ITEM)
+                displayFragment(PAGE.ITEM, item.title.toString())
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    private fun displayFragment(page: PAGE) {
+    private fun displayFragment(page: PAGE, itemTitle: String? = null) {
         var fragment: Fragment? = null
         when (page) {
             PAGE.FAVOURITE -> {
@@ -88,7 +86,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(this, "Favourite feature coming soon!!", Toast.LENGTH_LONG).show()
             }
             else -> {
-                fragment = BrowseFragment.newInstance("")
+                fragment = BrowseFragment.newInstance(itemTitle)
                 searchBoxListener = fragment.searchBoxListener
             }
         }

@@ -16,9 +16,7 @@ import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
 import net.rom.exchange.presentation.model.ItemExchangeView
 import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
+private const val ARG_ITEM_TITLE = "item_title"
 
 /**
  * A simple [Fragment] subclass.
@@ -31,7 +29,7 @@ private const val ARG_PARAM1 = "param1"
  */
 class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
+    private var itemTitle: String? = null
 
     @Inject
     lateinit var browseItemExchangePresenter: BrowseItemExchangeContract.Presenter
@@ -51,7 +49,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            itemTitle = it.getString(ARG_ITEM_TITLE)
         }
     }
 
@@ -131,9 +129,10 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String) =
+        fun newInstance(itemTitle: String?) =
                 BrowseFragment().apply {
                     arguments = Bundle().apply {
+                        putString(ARG_ITEM_TITLE, itemTitle)
                     }
                 }
     }
