@@ -38,6 +38,7 @@ ext {
     runnerVersion = '0.5'
     constraintLayout = '1.1.2'
     cardView = '28.0.0'
+    MPAndroidChartVersion = 'v3.1.0-alpha'
 
     domainDependencies = [
             javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
@@ -174,6 +175,7 @@ ext {
             glassfishAnnotation: "org.glassfish:javax.annotation:${glassfishAnnotationVersion}",
             constraintLayout   : "com.android.support.constraint:constraint-layout:${constraintLayout}",
             cardView           : "com.android.support:cardview-v7:${cardView}",
+            MPAndroidChart     : "com.github.PhilJay:MPAndroidChart:${MPAndroidChartVersion}"
     ]
 
     mobileUiTestDependencies = [

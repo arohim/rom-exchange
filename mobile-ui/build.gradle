@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 //apply plugin: 'jacoco-android'
 
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
 
@@ -86,6 +90,7 @@ dependencies {
     implementation mobileUiDependencies.daggerSupport
     implementation mobileUiDependencies.constraintLayout
     implementation mobileUiDependencies.cardView
+    implementation mobileUiDependencies.MPAndroidChart
 
     testImplementation mobileUiTestDependencies.kotlinJUnit
 
