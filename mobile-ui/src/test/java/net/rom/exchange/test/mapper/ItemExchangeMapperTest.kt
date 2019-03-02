@@ -1,4 +1,4 @@
-package net.rom.exchange.test
+package net.rom.exchange.test.mapper
 
 import net.rom.exchange.mapper.ItemExchangeMapper
 import net.rom.exchange.test.test.factory.ItemExchangeFactory
