@@ -23,19 +23,14 @@ class ItemExchangeFactory {
             )
         }
 
-
-        fun makeDataItemView(): DataItemView {
-            return DataItemView(
-                    price = DataFactory.randomInt(),
-                    time = DataFactory.randomUuid(),
-                    snap = DataFactory.randomBoolean()
-            )
+        fun makeDataGraphView(): DataItemView {
+            return DataItemView(randomInt(), "2019-01-23T21:44:03Z", false)
         }
 
         fun makeDataItemViewList(count: Int): List<DataItemView> {
             val dataItems = mutableListOf<DataItemView>()
             repeat(count) {
-                dataItems.add(makeDataItemView())
+                dataItems.add(makeDataGraphView())
             }
             return dataItems
         }

@@ -1,6 +1,6 @@
 package net.rom.exchange.test.test.factory
 
-import net.rom.exchange.domain.model.rom.DataItem
+import net.rom.exchange.presentation.model.rom.DataItemView
 import net.rom.exchange.test.test.factory.DataFactory.Factory.randomInt
 
 /**
@@ -10,8 +10,8 @@ class DataGraphFactory {
 
     companion object Factory {
 
-        fun makeDataGraphView(): DataItem {
-            return DataItem(randomInt(), "2019-01-23T21:44:03Z", false)
+        fun makeDataGraphView(): DataItemView {
+            return DataItemView(randomInt(), "2019-01-23T21:44:03Z", false)
         }
     }
 

@@ -25,8 +25,8 @@ class DataGraphMapperTest {
         val dataGraphFactory = DataGraphFactory.makeDataGraphView()
         val viewModel = dataGraphMapper.mapToView(dataGraphFactory)
 
-        assertEquals(0, viewModel.index)
-        assertEquals(dataGraphFactory.price, viewModel.price)
+        assertEquals(0.0F, viewModel.x)
+        assertEquals(dataGraphFactory.price.toFloat(), viewModel.y)
     }
 
 }
