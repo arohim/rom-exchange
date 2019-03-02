@@ -7,11 +7,12 @@ import javax.inject.Inject
 open class ItemExchangeMapper @Inject constructor() : Mapper<ItemExchangeView, ItemExchange> {
     override fun mapToView(type: ItemExchange): ItemExchangeView {
         return ItemExchangeView(
+                image = type.image,
                 name = type.name,
-                seaPrice = type.sea.latest.toString(),
-                globalPrice = type.global.latest.toString(),
-                seaChange = type.sea.all.change.toString(),
-                globalChange = type.global.all.change.toString()
+                sea = type.sea,
+                global = type.global,
+                type = type.type,
+                globalSeaDiff = type.globalSeaDiff
         )
     }
 }

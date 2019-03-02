@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItemExchangeContract.View,
                                                       val getItemEXchangeUseCase: SingleUseCase<List<ItemExchange>, ItemExchangeRequest>,
-                                                      val bufferooMapper: ItemExchangeMapper) :
+                                                      val itemExchangeMapper: ItemExchangeMapper) :
         BrowseItemExchangeContract.Presenter {
     companion object {
 
@@ -70,7 +70,7 @@ class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItem
         browseView.hideErrorState()
         if (items.isNotEmpty()) {
             browseView.hideEmptyState()
-            browseView.showItemExchange(items.map { bufferooMapper.mapToView(it) })
+            browseView.showItemExchange(items.map { itemExchangeMapper.mapToView(it) })
         } else {
             browseView.hideItems()
             browseView.showEmptyState()

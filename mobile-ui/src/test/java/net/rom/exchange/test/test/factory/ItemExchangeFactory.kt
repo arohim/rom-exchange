@@ -11,7 +11,7 @@ class ItemExchangeFactory {
     companion object Factory {
 
         fun makeItemExchangeItemView(): ItemExchangeView {
-            return ItemExchangeView(randomUuid(), randomUuid(), randomUuid(), randomUuid(), randomUuid())
+            return ItemExchangeView(randomUuid(), randomUuid(), randomUuid(), randomUuid(), randomUuid(), type.sea, type.global)
         }
     }
 
