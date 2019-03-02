@@ -16,8 +16,8 @@ open class ItemExchangeViewModelMapper @Inject constructor(private val dataGraph
                 seaPrice = "${type.sea.latest}z",
                 globalChange = "${type.global.all.change}%",
                 seaChange = "${type.sea.all.change}%",
-                seaDataGraph = type.sea.all.data.map { dataGraphViewModelMapper.mapToView(it) }.distinctBy { it.x }, //TODO: select only the highest price of the month
-                globalDataGraph = type.global.all.data.map { dataGraphViewModelMapper.mapToView(it) }.distinctBy { it.x }  //TODO: select only the highest price of the month
+                seaDataSet = type.sea.all.data.map { dataGraphViewModelMapper.mapToView(it) }.distinctBy { it.x }, //TODO: select only the highest price of the month
+                globalDataSet = type.global.all.data.map { dataGraphViewModelMapper.mapToView(it) }.distinctBy { it.x }  //TODO: select only the highest price of the month
         )
     }
 }

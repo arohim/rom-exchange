@@ -11,6 +11,6 @@ class ItemExchangeViewModel(
         val seaPrice: String,
         val globalChange: String,
         val seaChange: String,
-        val seaDataGraph: List<Entry>,
-        val globalDataGraph: List<Entry>
+        val seaDataSet: List<Entry>,
+        val globalDataSet: List<Entry>
 )
