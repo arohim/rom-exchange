@@ -7,7 +7,7 @@ import android.view.View
 import dagger.android.AndroidInjection
 import net.rom.exchange.mapper.ItemExchangeMapper
 import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
-import net.rom.exchange.presentation.model.ItemExchangeView
+import net.rom.exchange.presentation.model.rom.ItemExchangeView
 import kotlinx.android.synthetic.main.activity_browse.*
 import net.rom.exchange.R
 import javax.inject.Inject

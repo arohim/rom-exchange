@@ -4,9 +4,8 @@ import com.nhaarman.mockito_kotlin.*
 import io.reactivex.observers.DisposableSingleObserver
 import net.rom.exchange.domain.interactor.browse.GetItemExchange
 import net.rom.exchange.domain.model.rom.*
-import net.rom.exchange.presentation.factory.BufferooFactory
 import net.rom.exchange.presentation.factory.ItemExchangeFactory
-import net.rom.exchange.presentation.mapper.ItemExchangeMapper
+import net.rom.exchange.presentation.mapper.rom.ItemExchangeMapper
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test

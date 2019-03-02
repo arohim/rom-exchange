@@ -1,7 +1,7 @@
 package net.rom.exchange.mapper
 
 import net.rom.exchange.model.ItemExchangeViewModel
-import net.rom.exchange.presentation.model.ItemExchangeView
+import net.rom.exchange.presentation.model.rom.ItemExchangeView
 import javax.inject.Inject
 
 /**
@@ -12,10 +12,10 @@ open class ItemExchangeMapper @Inject constructor() : Mapper<ItemExchangeViewMod
     override fun mapToViewModel(type: ItemExchangeView): ItemExchangeViewModel {
         return ItemExchangeViewModel(
                 name = type.name,
-                globalPrice = "${type.globalPrice}z",
-                seaPrice = "${type.seaPrice}z",
-                globalChange = "${type.globalChange}%",
-                seaChange = "${type.seaChange}%"
+                globalPrice = "${type.global.latest}z",
+                seaPrice = "${type.sea.latest}z",
+                globalChange = "${type.global.all.change}%",
+                seaChange = "${type.sea.all.change}%"
         )
     }
 }

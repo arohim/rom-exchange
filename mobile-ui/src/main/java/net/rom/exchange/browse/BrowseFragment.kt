@@ -13,7 +13,7 @@ import net.rom.exchange.R
 import net.rom.exchange.main.MainActivity
 import net.rom.exchange.mapper.ItemExchangeMapper
 import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
-import net.rom.exchange.presentation.model.ItemExchangeView
+import net.rom.exchange.presentation.model.rom.ItemExchangeView
 import javax.inject.Inject
 
 private const val ARG_ITEM_TITLE = "item_title"

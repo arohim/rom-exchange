@@ -3,7 +3,7 @@ package net.rom.exchange.presentation.browse
 import io.reactivex.observers.DisposableSingleObserver
 import net.rom.exchange.domain.interactor.SingleUseCase
 import net.rom.exchange.domain.model.rom.*
-import net.rom.exchange.presentation.mapper.ItemExchangeMapper
+import net.rom.exchange.presentation.mapper.rom.ItemExchangeMapper
 import javax.inject.Inject
 
 class BrowseItemExchangePresenter @Inject constructor(val browseView: BrowseItemExchangeContract.View,

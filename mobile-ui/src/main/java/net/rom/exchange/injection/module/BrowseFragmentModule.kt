@@ -7,7 +7,7 @@ import net.rom.exchange.domain.interactor.browse.GetItemExchange
 import net.rom.exchange.injection.scopes.PerActivity
 import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
 import net.rom.exchange.presentation.browse.BrowseItemExchangePresenter
-import net.rom.exchange.presentation.mapper.ItemExchangeMapper
+import net.rom.exchange.presentation.mapper.rom.ItemExchangeMapper
 
 
 /**

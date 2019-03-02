@@ -24,10 +24,10 @@ class ItemExchangeMapperTest {
         val romExchangeViewModel = rOMExchangeItemMapper.mapToViewModel(romExchangeItem)
 
         assertEquals(romExchangeItem.name, romExchangeViewModel.name)
-        assertEquals("${romExchangeItem.seaPrice}z", romExchangeViewModel.seaPrice)
-        assertEquals("${romExchangeItem.seaChange}%", romExchangeViewModel.seaChange)
-        assertEquals("${romExchangeItem.globalChange}%", romExchangeViewModel.globalChange)
-        assertEquals("${romExchangeItem.globalPrice}z", romExchangeViewModel.globalPrice)
+        assertEquals("${romExchangeItem.sea.latest}z", romExchangeViewModel.seaPrice)
+        assertEquals("${romExchangeItem.sea.all.change}%", romExchangeViewModel.seaChange)
+        assertEquals("${romExchangeItem.global.all.change}%", romExchangeViewModel.globalChange)
+        assertEquals("${romExchangeItem.global.latest}z", romExchangeViewModel.globalPrice)
     }
 
 }
