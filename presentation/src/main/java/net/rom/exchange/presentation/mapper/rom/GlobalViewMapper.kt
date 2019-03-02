@@ -6,9 +6,9 @@ import net.rom.exchange.presentation.model.rom.GlobalView
 import javax.inject.Inject
 
 class GlobalViewMapper @Inject constructor(
-        private val allMapper: AllMapper,
-        private val weekMapper: WeekMapper,
-        private val monthMapper: MonthMapper
+        private val allMapper: AllViewMapper,
+        private val weekMapper: WeekViewMapper,
+        private val monthMapper: MonthViewMapper
 ) : Mapper<GlobalView, Global> {
     override fun mapToView(type: Global): GlobalView {
         return GlobalView(

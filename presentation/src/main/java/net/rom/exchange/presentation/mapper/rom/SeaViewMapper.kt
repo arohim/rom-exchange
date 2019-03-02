@@ -6,9 +6,9 @@ import net.rom.exchange.presentation.model.rom.SeaView
 import javax.inject.Inject
 
 class SeaViewMapper @Inject constructor(
-        private val allMapper: AllMapper,
-        private val weekMapper: WeekMapper,
-        private val monthMapper: MonthMapper
+        private val allMapper: AllViewMapper,
+        private val weekMapper: WeekViewMapper,
+        private val monthMapper: MonthViewMapper
 ) : Mapper<SeaView, Sea> {
     override fun mapToView(type: Sea): SeaView {
         return SeaView(
