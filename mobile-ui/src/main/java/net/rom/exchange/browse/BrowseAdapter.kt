@@ -1,12 +1,26 @@
 package net.rom.exchange.browse
 
+import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.Legend
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.components.YAxis
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.LargeValueFormatter
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
+import com.github.mikephil.charting.utils.ColorTemplate
+import net.rom.exchange.Constants.MONTHS
 import net.rom.exchange.R
+import net.rom.exchange.chart.ValueFormatter
 import net.rom.exchange.model.ItemExchangeViewModel
+import java.util.ArrayList
 import javax.inject.Inject
 
 class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -26,11 +40,62 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
             holder.textSeaChange.text = item?.seaChange
             holder.textGlobalChange.text = item?.globalChange
 
+            item?.let {
+                setUpChartData(holder.chart, it)
+            }
+
 //        Glide.with(holder.itemView.context)
 //                .load(item.avatar)
 //                .apply(RequestOptions.circleCropTransform())
 //                .into(holder.iconImage)
         }
+    }
+
+    private fun setUpChartData(chart: LineChart, item: ItemExchangeViewModel) {
+        chart.description.isEnabled = false
+        chart.setBackgroundColor(Color.WHITE)
+        chart.setTouchEnabled(false)
+
+        val leftAxis = chart.axisLeft
+        leftAxis.setDrawGridLines(false)
+        leftAxis.axisMinimum = 0f // this replaces setStartAtZero(true)
+        leftAxis.valueFormatter = LargeValueFormatter()
+
+        val rightAxis = chart.axisRight
+        rightAxis.isEnabled = false
+
+        val xAxis = chart.xAxis
+        xAxis.position = XAxis.XAxisPosition.BOTTOM
+        xAxis.axisMinimum = 0f
+        xAxis.granularity = 1f
+        xAxis.valueFormatter = object : ValueFormatter() {
+            override fun getFormattedValue(value: Float): String {
+                return MONTHS[value.toInt() % MONTHS.size]
+            }
+        }
+
+        val dataSets = ArrayList<ILineDataSet>()
+
+        val seaGraph = LineDataSet(item.seaDataGraph, "Sea")
+        seaGraph.lineWidth = 1F
+        seaGraph.circleRadius = 3F
+        val seaGraphColor = ColorTemplate.JOYFUL_COLORS[1]
+        seaGraph.color = seaGraphColor
+        seaGraph.setCircleColor(seaGraphColor)
+        dataSets.add(seaGraph)
+
+        val globalGraph = LineDataSet(item.globalDataGraph, "Global")
+        globalGraph.lineWidth = 1F
+        globalGraph.circleRadius = 3F
+        val globalGraphColor = ColorTemplate.JOYFUL_COLORS[0]
+        globalGraph.color = globalGraphColor
+        globalGraph.setCircleColor(globalGraphColor)
+        dataSets.add(globalGraph)
+
+        val data = LineData(dataSets)
+        data.setValueFormatter(LargeValueFormatter())
+        chart.data = data
+        chart.invalidate()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -99,6 +164,7 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
         var textSeaPrice: TextView
         var textGlobalChange: TextView
         var textSeaChange: TextView
+        var chart: LineChart
 
         init {
 //            iconImage = view.findViewById(R.id.icon_avatar)
@@ -107,7 +173,9 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
             textSeaPrice = view.findViewById(R.id.text_sea_price)
             textGlobalChange = view.findViewById(R.id.text_global_change)
             textSeaChange = view.findViewById(R.id.text_sea_change)
+            chart = view.findViewById(R.id.chart)
         }
+
     }
 
 }
