@@ -38,7 +38,7 @@ class BrowseAdapter @Inject constructor() : RecyclerView.Adapter<RecyclerView.Vi
             VIEW_ITEM -> {
                 val itemView = LayoutInflater
                         .from(parent.context)
-                        .inflate(R.layout.item_rom_exchange_item, parent, false)
+                        .inflate(R.layout.view_item_exchange_browse, parent, false)
                 return ItemViewHolder(itemView)
             }
             VIEW_PROG -> {
