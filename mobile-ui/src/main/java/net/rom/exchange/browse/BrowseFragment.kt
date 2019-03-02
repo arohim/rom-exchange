@@ -11,7 +11,7 @@ import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.activity_browse.*
 import net.rom.exchange.R
 import net.rom.exchange.main.MainActivity
-import net.rom.exchange.mapper.ItemExchangeMapper
+import net.rom.exchange.mapper.ItemExchangeViewModelMapper
 import net.rom.exchange.presentation.browse.BrowseItemExchangeContract
 import net.rom.exchange.presentation.model.rom.ItemExchangeView
 import javax.inject.Inject
@@ -38,7 +38,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
     lateinit var browseAdapter: BrowseAdapter
 
     @Inject
-    lateinit var mapper: ItemExchangeMapper
+    lateinit var mapper: ItemExchangeViewModelMapper
 
     val searchBoxListener: MainActivity.SearchBoxListener = object : MainActivity.SearchBoxListener {
         override fun onSubmit(keyword: String) {

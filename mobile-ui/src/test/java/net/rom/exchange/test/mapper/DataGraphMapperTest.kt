@@ -1,6 +1,6 @@
 package net.rom.exchange.test.mapper
 
-import net.rom.exchange.mapper.DataGraphMapper
+import net.rom.exchange.mapper.DataGraphViewModelMapper
 import net.rom.exchange.test.test.factory.DataGraphFactory
 import org.joda.time.DateTimeUtils
 import org.junit.Before
@@ -12,12 +12,12 @@ import kotlin.test.assertEquals
 @RunWith(JUnit4::class)
 class DataGraphMapperTest {
 
-    private lateinit var dataGraphMapper: DataGraphMapper
+    private lateinit var dataGraphMapper: DataGraphViewModelMapper
 
     @Before
     fun setUp() {
         DateTimeUtils.setCurrentMillisFixed(12345556666L)
-        dataGraphMapper = DataGraphMapper()
+        dataGraphMapper = DataGraphViewModelMapper()
     }
 
     @Test
