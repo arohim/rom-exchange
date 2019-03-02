@@ -10,10 +10,7 @@ import javax.inject.Inject
 open class DataGraphMapper @Inject constructor() : Mapper<DataGraphView, DataItem> {
     override fun mapToView(type: DataItem): DataGraphView {
         val index = getIndex(type.time)
-        return DataGraphView(
-                index = index,
-                price = type.price
-        )
+        return DataGraphView(index = index, price = type.price)
     }
 
     private fun getIndex(time: String): Int {
