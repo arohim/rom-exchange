@@ -12,6 +12,7 @@ import com.github.mikephil.charting.formatter.LargeValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.github.mikephil.charting.utils.ColorTemplate
 import net.rom.exchange.Constants
+import net.rom.exchange.formater.ValueFormatter
 import java.util.ArrayList
 
 class ExchangeChart : LineChart {

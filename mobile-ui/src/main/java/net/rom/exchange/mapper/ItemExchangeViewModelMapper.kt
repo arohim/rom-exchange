@@ -1,5 +1,7 @@
 package net.rom.exchange.mapper
 
+import com.github.mikephil.charting.formatter.PercentFormatter
+import net.rom.exchange.formater.ZenyFormatter
 import net.rom.exchange.model.ItemExchangeViewModel
 import net.rom.exchange.presentation.model.rom.ItemExchangeView
 import javax.inject.Inject
@@ -12,10 +14,10 @@ open class ItemExchangeViewModelMapper @Inject constructor(private val dataGraph
     override fun mapToViewModel(type: ItemExchangeView): ItemExchangeViewModel {
         return ItemExchangeViewModel(
                 name = type.name,
-                globalPrice = "${type.global.latest}z",
-                seaPrice = "${type.sea.latest}z",
-                globalChange = "${type.global.all.change}%",
-                seaChange = "${type.sea.all.change}%",
+                globalPrice = ZenyFormatter.makeZeny(type.global.latest),
+                seaPrice = ZenyFormatter.makeZeny(type.sea.latest),
+                globalChange = PercentFormatter().getFormattedValue(type.global.all.change.toFloat(), null),
+                seaChange = PercentFormatter().getFormattedValue(type.sea.all.change.toFloat(), null),
                 seaDataSet = type.sea.all.data.map { dataGraphViewModelMapper.mapToView(it) }.distinctBy { it.x }, //TODO: select only the highest price of the month
                 globalDataSet = type.global.all.data.map { dataGraphViewModelMapper.mapToView(it) }.distinctBy { it.x }  //TODO: select only the highest price of the month
         )
