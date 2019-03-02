@@ -22,7 +22,7 @@ class AllEntityMapperTest {
     }
 
     @Test
-    fun mapFromEntityMapsData() {
+    fun mapFromDataMapsView() {
         // GIVEN
         val domain = ItemExchangeFactory.makeAll()
 
@@ -33,8 +33,8 @@ class AllEntityMapperTest {
         assertDataEquality(domain, view)
     }
 
-    private fun assertDataEquality(entity: All, data: AllView) {
-        assertEquals(entity.data.size, data.data.size)
-        assertEquals(entity.change, data.change, 0.0)
+    private fun assertDataEquality(domain: All, view: AllView) {
+        assertEquals(domain.data.size, view.data.size)
+        assertEquals(domain.change, view.change, 0.0)
     }
 }

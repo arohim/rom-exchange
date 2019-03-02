@@ -22,7 +22,7 @@ class MonthEntityMapperTest {
     }
 
     @Test
-    fun mapFromEntityMapsData() {
+    fun mapFromDataMapsView() {
         // GIVEN
         val domain = ItemExchangeFactory.makeMonth()
 

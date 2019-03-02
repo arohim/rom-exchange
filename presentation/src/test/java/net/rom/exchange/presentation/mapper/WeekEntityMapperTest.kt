@@ -22,7 +22,7 @@ class WeekEntityMapperTest {
     }
 
     @Test
-    fun mapFromEntityMapsData() {
+    fun mapFromDataMapsView() {
         // GIVEN
         val domain = ItemExchangeFactory.makeWeek()
 

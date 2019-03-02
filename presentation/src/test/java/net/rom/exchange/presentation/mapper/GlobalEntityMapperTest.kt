@@ -26,7 +26,7 @@ class GlobalEntityMapperTest {
     }
 
     @Test
-    fun mapFromEntityMapsData() {
+    fun mapFromDataMapsView() {
         // GIVEN
         val domain = ItemExchangeFactory.makeGlobal()
 
@@ -38,9 +38,9 @@ class GlobalEntityMapperTest {
     }
 
     private fun assertDataEquality(domain: Global, view: GlobalView) {
-        assertEquals(view.all.data.size, domain.all.data.size)
-        assertEquals(view.week.data.size, domain.week.data.size)
-        assertEquals(view.month.data.size, domain.month.data.size)
-        assertEquals(view.latest, domain.latest)
+        assertEquals(domain.all.data.size, view.all.data.size)
+        assertEquals(domain.week.data.size, view.week.data.size)
+        assertEquals(domain.month.data.size, view.month.data.size)
+        assertEquals(domain.latest, view.latest)
     }
 }

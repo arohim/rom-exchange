@@ -32,9 +32,9 @@ class DataItemViewMapperTest {
         assertDataItemEquality(domain, view)
     }
 
-    private fun assertDataItemEquality(domain: DataItem, data: DataItemView) {
-        assertEquals(domain.price, data.price)
-        assertEquals(domain.time, data.time)
-        assertEquals(domain.snap, data.snap)
+    private fun assertDataItemEquality(domain: DataItem, view: DataItemView) {
+        assertEquals(domain.price, view.price)
+        assertEquals(domain.time, view.time)
+        assertEquals(domain.snap, view.snap)
     }
 }

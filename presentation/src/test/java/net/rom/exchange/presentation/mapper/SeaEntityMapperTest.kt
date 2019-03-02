@@ -26,7 +26,7 @@ class SeaEntityMapperTest {
     }
 
     @Test
-    fun mapFromEntityMapsData() {
+    fun mapFromDataMapsView() {
         // GIVEN
         val domain = ItemExchangeFactory.makeSea()
 
