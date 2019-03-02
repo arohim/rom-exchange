@@ -91,6 +91,7 @@ dependencies {
     implementation mobileUiDependencies.constraintLayout
     implementation mobileUiDependencies.cardView
     implementation mobileUiDependencies.MPAndroidChart
+    implementation mobileUiDependencies.jodaTime
 
     testImplementation mobileUiTestDependencies.kotlinJUnit
 
