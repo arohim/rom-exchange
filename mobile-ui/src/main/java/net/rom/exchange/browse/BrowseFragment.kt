@@ -28,7 +28,6 @@ private const val ARG_ITEM_TITLE = "item_title"
  *
  */
 class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
-    // TODO: Rename and change types of parameters
     private var itemTitle: String? = null
 
     @Inject
@@ -59,7 +58,7 @@ class BrowseFragment : Fragment(), BrowseItemExchangeContract.View {
         return inflater.inflate(R.layout.fragment_browse, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         AndroidSupportInjection.inject(this)
         setupBrowseRecycler()
