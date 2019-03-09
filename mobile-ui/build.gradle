@@ -16,11 +16,18 @@ android {
     defaultConfig {
         minSdkVersion globalConfiguration["androidMinSdkVersion"]
         targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        applicationId "net.rom.exchange"
         multiDexEnabled = true
         testInstrumentationRunner "net.rom.exchange.test.test.TestRunner"
+        versionName "0.1.1"
+        versionCode 2
     }
 
     buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+        }
         debug {
             testCoverageEnabled true
         }
