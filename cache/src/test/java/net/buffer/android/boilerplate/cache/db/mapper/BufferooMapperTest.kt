@@ -1,12 +1,12 @@
 package net.buffer.android.boilerplate.cache.db.mapper
 
 import android.database.Cursor
-import net.buffer.android.boilerplate.cache.BuildConfig
 import net.buffer.android.boilerplate.cache.db.Db
 import net.buffer.android.boilerplate.cache.db.DbOpenHelper
 import net.buffer.android.boilerplate.cache.model.CachedBufferoo
 import net.buffer.android.boilerplate.cache.test.DefaultConfig
 import net.buffer.android.boilerplate.cache.test.factory.BufferooFactory
+import org.buffer.android.boilerplate.cache.BuildConfig
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
