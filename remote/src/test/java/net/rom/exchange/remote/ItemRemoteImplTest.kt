@@ -79,6 +79,6 @@ class ItemRemoteImplTest {
 
     //</editor-fold>
     private fun stubItemExchangeServiceGetItems(single: Single<List<ItemExchangeModel>>) {
-        whenever(service.getItems(any(), any(), any(), any(), any(), any())).thenReturn(single)
+        whenever(service.getItems(any(), any(), any(), any(), any(), any(), any())).thenReturn(single)
     }
 }

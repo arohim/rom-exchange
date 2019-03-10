@@ -19,8 +19,8 @@ android {
         applicationId "net.rom.exchange"
         multiDexEnabled = true
         testInstrumentationRunner "net.rom.exchange.test.test.TestRunner"
-        versionName "0.1.1"
-        versionCode 2
+        versionName "0.1.2"
+        versionCode 3
     }
 
     buildTypes {

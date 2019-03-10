@@ -21,7 +21,7 @@ open class GetItemExchange @Inject constructor(private val ItemExchangeRepositor
                 sort = params?.sort?.value ?: Sort.CHANGE.value,
                 sortDir = params?.sortDir?.value ?: SortDir.DESC.value,
                 sortServer = params?.sortServer?.value ?: SortServer.BOTH.value,
-                sortRange = params?.sortRange?.value ?: "",
+                sortRange = params?.sortRange?.value ?: "all",
                 page = params?.page ?: 1
         )
     }

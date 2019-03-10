@@ -15,6 +15,7 @@ class ItemExchangeRemoteImpl @Inject constructor(private val romExchangeService:
                 type = type,
                 sort = sort,
                 sortDir = sortDir,
+                sortRange = sortRange,
                 page = page
         ).map {
             it.map { listItem ->

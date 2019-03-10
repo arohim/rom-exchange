@@ -13,6 +13,7 @@ interface ItemExchangeService {
             @Query("type") type: Int,
             @Query("sort") sort: String,
             @Query("sort_dir") sortDir: String,
+            @Query("range") sortRange: String,
             @Query("page") page: Int
 
     ): Single<List<ItemExchangeModel>>
