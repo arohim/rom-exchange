@@ -7,8 +7,8 @@ Our project have 48 features using Clean Architecture already in a single module
 freely, to fork and make your own App.
 https://play.google.com/store/apps/details?id=net.rom.exchange
 <p>
-  <img src="https://github.com/arohim/eddga/blob/master/images/Screenshot_20190310-003629.png?raw=true" width="300">
-  <img src="https://github.com/arohim/eddga/blob/master/images/Screenshot_20190310-004059.png?raw=true" width="300">
+  <img src="https://github.com/arohim/eddga/blob/master/art/demoapp-1.png?raw=true" width="300">
+  <img src="https://github.com/arohim/eddga/blob/master/art/demoapp-2.png?raw=true" width="300">
 </p>
 
 ## Thanks
